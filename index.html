@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exo JavaScript</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <ul>
+        <li>Acceuil</li>
+        <li>Contact</li>
+        <li>Parametre</li>
+        <li>Mon compte</li>
+      </ul>
+    </nav>
+
+    <div class="mousemove"></div>
+
+    <h1>Questionnaire</h1>
+
+    <div id="q1" class="click-event box">
+      <h2>Quelle est la capitale de la France ?</h2>
+      <button id="btn1-1">Lyon</button>
+      <button id="btn1-2">Bordeaux</button>
+      <button id="btn1-3">Paris</button>
+      <button id="btn1-4">Belgique</button>
+      <p id="res1-1">Bonne Réponse !!</p>
+      <p id="res1-2">Faux !! La bonne réponse est "Paris"</p>
+    </div>
+
+    <div id="q2" class="click-event box">
+      <h2>Sonic était la mascotte de quel marque de console ?</h2>
+      <button id="btn2-1">Nintendo</button>
+      <button id="btn2-2">Playstation</button>
+      <button id="btn2-3">Sega</button>
+      <button id="btn2-4">Xbox</button>
+      <p id="res2-1">Bonne Réponse !!</p>
+      <p id="res2-2">Faux !! La bonne réponse est "Sega"</p>
+    </div>
+
+    <div id="q3" class="click-event box">
+      <h2>Quelle est la cpnsole la plus vendu au monde ?</h2>
+      <button id="btn3-1">Game Cube</button>
+      <button id="btn3-2">Playstaion One</button>
+      <button id="btn3-3">Playstation 2</button>
+      <button id="btn3-4">Xbox360</button>
+      <p id="res3-1">Bonne Réponse !!</p>
+      <p id="res3-2">Faux !! La bonne réponse est "Playstation 2"</p>
+    </div>
+
+    <div class="key-event box">
+      <h2>Vous appuyer sur la touche : <span id="key"></span></h2>
+    </div>
+
+    <form class="box">
+      <input id="name" type="text" placeholder="Entrez votre nom" />
+      <select>
+        <option value="">Selectionnez la langue</option>
+        <option value="Français">Français</option>
+        <option value="Anglais">Anglais</option>
+        <option value="Portugais">Portugais</option>
+      </select>
+      <div id="checkCGV">
+        <input type="checkbox" id="cgv" />
+        <label for="cgv">Accepter les CGV</label>
+      </div>
+      <input type="submit" value="valider" />
+    </form>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
