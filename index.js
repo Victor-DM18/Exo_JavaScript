@@ -152,6 +152,7 @@ window.addEventListener("scroll", () => {
 
 //form event
 
+// enregistre la valeur de l'input
 let pseudo;
 text.addEventListener("input", (e) => {
   pseudo = e.target.value;
@@ -163,8 +164,9 @@ select.addEventListener("input", (e) => {
 });
 
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
+  e.preventDefault(); //empeche le navigateur de changer de page lors du submit
   if (cgv.checked) {
+    // si cgv cicher => insers du HTML
     result.innerHTML = `
     <h3>Nom : ${pseudo}</h3>
     <h4>Langue : ${language}</h4>
