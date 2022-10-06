@@ -33,7 +33,13 @@ const key = document.getElementById("key");
 const nav = document.querySelector("nav");
 
 //form
+const form = document.querySelector("form");
 const text = document.getElementById("name");
+const select = document.querySelector("select");
+const error = document.getElementById("errorCGV");
+const cgv = document.getElementById("cgv");
+
+const result = document.getElementById("result");
 
 // mouseover event => quand la souris survole un element
 question1.addEventListener("mouseover", () => {
@@ -149,4 +155,24 @@ window.addEventListener("scroll", () => {
 let pseudo;
 text.addEventListener("input", (e) => {
   pseudo = e.target.value;
+});
+
+let language;
+select.addEventListener("input", (e) => {
+  language = e.target.value;
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (cgv.checked) {
+    result.innerHTML = `
+    <h3>Nom : ${pseudo}</h3>
+    <h4>Langue : ${language}</h4>
+    `;
+    error.textContent = "";
+  } else {
+    error.textContent = "Veuillez accepter les CGV";
+    error.style.color = "red";
+    console.log("Validé");
+  }
 });
