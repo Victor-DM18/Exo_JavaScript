@@ -1,0 +1,34 @@
+body{
+  text-align: center;  
+}
+
+.app{
+  display: grid;
+  width: 60%;
+  margin: auto;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 50px 30px 30px 30px 30px 30px;
+  grid-template-areas: 
+  "res res res res"
+  "7 8 9 reset"
+  "4 5 6 reset"
+  " 1 2 3 reset"
+  "0 dot plus minus"
+  "equal equal times div";
+  border: 2px solid rgb(18, 194, 203)
+}
+
+.nb {
+  color: white;
+  background-color: rgb(71, 71, 70);
+}
+
+.ot {
+  background-color: rgb(247, 127, 14);
+}
+
+h3{
+    margin: 7px 10px 0 0;
+    font-size: 2rem;
+    grid-area: res;
+}
