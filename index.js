@@ -166,7 +166,7 @@ select.addEventListener("input", (e) => {
 form.addEventListener("submit", (e) => {
   e.preventDefault(); //empeche le navigateur de changer de page lors du submit
   if (cgv.checked) {
-    // si cgv cicher => insers du HTML
+    // si cgv cocher => insert du HTML
     result.innerHTML = `
     <h3>Nom : ${pseudo}</h3>
     <h4>Langue : ${language}</h4>
@@ -177,4 +177,9 @@ form.addEventListener("submit", (e) => {
     error.style.color = "red";
     console.log("Validé");
   }
+});
+
+//Load event
+window.addEventListener("load", () => {
+  console.log("Document chargé");
 });
