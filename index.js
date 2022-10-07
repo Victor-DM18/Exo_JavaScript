@@ -41,6 +41,10 @@ const cgv = document.getElementById("cgv");
 
 const result = document.getElementById("result");
 
+//all box class
+const boxes = document.querySelectorAll(".box");
+console.log(boxes);
+
 // mouseover event => quand la souris survole un element
 question1.addEventListener("mouseover", () => {
   question1.style.borderStyle = "solid";
@@ -182,4 +186,14 @@ form.addEventListener("submit", (e) => {
 //Load event
 window.addEventListener("load", () => {
   console.log("Document chargé");
+});
+
+//ForEach
+boxes.forEach((box) => {
+  box.addEventListener("mouseover", (e) => {
+    box.style.transform = "scale(1.2)";
+  });
+  box.addEventListener("mouseout", (e) => {
+    box.style.transform = "scale(1)";
+  });
 });

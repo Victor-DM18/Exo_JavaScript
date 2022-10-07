@@ -70,6 +70,7 @@ nav{
   background-color: coral;
   padding: 0;
   transition: 0.5s;
+  z-index: 2;
 }
 
 ul{
