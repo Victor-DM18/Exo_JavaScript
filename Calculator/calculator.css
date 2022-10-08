@@ -11,7 +11,7 @@ body{
 
 .app{
   display: grid;
-  width: 50%;
+  width: 30%;
   margin: auto;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 50px 30px 30px 30px 30px 30px;
