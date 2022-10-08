@@ -30,10 +30,12 @@ body{
 .nb {
   color: white;
   background-color: rgb(71, 71, 70);
+  font-size: 18px;
 }
 
 .ot {
   background-color: rgb(247, 127, 14);
+  font-size: 20px;
 }
 
 h3{
@@ -49,30 +51,13 @@ h3{
   grid-area: equal;
   background-color: rgb(26, 25, 25);
   color: white;
+  font-size: 20px;
 }
 
 #clear {
   grid-area: clear ;
   background-color: rgb(26, 25, 25);
   color: white;
+  font-size: 20px;
 }
 
-#dot {
-grid-area: dot;
-}
-
-#div {
-  grid-area: div;
-}
-
-#plus {
-  grid-area: plus;
-}
-
-#minus {
-  grid-area: minus;
-}
-
-#multi {
-  grid-area: multi;
-}
