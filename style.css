@@ -25,6 +25,10 @@ body {
   z-index: -1;
 }
 
+.link {
+  border: 2px solid black;
+}
+
 .box {
   
   background-color: rgb(211, 208, 208);
