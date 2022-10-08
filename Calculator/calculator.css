@@ -15,7 +15,10 @@ body{
   "1 2 3 plus"
   "0 multi div minus"
   "equal equal equal dot";
-  border: 2px solid rgb(18, 194, 203)
+  border: 5px solid rgb(89, 92, 93);
+  background-color: rgb(203, 211, 214);
+  border-radius: 10px;
+
 }
 
 .nb {
@@ -28,18 +31,24 @@ body{
 }
 
 h3{
-    margin: 7px 10px 0 0;
+    margin: 5px 10px 5px 10px;
     font-size: 2rem;
     grid-area: res;
     text-align: end;
+    border: 2px solid rgb(8, 8, 8);
+    background-color: rgba(177, 240, 244, 0.88);
 }
 
 #equal {
   grid-area: equal;
+  background-color: rgb(26, 25, 25);
+  color: white;
 }
 
 #clear {
   grid-area: clear ;
+  background-color: rgb(26, 25, 25);
+  color: white;
 }
 
 #dot {
