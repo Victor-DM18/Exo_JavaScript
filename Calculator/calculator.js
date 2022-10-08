@@ -9,6 +9,7 @@ buttons.forEach((btn) => {
 
 equal.addEventListener("click", () => {
   result.textContent = eval(result.textContent);
+  console.log(result);
 });
 
 clear.addEventListener("click", () => {

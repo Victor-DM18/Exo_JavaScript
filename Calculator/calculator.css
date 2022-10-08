@@ -11,17 +11,17 @@ body{
 
 .app{
   display: grid;
-  width: 60%;
+  width: 50%;
   margin: auto;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 50px 30px 30px 30px 30px 30px;
   grid-template-areas: 
   "res res res res"
-  "7 8 9 clear"
-  "4 5 6 clear"
-  "1 2 3 plus"
-  "0 multi div minus"
-  "equal equal equal dot";
+  "clear clear div multi"
+  "7 8 9 plus"
+  "4 5 6 minus"
+  "1 2 3 dot"
+  "0 equal equal equal";
   border: 5px solid rgb(89, 92, 93);
   background-color: rgb(203, 211, 214);
   border-radius: 10px;
@@ -30,7 +30,7 @@ body{
 .nb {
   color: white;
   background-color: rgb(71, 71, 70);
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .ot {
@@ -52,6 +52,7 @@ h3{
   background-color: rgb(26, 25, 25);
   color: white;
   font-size: 20px;
+  border-radius: 30px;
 }
 
 #clear {
@@ -59,5 +60,9 @@ h3{
   background-color: rgb(26, 25, 25);
   color: white;
   font-size: 20px;
+  border-radius: 30px;
 }
 
+.btn {
+  border-radius: 20px;
+}
