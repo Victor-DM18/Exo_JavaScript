@@ -143,6 +143,7 @@ window.addEventListener("mouseup", () => {
 //keypress => quand on press sur une touche du clavier
 document.addEventListener("keypress", (e) => {
   key.textContent = e.key;
+  console.log(e);
 });
 
 // scroll event
@@ -197,3 +198,5 @@ boxes.forEach((box) => {
     box.style.transform = "scale(1)";
   });
 });
+
+//stopPropagation = empecher la propagation d'évenement
