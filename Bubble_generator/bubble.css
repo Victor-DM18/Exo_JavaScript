@@ -7,8 +7,18 @@ body {
   position: absolute;
   border-radius: 300px;
   background: rgba(208, 140, 15, 0.96);
+  opacity: 0;
+  animation: anim 8s;
+}
+
+@keyframes anim {
+  to{
+    top: -250px;
+    opacity: 1;
+  }  
 }
 
 h1 {
   text-align: center;
 }
+
