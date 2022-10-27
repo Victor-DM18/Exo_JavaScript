@@ -3,6 +3,7 @@
   src: url(./font/Inter-VariableFont_slnt\wght.ttf);
 }
 * {
+  cursor:var(mousemoveWhite);
   margin: 0;
   padding: 5px;
   font-family: "font-1", Arial;
@@ -26,6 +27,36 @@ body {
   color: rgb(246, 246, 246);
   min-height: 100vh;
 }
+
+
+
+.mousemove {
+  mix-blend-mode: invert;
+  border-radius: 500px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.mouse {
+  width: 14px;
+  height: 14px;
+  background: #2128bd;
+}
+
+.mousemoveBlack {
+  height: 150px;
+  width: 150px;
+  background: black;
+  opacity: 0.5;
+}
+
+.mousemoveWhite {
+  height: 75px;
+  width: 75px;
+  background: white;
+  opacity: 0.5;
+}
+
 nav {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -93,17 +124,8 @@ footer img {
   height: 60px;
 }
 
-.mousemove {
-    height: 100px;
-      width: 100px;
-      border: 2px solid black;
-      position: absolute;
-      border-radius: 50px;
-      transform: translate(-50%, -50%);
-      background: black;
-      opacity: 0.5;
-      z-index: 1;
-}
+
+
 
 /* ************** RESPONSIVE *************** */
 

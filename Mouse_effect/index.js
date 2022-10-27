@@ -6,9 +6,15 @@
 
 // Donner un style de transparence aux 2 plus gros ronds (mix-blend-mode)
 
-const mousemove = document.querySelector(".mousemove");
+const mousemoveBlack = document.querySelector(".mousemoveBlack");
+const mousemoveWhite = document.querySelector(".mousemoveWhite");
+const mouse = document.querySelector(".mouse");
 
 window.addEventListener("mousemove", (e) => {
-  mousemove.style.top = e.pageY + "px";
-  mousemove.style.left = e.pageX + "px";
+  mousemoveBlack.style.top = e.pageY + "px";
+  mousemoveBlack.style.left = e.pageX + "px";
+  mousemoveWhite.style.top = e.pageY + "px";
+  mousemoveWhite.style.left = e.pageX + "px";
+  mouse.style.top = e.pageY + "px";
+  mouse.style.left = e.pageX + "px";
 });
