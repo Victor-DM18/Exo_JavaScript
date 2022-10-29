@@ -17,6 +17,8 @@ a:visited {
   color: white;
   text-decoration: none;
   transition: 0.3s;
+  z-index: 20;
+  position: relative;
 }
 a:hover {
   font-size: 1.3rem;
@@ -26,6 +28,7 @@ body {
   background: rgb(27, 27, 27);
   color: rgb(246, 246, 246);
   min-height: 100vh;
+  cursor: none;
 }
 
 
