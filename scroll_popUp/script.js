@@ -10,28 +10,32 @@
 
 const navbar = document.getElementById("navbar");
 const image = document.getElementById("imgImprovise");
-const popup = document.getElementById("popup");
+const close = document.getElementById("closeBtn");
 
 window.addEventListener("scroll", () => {
-  console.log(window.scrollY);
   if (window.scrollY > 0) {
     navbar.style.height = "60px";
   } else {
     navbar.style.height = "90px";
   }
 
-  if (window.scrollY > 100) {
-    image.style.opacity = "1";
+  let scroll =
+    (window.scrollY + window.innerHeight) / document.body.offsetHeight;
+
+  if (scroll > 0.55) {
+    image.style.opacity = 1;
+    image.style.transform = "none";
   } else {
-    image.style.opacity = "0";
+    image.style.opacity = 0;
+    image.style.transform = "none";
   }
 
-  if (window.scrollY >= 1200) {
+  if (scroll >= 1) {
     popup.style.opacity = "1";
     popup.style.transform = "translate(0px)";
   }
 });
 
-popup.addEventListener("click", () => {
+close.addEventListener("click", () => {
   popup.remove();
 });
