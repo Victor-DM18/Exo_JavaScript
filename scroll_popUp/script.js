@@ -22,7 +22,7 @@ window.addEventListener("scroll", () => {
   let scroll =
     (window.scrollY + window.innerHeight) / document.body.offsetHeight;
 
-  if (scroll > 0.55) {
+  if (scroll > 0.45) {
     image.style.opacity = 1;
     image.style.transform = "none";
   } else {
@@ -37,5 +37,6 @@ window.addEventListener("scroll", () => {
 });
 
 close.addEventListener("click", () => {
-  popup.remove();
+  popup.style.transform = "translate(500px)";
+  popup.style.opacity = 0;
 });
