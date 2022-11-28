@@ -1,0 +1,32 @@
+body {
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 300px;
+  background: rgba(208, 140, 15, 0.96);
+  opacity: 0;
+  animation: anim 8s;
+}
+
+@keyframes anim {
+  to{
+    top: -250px;
+    left : var(--left);
+    opacity: 1;
+  }  
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 100px;
+  opacity: 0.5;
+  z-index: -1;
+}
+

@@ -1,0 +1,68 @@
+
+body{
+  text-align: center;  
+}
+.link {
+    background-color: rgb(211, 208, 208);
+      border-radius: 50px;
+      border: 2px solid black;
+      padding: 5px
+}
+
+.app{
+  display: grid;
+  width: 30%;
+  margin: auto;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 50px 30px 30px 30px 30px 30px;
+  grid-template-areas: 
+  "res res res res"
+  "clear clear div multi"
+  "7 8 9 plus"
+  "4 5 6 minus"
+  "1 2 3 dot"
+  "0 equal equal equal";
+  border: 5px solid rgb(89, 92, 93);
+  background-color: rgb(203, 211, 214);
+  border-radius: 10px;
+}
+
+.nb {
+  color: white;
+  background-color: rgb(71, 71, 70);
+  font-size: 20px;
+}
+
+.ot {
+  background-color: rgb(247, 127, 14);
+  font-size: 20px;
+}
+
+h3{
+    margin: 5px 10px 5px 10px;
+    font-size: 2rem;
+    grid-area: res;
+    text-align: end;
+    border: 2px solid rgb(8, 8, 8);
+    background-color: rgba(177, 240, 244, 0.88);
+}
+
+#equal {
+  grid-area: equal;
+  background-color: rgb(26, 25, 25);
+  color: white;
+  font-size: 20px;
+  border-radius: 30px;
+}
+
+#clear {
+  grid-area: clear ;
+  background-color: rgb(26, 25, 25);
+  color: white;
+  font-size: 20px;
+  border-radius: 30px;
+}
+
+.btn {
+  border-radius: 20px;
+}
