@@ -1,0 +1,19 @@
+body {
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  min-height: 700px;
+  font-size: 50px;
+}
+
+#target span {
+  color: rgb(22, 136, 145);
+  opacity: 0;
+  animation: anim 3s;
+}
+
+@keyframes anim {
+  to {
+    opacity: 1;
+  }
+}
