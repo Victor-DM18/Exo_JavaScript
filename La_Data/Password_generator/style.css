@@ -1,0 +1,117 @@
+*{
+  text-align : center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  outline: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url(./images/cadenas.jpg) fixed;
+  background-size: cover;
+  margin: 0;
+  padding: auto;
+}
+
+
+h1{
+  color: rgb(85, 189, 207);
+  text-shadow: 5px 5px 5px  rgb(1, 7, 8);
+}
+
+.generator {
+  background-image: linear-gradient(to right, #a5d1e3 0%, #108dbe 100%);
+  border-radius: 16px;
+  width: 80%;
+  padding: 10px;
+  margin-top: 50px;
+  max-width: 600px;
+  box-shadow: 3px 4px 10px 0px #093241c2;
+}
+
+#password {
+  background: transparent;
+  border: none;
+  font-size: 50px;
+  width: 90%;
+} 
+
+.range {
+  margin: 20px 0;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 160px;
+  background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+  border-radius: 50px;
+}
+ 
+
+input[type="range"]::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.2) translateY(-9px);
+}
+
+#display-range {
+  width: 30px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+}
+
+.pwd-chekbox {
+  margin: 36px 0 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked+label {
+  transform: scale(1.3);
+  background-image: linear-gradient(to top, #bce4d6 0%, #2ae0b3 100%);
+}
+
+label {
+  user-select: none;
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  height: 60px;
+  width: 60px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.486);
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+button {
+  margin: 14px 0 20px;
+  background-image: linear-gradient(to right, #a7ddc8 0%, #4edc61 100%);
+  padding: 10px 20px;
+  border-radius: 150px;
+  border: 2px solid rgb(36, 199, 186);
+  border-bottom: 3px solid rgb(200, 200, 70);
+  border-right: 3px solid rgb(206, 206, 59);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid rgb(36, 199, 186);
+  border-bottom: 3px solid rgb(200, 200, 70);
+  border-right: 3px solid rgb(206, 206, 59);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.32);
+  transform: translateX(3px);
+}
+
+button:active {
+  transform: scale(1.05);
+}

@@ -9,6 +9,39 @@
     <title>Paasword Generator</title>
   </head>
   <body>
+    <h1>Génerateur de mot de passe</h1>
+
+    <div class="generator">
+      <input type="text" id="password" value="Mot de passe" readonly />
+      <div>
+        <input
+          class="range"
+          type="range"
+          id="pwd-range"
+          min="4"
+          max="20"
+          value="8"
+          oninput="document.getElementById('display-range').value=this.value"
+        />
+        <input type="text" name="" id="display-range" value="8" readonly />
+      </div>
+
+      <div class="pwd-chekbox">
+        <input type="checkbox" id="lowercase" />
+        <label for="lowercase">a-z</label>
+
+        <input type="checkbox" id="uppercase" />
+        <label for="uppercase">A-Z</label>
+
+        <input type="checkbox" id="number" />
+        <label for="number">0-9</label>
+
+        <input type="checkbox" id="symbol" />
+        <label for="symbol">?!</label>
+      </div>
+
+      <button id="display-pwd">Génerateur mot de passe</button>
+    </div>
     <script src="./index.js"></script>
   </body>
 </html>
