@@ -79,6 +79,24 @@ span {
   width: 80%;
 }
 
+.progressRed {
+  background: red;
+  width: 33%;
+  visibility: visible;
+}
+
+.progressYellow {
+  background: #d1e64a;
+  width: 67%;
+  visibility: visible;
+}
+
+.progressGreen {
+  width: 100%;
+  background: #5ef9a4;
+  visibility: visible;
+}
+
 #submit {
   align-self: center;
   width: 60%;

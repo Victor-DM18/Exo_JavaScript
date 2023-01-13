@@ -2,6 +2,7 @@
 const inputs = document.querySelectorAll(
   'input[type="text"], input[type="password"]'
 );
+const progressBar = document.getElementById("progress-bar");
 
 const errorDisplay = (tag, message, valid) => {
   const container = document.querySelector("." + tag + "-container");
@@ -27,7 +28,17 @@ const emailCheck = (value) => {
     : errorDisplay("email", "", true);
 };
 
-const pwdCheck = (value) => {};
+const pwdCheck = (value) => {
+  !value.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/)
+    ? (errorDisplay(
+        "password",
+        "Le mot de passe doit contenir au moins une minuscule, majuscule, chiffre et caractère spéciale"
+      ), progressBar.classList.add("progressRed"))
+    : value.length < 8 ? 
+      progressBar.classList.add("progressRed") : (value.length > 7 && value.length < 12) ? progressBar.classList.add("progressYellow")
+
+  console.log(value);
+};
 
 const confirmCheck = (value) => {};
 
