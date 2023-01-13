@@ -21,7 +21,11 @@ const nameCheck = (value) => {
     : errorDisplay("name", "", true);
 };
 
-const emailCheck = (value) => {};
+const emailCheck = (value) => {
+  !value.match(/^[\w_.-]+@[\w.-]+\.[a-z]{2,4}$/i)
+    ? errorDisplay("email", "email invalide")
+    : errorDisplay("email", "", true);
+};
 
 const pwdCheck = (value) => {};
 
