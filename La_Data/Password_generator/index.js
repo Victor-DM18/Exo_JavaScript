@@ -1,5 +1,4 @@
 const range = document.querySelector(".range");
-const displayRange = document.getElementById("display-range");
 const submit = document.getElementById("display-pwd");
 const lowercase = document.getElementById("lowercase");
 const uppercase = document.getElementById("uppercase");
@@ -30,6 +29,14 @@ const generator = () => {
     password += data[Math.floor(Math.random() * data.length)];
   }
   pwd.value = password;
+  pwd.select();
+  document.execCommand("copy ");
+
+  submit.textContent = "mot de passe copié !";
+
+  setTimeout(() => {
+    submit.textContent = "Génerer mot de passe";
+  }, 1000);
 };
 
 submit.addEventListener("click", generator);
