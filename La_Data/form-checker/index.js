@@ -59,7 +59,12 @@ const pwdCheck = (value) => {
   console.log(value);
 };
 
-const confirmCheck = (value) => {};
+const confirmCheck = (value) => {
+  value !== password
+    ? (errorDisplay("confirmation", "Le mot de pas n'est pas identoique"),
+      (confirmPassword = null))
+    : (errorDisplay("confirmation", "", true), (confirmPassword = value));
+};
 
 //events
 inputs.forEach((input) => {
