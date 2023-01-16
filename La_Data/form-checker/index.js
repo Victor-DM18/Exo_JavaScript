@@ -4,6 +4,8 @@ const inputs = document.querySelectorAll(
 );
 const progressBar = document.getElementById("progress-bar");
 
+let pseudo, email, password, confirmPassword;
+
 const errorDisplay = (tag, message, valid) => {
   const container = document.querySelector("." + tag + "-container");
   const span = document.querySelector("." + tag + "-container > span");
@@ -20,16 +22,17 @@ const errorDisplay = (tag, message, valid) => {
 //confirm function for all the inputs
 const nameCheck = (value) => {
   value.length > 0 && (value.length < 4 || value.length > 20)
-    ? errorDisplay("name", "Le nom doit faire entre 3 et 20 caratères")
+    ? (errorDisplay("name", "Le nom doit faire entre 3 et 20 caratères"),
+      (pseudo = null))
     : !value.match(/^[a-zA-Z0-9_.-]*$/)
-    ? errorDisplay("name", "Un caractère n'est pas autorisé")
-    : errorDisplay("name", "", true);
+    ? (errorDisplay("name", "Un caractère n'est pas autorisé"), (pseudo = null))
+    : (errorDisplay("name", "", true), (pseudo = value));
 };
 
 const emailCheck = (value) => {
   !value.match(/^[\w_.-]+@[\w.-]+\.[a-z]{2,4}$/i)
-    ? errorDisplay("email", "email invalide")
-    : errorDisplay("email", "", true);
+    ? (errorDisplay("email", "email invalide"), (email = null))
+    : (errorDisplay("email", "", true), (email = value));
 };
 
 const pwdCheck = (value) => {
@@ -40,19 +43,18 @@ const pwdCheck = (value) => {
       ),
       progressBar.classList.add("progressRed"),
       progressBar.classList.remove("progressYellow"),
-      progressBar.classList.remove("progressGreen"))
+      progressBar.classList.remove("progressGreen"),
+      (password = null))
     : value.length >= 8 && value.length < 12
     ? (progressBar.classList.add("progressYellow"),
       progressBar.classList.remove("progressGreen", "progressRed"),
-      errorDisplay("password", "Sécurité moyenne", true))
+      errorDisplay("password", "Sécurité moyenne", true),
+      (password = value))
     : value.length >= 12
     ? (progressBar.classList.add("progressGreen"),
       progressBar.classList.remove("progressYellow", "progressRed"),
-      errorDisplay("password", "Sécurité bonne", true))
-    : value.length < 8
-    ? (progressBar.classList.add("progressRed"),
-      progressBar.classList.remove("progressYellow", "progressGreen"),
-      errorDisplay("password", "", true))
+      errorDisplay("password", "Sécurité bonne", true),
+      (password = value))
     : null;
   console.log(value);
 };
