@@ -9,8 +9,12 @@ const errorDisplay = (tag, message, valid) => {
   const span = document.querySelector("." + tag + "-container > span");
 
   !valid
-    ? (container.classList.add("error"), (span.textContent = message))
-    : (container.classList.remove("error"), (span.textContent = message));
+    ? (container.classList.add("error"),
+      (span.textContent = message),
+      container.classList.remove("good"))
+    : (container.classList.add("good"),
+      container.classList.remove("error"),
+      (span.textContent = message));
 };
 
 //confirm function for all the inputs
@@ -33,10 +37,23 @@ const pwdCheck = (value) => {
     ? (errorDisplay(
         "password",
         "Le mot de passe doit contenir au moins une minuscule, majuscule, chiffre et caractère spéciale"
-      ), progressBar.classList.add("progressRed"))
-    : value.length < 8 ? 
-      progressBar.classList.add("progressRed") : (value.length > 7 && value.length < 12) ? progressBar.classList.add("progressYellow")
-
+      ),
+      progressBar.classList.add("progressRed"),
+      progressBar.classList.remove("progressYellow"),
+      progressBar.classList.remove("progressGreen"))
+    : value.length >= 8 && value.length < 12
+    ? (progressBar.classList.add("progressYellow"),
+      progressBar.classList.remove("progressGreen", "progressRed"),
+      errorDisplay("password", "Sécurité moyenne", true))
+    : value.length >= 12
+    ? (progressBar.classList.add("progressGreen"),
+      progressBar.classList.remove("progressYellow", "progressRed"),
+      errorDisplay("password", "Sécurité bonne", true))
+    : value.length < 8
+    ? (progressBar.classList.add("progressRed"),
+      progressBar.classList.remove("progressYellow", "progressGreen"),
+      errorDisplay("password", "", true))
+    : null;
   console.log(value);
 };
 
