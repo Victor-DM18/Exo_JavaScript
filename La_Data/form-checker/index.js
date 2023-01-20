@@ -4,6 +4,7 @@ const inputs = document.querySelectorAll(
 );
 const progressBar = document.getElementById("progress-bar");
 const submit = document.getElementById("submit");
+const form = document.querySelector("form");
 
 let pseudo, email, password, confirmPassword;
 
@@ -57,13 +58,12 @@ const pwdCheck = (value) => {
       errorDisplay("password", "Sécurité bonne", true),
       (password = value))
     : null;
-  confirmCheck();
-  console.log(value);
+  confirmPassword ? confirmCheck(confirmPassword) : null;
 };
 
 const confirmCheck = (value) => {
   value !== password
-    ? (errorDisplay("confirmation", "Le mot de pas n'est pas identoiq ue"),
+    ? (errorDisplay("confirmation", "Le mot de passe n'est pas identoique"),
       (confirmPassword = false))
     : (errorDisplay("confirmation", "", true), (confirmPassword = true));
 };
@@ -87,13 +87,37 @@ inputs.forEach((input) => {
         null;
     }
   });
+});
 
-  submit.addEventListener("click", () => {
-    console.log(
-      "pseudo = " + pseudo,
-      "email = " + email,
-      "password = " + password,
-      "confirmation = " + confirmPassword
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const data = {
+    Pseudo: pseudo,
+    Email: email,
+    "Mot de passe": password,
+    Confirmation: confirmPassword,
+  };
+
+  if (pseudo && email && password && confirmPassword) {
+    console.log(data),
+      (pseudo = null),
+      (email = null),
+      (password = null),
+      (confirmPassword = null);
+
+    inputs.forEach((input) => {
+      input.value = "";
+      errorDisplay("password", "");
+    });
+    progressBar.classList.remove(
+      "progressRed",
+      "progressYellow",
+      "progressGreen"
     );
-  });
+    alert("Formulaire validé !");
+  } else {
+    console.log("Erreur dans le formulaire "),
+      alert("Erreur dans le formulaire");
+  }
 });
