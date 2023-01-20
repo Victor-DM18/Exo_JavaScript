@@ -1,0 +1,16 @@
+body {
+  min-height: 100vh;
+  color: aliceblue;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  transition: 1.5s linear ;
+}
+
+h1 {
+  background-color: black;
+  border-radius: 20px;
+  padding: 10px;
+  }
