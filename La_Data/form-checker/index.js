@@ -3,6 +3,7 @@ const inputs = document.querySelectorAll(
   'input[type="text"], input[type="password"]'
 );
 const progressBar = document.getElementById("progress-bar");
+const submit = document.getElementById("submit");
 
 let pseudo, email, password, confirmPassword;
 
@@ -56,14 +57,15 @@ const pwdCheck = (value) => {
       errorDisplay("password", "Sécurité bonne", true),
       (password = value))
     : null;
+  confirmCheck();
   console.log(value);
 };
 
 const confirmCheck = (value) => {
   value !== password
-    ? (errorDisplay("confirmation", "Le mot de pas n'est pas identoique"),
-      (confirmPassword = null))
-    : (errorDisplay("confirmation", "", true), (confirmPassword = value));
+    ? (errorDisplay("confirmation", "Le mot de pas n'est pas identoiq ue"),
+      (confirmPassword = false))
+    : (errorDisplay("confirmation", "", true), (confirmPassword = true));
 };
 
 //events
@@ -84,5 +86,14 @@ inputs.forEach((input) => {
       default:
         null;
     }
+  });
+
+  submit.addEventListener("click", () => {
+    console.log(
+      "pseudo = " + pseudo,
+      "email = " + email,
+      "password = " + password,
+      "confirmation = " + confirmPassword
+    );
   });
 });
