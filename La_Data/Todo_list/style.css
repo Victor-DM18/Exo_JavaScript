@@ -9,7 +9,7 @@ body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-form {
+.form {
   display: flex;
   flex-direction: column;
   background-color: rgb(213, 137, 25);
@@ -43,9 +43,49 @@ h1 {
 ul {
   display: flex;
   flex-direction: column;
-  align-self: start;
 }
 
-span {
+ul li {
+  list-style: none;
+}
+
+ul li:before {
+  content: "✽";
+  padding: 0.6rem;
+  font-size: 1.3rem;
   color: aqua;
 }
+
+ul li:after {
+  opacity: 0;
+}
+
+ul li:hover:after {
+  content: " (terminé)";
+  opacity: 0;
+  font-size: 1.1rem;
+  color: aqua;
+  font-style: italic;
+  animation: pseudoClassAnim 1s forwards;
+}
+
+li.check:before {
+  content: "✔";
+  padding: 10px 10px;
+  font-size: 1.1rem;
+  color: aqua;
+}
+
+li.check:hover:after {
+  content: " (supprimer)";
+  font-size: 1.1rem;
+  color: aqua;
+  opacity: 0;
+}
+
+@keyframes pseudoClassAnim {
+  to {
+    opacity: 1;
+  }
+}
+

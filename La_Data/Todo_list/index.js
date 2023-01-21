@@ -1,5 +1,5 @@
 const form = document.querySelector(".form");
-const list = document.getElementById("list");
+// const list = document.getElementById("list");
 
 const storage = () => {
   window.localStorage.todoList = list.innerHTML;
@@ -19,8 +19,8 @@ form.addEventListener("submit", (e) => {
 });
 
 list.addEventListener("click", (e) => {
-  document.querySelector("span")
+  e.target.classList.contains("check")
     ? e.target.remove()
-    : (e.target.innerHTML += "<span> OK </span>");
+    : e.target.classList.add("check");
   storage();
 });
