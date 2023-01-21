@@ -33,7 +33,6 @@ h1 {
   background: linear-gradient(to right, rgb(24, 99, 153), rgb(21, 216, 203));
   color: white;
   font-size: 20px ;
-  margin-bottom: 20px;
 }
 
 #todo::placeholder {
@@ -41,7 +40,8 @@ h1 {
   opacity : 0.5
 }
 
-span {
+ul {
   display: flex;
+  flex-direction: column;
   align-self: start;
 }
