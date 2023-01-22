@@ -9,14 +9,21 @@
   </head>
   <body>
     <h1>Compte à rebours</h1>
-    <div>
-      <input type="number" id="number" />
-      <input type="submit" value="Ok" />
-    </div>
+    <form id="form">
+      <input
+        type="number"
+        min="1"
+        max="99"
+        size="1"
+        maxlength="2"
+        id="number"
+      />
+      <input type="submit" id="start" value="Ok" />
+    </form>
 
     <div id="display">
       <h2>Décompte :</h2>
-      <span id="count">00 : 00</span>
+      <span id="count"></span>
     </div>
 
     <script src="./index.js"></script>
