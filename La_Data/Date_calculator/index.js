@@ -20,6 +20,19 @@ start.addEventListener("change", (e) => {
     const dayConvert = day.toISOString().split("T")[0];
     end.value = dayConvert;
     end.min = dayConvert;
+  } else {
+    day.setDate(day.getDate() + 1);
+    const dayConvert = day.toISOString().split("T")[0];
+    end.min = dayConvert;
   }
-  console.log(day);
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  diff =
+    (Math.abs(new Date(end.value) - new Date(start.value)) /
+      (1000 * 60 * 60 * 24)) *
+    cost.textContent;
+
+  total.textContent = `Total : ${diff} €`;
 });
