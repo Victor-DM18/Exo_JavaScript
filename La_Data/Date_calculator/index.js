@@ -29,10 +29,10 @@ start.addEventListener("change", (e) => {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  diff =
-    (Math.abs(new Date(end.value) - new Date(start.value)) /
-      (1000 * 60 * 60 * 24)) *
-    cost.textContent;
+  const diff = Math.abs(new Date(end.value) - new Date(start.value));
 
-  total.textContent = `Total : ${diff} €`;
+  const calculPrice =
+    Math.ceil(diff / (1000 * 60 * 60 * 24)) * cost.textContent;
+
+  total.textContent = `Total : ${calculPrice} €`;
 });
