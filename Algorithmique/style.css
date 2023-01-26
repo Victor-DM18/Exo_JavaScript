@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+}
+
+h1 {
+  align-self: center;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  align-self: center;
+  width: 6 0%;
+}
+
+li {
+  align-self: center;
+  margin: 20px;
+}
+  
