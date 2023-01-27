@@ -564,7 +564,7 @@ document.body.addEventListener("click", (e)=>{
     location.reload();
 });
 (async function displayStat() {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 151)}/`).then((res)=>res.json()).then((data)=>{
+    fetch(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 150 + 1)}/`).then((res)=>res.json()).then((data)=>{
         console.log(data.sprites.front_default);
         const graph = [
             {

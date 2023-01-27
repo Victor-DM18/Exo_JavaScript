@@ -5,7 +5,9 @@ document.body.addEventListener("click", (e) => {
 });
 
 (async function displayStat() {
-  fetch(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 151)}/`)
+  fetch(
+    `https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 150 + 1)}/`
+  )
     .then((res) => res.json())
     .then((data) => {
       console.log(data.sprites.front_default);
