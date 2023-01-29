@@ -26,3 +26,16 @@ fetch("https://pokeapi.co/api/v2/pokemon/charizard")
     });
   })
   .catch((err) => console.log(err));
+
+// FECTH , les options
+
+const myHeader = new Headers();
+
+const init = {
+  method: "GET",
+  headers: myHeader,
+  mode: "cors",
+  cache: "default",
+};
+
+fetch("lien data", init).then((data) => {});
