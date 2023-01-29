@@ -1,17 +1,17 @@
 fetch("http://localhost:3000/posts").then((res) => {
   res.json().then((data) => {
     for (i = 0; i < data.length; i++) {
-      post.innerHTML += `<div id=box> <span id=pseudo>pseudo : ${data[i].pseudo}</span>     
+      post.innerHTML += `<div id=box> <span id=pseudo>pseudo : ${data[i].pseudo}</span>
       <span id=age> age : ${data[i].age}</span>
       <span id=message>message : ${data[i].message}</span></div>`;
     }
   });
 });
 
-const init = {
-  method: "POTS",
+const init2 = {
+  method: "POST",
   headers: {
-    "content-type": "application/json",
+    "Content-Type": "application/json",
   },
   body: JSON.stringify({
     pseudo: "Alain",
@@ -22,8 +22,8 @@ const init = {
   credentials: "same-origin",
 };
 
-document.querySelector("form").addEventListener("submit", () => {
-  fetch("http://localhost:3000/posts", init).then((data) => {
+form.addEventListener("submit", () => {
+  fetch("http://localhost:3000/posts", init2).then(() => {
     console.log("data envoyé");
   });
 });

@@ -1,14 +1,22 @@
 {
-  "posts" : [
+  "posts": [
     {
-      "pseudo" : "Vikito",
+      "id": 1,
+      "pseudo": "Vikito",
       "message": "I am a developer",
-      "age" : 33
+      "age": 33
     },
     {
-      "pseudo" : "Jean",
+      "id": 2,
+      "pseudo": "Jean",
       "message": "I am a clown",
-      "age" : 25
+      "age": 25
+    },
+    {
+      "pseudo": "Alain",
+      "message": "I am a Goat",
+      "age": 38,
+      "id": 3
     }
   ]
 }
