@@ -1,0 +1,14 @@
+{
+  "posts" : [
+    {
+      "pseudo" : "Vikito",
+      "message": "I am a developer",
+      "age" : 33
+    },
+    {
+      "pseudo" : "Jean",
+      "message": "I am a clown",
+      "age" : 25
+    }
+  ]
+}
