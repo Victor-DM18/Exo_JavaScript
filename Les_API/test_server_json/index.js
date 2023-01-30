@@ -2,6 +2,8 @@ const inputs = document.querySelectorAll(
   'input[type="text"], input[type="number"]'
 );
 
+let pseudoValue, ageValue, messageValue;
+
 fetch("http://localhost:3000/posts").then((res) => {
   res.json().then((data) => {
     for (i = 0; i < data.length; i++) {
@@ -18,20 +20,18 @@ const init2 = {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    pseudo: pseudoText.textContent,
-    message: message.textContent,
-    age: age.textContent,
+    pseudo: pseudoValue,
+    message: messageValue,
+    age: ageValue,
   }),
   mode: "cors",
   credentials: "same-origin",
 };
 
+//event
+
 form.addEventListener("submit", (e) => {
-  if (
-    pseudoText.textContent !== "" &&
-    message.textContent !== "" &&
-    age.textContent !== ""
-  ) {
+  if (pseudoValue !== "" && messageValue !== "" && ageValue !== "") {
     fetch("http://localhost:3000/posts", init2).then((e) => {
       e.preventDefault();
       console.log("data envoyé");
@@ -45,10 +45,13 @@ inputs.forEach((input) => {
   input.addEventListener("input", (e) => {
     switch (e.target.id) {
       case "pseudoText":
+        pseudoValue = e.target.value;
         break;
       case "message":
+        messageValue = e.target.value;
         break;
       case "age":
+        ageValue = e.target.value;
         break;
     }
   });
