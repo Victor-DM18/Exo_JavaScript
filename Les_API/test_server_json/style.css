@@ -19,10 +19,6 @@ form {
   width: 40%;
 }
 
-label{
-  
-}
-
 form div {
   display: flex;
   flex-direction: column;
@@ -50,12 +46,11 @@ input {
 #box {
   display: flex;
   flex-direction: column;
-  width: 80%;
   border : none;
   border-radius: 20px;
   box-shadow: 5px 5px 10px 5px rgb(120, 122, 123);
   margin: 10px;
-  padding: 10px;
+  padding: 15px;
   background-color: aquamarine;
 }
 

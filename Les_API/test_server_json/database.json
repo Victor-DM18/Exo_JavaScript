@@ -17,6 +17,12 @@
       "message": "I am a Goat",
       "age": 38,
       "id": 3
+    },
+    {
+      "pseudo": "Pegi",
+      "message": "Je joue à GTA IV",
+      "age": "18",
+      "id": 4
     }
   ]
 }
