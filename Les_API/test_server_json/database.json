@@ -17,6 +17,12 @@
       "message": "I am a Goat",
       "age": 38,
       "id": 3
+    },
+    {
+      "pseudo": "",
+      "message": "",
+      "age": "",
+      "id": 4
     }
   ]
 }

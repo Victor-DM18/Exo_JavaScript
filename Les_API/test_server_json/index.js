@@ -1,3 +1,7 @@
+const inputs = document.querySelectorAll(
+  'input[type="text"], input[type="number"]'
+);
+
 fetch("http://localhost:3000/posts").then((res) => {
   res.json().then((data) => {
     for (i = 0; i < data.length; i++) {
@@ -14,16 +18,38 @@ const init2 = {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    pseudo: "Alain",
-    message: "I am a Goat",
-    age: 38,
+    pseudo: pseudoText.textContent,
+    message: message.textContent,
+    age: age.textContent,
   }),
   mode: "cors",
   credentials: "same-origin",
 };
 
-form.addEventListener("submit", () => {
-  fetch("http://localhost:3000/posts", init2).then(() => {
-    console.log("data envoyé");
+form.addEventListener("submit", (e) => {
+  if (
+    pseudoText.textContent !== "" &&
+    message.textContent !== "" &&
+    age.textContent !== ""
+  ) {
+    fetch("http://localhost:3000/posts", init2).then((e) => {
+      e.preventDefault();
+      console.log("data envoyé");
+    });
+  } else {
+    alert("erreur formulaire !!");
+  }
+});
+
+inputs.forEach((input) => {
+  input.addEventListener("input", (e) => {
+    switch (e.target.id) {
+      case "pseudoText":
+        break;
+      case "message":
+        break;
+      case "age":
+        break;
+    }
   });
 });
