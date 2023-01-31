@@ -7,7 +7,10 @@ let pseudoValue, ageValue, messageValue;
 fetch("http://localhost:3000/posts").then((res) => {
   res.json().then((data) => {
     for (i = 0; i < data.length; i++) {
-      post.innerHTML += `<div id=box> <span>pseudo : ${data[i].pseudo}</span>
+      post.innerHTML += `<div id=box> <div class="btn" id="btn">
+        <span></span>
+        <span></span>
+      </div> <span>pseudo : ${data[i].pseudo}</span>
       <span> age : ${data[i].age}</span>
       <span>message : ${data[i].message}</span></div>`;
     }
