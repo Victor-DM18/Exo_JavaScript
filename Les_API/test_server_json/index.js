@@ -2,17 +2,21 @@ const inputs = document.querySelectorAll(
   'input[type="text"], input[type="number"]'
 );
 
+document.body.addEventListener("click", (e) => {
+  console.log(e.target);
+});
+
 let pseudoValue, ageValue, messageValue;
 
 fetch("http://localhost:3000/posts").then((res) => {
   res.json().then((data) => {
     for (i = 0; i < data.length; i++) {
-      post.innerHTML += `<div id=box> <div class="btn" id="btn">
-        <span></span>
-        <span></span>
-      </div> <span>pseudo : ${data[i].pseudo}</span>
+      post.innerHTML += `<div id=box>
+      <input type="button" id="btn" name="btn" value="X"/>
+      <span>pseudo : ${data[i].pseudo}</span>
       <span> age : ${data[i].age}</span>
-      <span>message : ${data[i].message}</span></div>`;
+      <span>message : ${data[i].message}</span>
+      </div>`;
     }
   });
 });
@@ -70,3 +74,12 @@ form.addEventListener("submit", (e) => {
     alert("erreur formulaire !!");
   }
 });
+
+const btns = document.querySelectorAll("#box");
+console.log(btns);
+
+// btns.forEach((button) => {
+//   button.addEventListener("click", (e) => {
+//     console.log(e.target);
+//   });
+// });
