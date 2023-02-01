@@ -39,3 +39,23 @@ const init = {
 };
 
 fetch("lien data", init).then((data) => {});
+
+//-------------------
+// asynchrone method
+//-------------------
+
+// setTimeout method
+setTimeout(() => {
+  // console.log("test setTimeout()");
+});
+
+// promise
+fetxh("mon lien").then((res) => res);
+
+// async/await
+async function dataFetch() {
+  await fetch("mon lient");
+  //wait the fetch and then call the displayData() function
+
+  displayData();
+}
