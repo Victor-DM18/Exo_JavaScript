@@ -59,3 +59,10 @@ async function dataFetch() {
 
   displayData();
 }
+
+const dataFetch = async () => {
+  await fetch("mon lien");
+  //wait the fetch and then call the displayData() function
+
+  displayData();
+};
