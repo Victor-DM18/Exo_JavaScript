@@ -4,6 +4,7 @@ const fetchUser = async () => {
   await fetch("https://randomuser.me/api/?results=24").then((res) =>
     res.json().then((data) => {
       users = data.results;
+      console.log(users[1]);
     })
   );
 };
@@ -38,8 +39,9 @@ const displayUsers = async () => {
     <span>Sexe : ${user.gender == "male" ? "homme" : "femme"}</span>
     <span>Âge : ${user.dob.age} ans</span>
     <span>Email : ${user.email}</span> 
+    <span>Vie à : ${user.location.city}, ${user.location.country}</span> 
     <span>Tél : ${user.phone}</span>
-    <span>Inscris depuis : ${dateParser(user.registered.date)}</span>
+    <span>Inscris depuis le : ${dateParser(user.registered.date)}</span>
     </div>
     
     `
