@@ -18,9 +18,10 @@ const displayUsers = async () => {
       <div id="list"> 
       <img src="${user.picture.large}"/>
       <h3>${user.name.first} ${user.name.last.toUpperCase()}</h3>
-      <span>${user.gender}</span>
-      <span>${user.email}</span>
-      <span>${user.phone}</span>
+      <span>sex : ${user.gender}</span>
+      <span>âge : ${user.dob.age}</span>
+      <span>email : ${user.email}</span>
+      <span>tél : ${user.phone}</span>
       </div>
     
     `
