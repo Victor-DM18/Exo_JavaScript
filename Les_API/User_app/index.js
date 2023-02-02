@@ -20,20 +20,26 @@ function dateParser(chaine) {
 const displayUsers = async () => {
   await fetchUser();
 
+  function dateParser(chaine) {
+    let newDate = new Date(chaine).toLocaleDateString("fr-FR", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+    return newDate;
+  }
+
   usersList.innerHTML = users
     .map(
       (user) => `
     <div id="list"> 
     <img src="${user.picture.large}"/>
     <h3>${user.name.first} ${user.name.last.toUpperCase()}</h3>
-    <span>Sexe : ${user.gender}</span>
-    <span>Âge : ${user.dob.age}</span>
-    <span>Email : ${user.email}</span>
+    <span>Sexe : ${user.gender == "male" ? "homme" : "femme"}</span>
+    <span>Âge : ${user.dob.age} ans</span>
+    <span>Email : ${user.email}</span> 
     <span>Tél : ${user.phone}</span>
-    <span>Inscris depuis : ${user.registered.date
-      .split("T")[0]
-      .split("-")
-      .join("/")}</span>
+    <span>Inscris depuis : ${dateParser(user.registered.date)}</span>
     </div>
     
     `
