@@ -80,4 +80,13 @@ fetch("data.json")
     // Parse => transforme json en object js
     // console.log(JSON.parse(settings));
   });
-å;
+
+// Session Storage
+sessionStorage.dataSettings = "55px";
+// console.log(sessionStorage.dataSettings);
+sessionStorage.clear();
+//---
+// Cookies
+document.cookie = "username=From Scratch";
+// Bonne pratique
+document.cookie = "pseudo=FS; path=/http;max-age=450000; secure; samesite";
