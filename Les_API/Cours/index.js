@@ -70,6 +70,7 @@ const dataFetch = async () => {
 //---------
 // LE JSON
 //--------
+
 // Méthode.json() => méthode qui s'auto-résoutåen royant le Body de la requête.
 fetch("data.json")
   .then((res) => res.json())
@@ -85,7 +86,7 @@ fetch("data.json")
 sessionStorage.dataSettings = "55px";
 // console.log(sessionStorage.dataSettings);
 sessionStorage.clear();
-//---
+
 // Cookies
 document.cookie = "username=From Scratch";
 // Bonne pratique
