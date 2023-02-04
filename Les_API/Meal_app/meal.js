@@ -1,4 +1,6 @@
 // https://www.themealdb.com/api/json/v1/1/search.php?s=tomato
+
+let recipies = [];
 const fetchData = async () => {
   const value = food.value;
   await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`)
@@ -10,13 +12,13 @@ const fetchData = async () => {
 };
 
 const displayMeal = async () => {
-  await fetchData();
-
-  meal.innerHTML = recipies
-    .map(
-      (recipe) =>
-        `
-        <div id="recipe">
+  await fetchData().then(() => {
+    meal.innerHTML = recipies
+      .map(
+        (recipe) =>
+          `
+      <div id="recipe">
+      <img src="${recipe.strMealThumb}"/>
       <h2>${recipe.strMeal}<h2>
       <span>${recipe.strIngredient1}</span>
       <span>${recipe.strIngredient2}</span>
@@ -48,8 +50,9 @@ const displayMeal = async () => {
       <span>${recipe.strIngredient28}</span>
       </div>
       `
-    )
-    .join("");
+      )
+      .join("");
+  });
 };
 
 search.addEventListener("submit", (e) => {

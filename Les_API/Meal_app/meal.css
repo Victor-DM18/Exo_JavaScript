@@ -47,6 +47,11 @@ form input {
   min-width: 400px;
  }
 
+ img {
+  width:  100%;
+  border-radius: 20px;
+ }
+
 
  span {
   display: flex;
