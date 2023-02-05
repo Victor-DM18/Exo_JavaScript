@@ -28,6 +28,10 @@ form input {
   background-color: antiquewhite;
 }
 
+#error {
+  color: rgb(235, 30, 30);
+}
+
 #meal {
   display: flex;
   flex-wrap: wrap;
