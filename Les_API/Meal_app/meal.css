@@ -11,6 +11,7 @@ h1 {
 }
 
 form {
+  position: fixed;
   display: flex;
   flex-direction: column;
   border: solid black;
@@ -28,11 +29,16 @@ form input {
   background-color: antiquewhite;
 }
 
+form label {
+  align-self: center;
+}
+
 #error {
   color: rgb(235, 30, 30);
 }
 
 #meal {
+  margin-top: 250px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
