@@ -30,6 +30,7 @@ const displayMeal = () => {
         <div id="recipe">
         <img src="${recipe.strMealThumb}"/>
         <h1>${recipe.strMeal}</h1 >
+        <p>${recipe.strInstructions}</p>
         <ul>${ingredients.join("")}</ul>
         </div>
         `;
