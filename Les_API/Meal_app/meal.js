@@ -5,49 +5,55 @@ const fetchData = async (value) => {
   await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=" + value)
     .then((res) => res.json())
     .then((data) => (recipies = data.meals));
+  console.log(recipies);
 };
 
 const displayMeal = () => {
+  if (recipies === null) {
+    meal.innerHTML = '<h2 id="error">No result</h2>';
+  }
+
   meal.innerHTML = recipies
     .map(
       (recipe) =>
         `
       <div id="recipe">
       <img src="${recipe.strMealThumb}"/>
-      <h2>${recipe.strMeal}<h2>
-      <span>${recipe.strIngredient1}</span>
-      <span>${recipe.strIngredient2}</span>
-      <span>${recipe.strIngredient3}</span>
-      <span>${recipe.strIngredient4}</span>
-      <span>${recipe.strIngredient5}</span>
-      <span>${recipe.strIngredient6}</span>
-      <span>${recipe.strIngredient7}</span>
-      <span>${recipe.strIngredient8}</span>
-      <span>${recipe.strIngredient9}</span>
-      <span>${recipe.strIngredient10}</span>
-      <span>${recipe.strIngredient11}</span>
-      <span>${recipe.strIngredient12}</span>
-      <span>${recipe.strIngredient13}</span>
-      <span>${recipe.strIngredient14}</span>
-      <span>${recipe.strIngredient15}</span>
-      <span>${recipe.strIngredient16}</span>
-      <span>${recipe.strIngredient17}</span>
-      <span>${recipe.strIngredient18}</span>
-      <span>${recipe.strIngredient19}</span>
-      <span>${recipe.strIngredient20}</span>
-      <span>${recipe.strIngredient21}</span>
-      <span>${recipe.strIngredient22}</span>
-      <span>${recipe.strIngredient23}</span>
-      <span>${recipe.strIngredient24}</span>
-      <span>${recipe.strIngredient25}</span>
-      <span>${recipe.strIngredient26}</span>
-      <span>${recipe.strIngredient27}</span>
-      <span>${recipe.strIngredient28}</span>
+      <h2>${recipe.strMeal}</h2>
+      <li ="list">
+      <ul>${recipe.strIngredient1}</ul>
+      <ul>${recipe.strIngredient2}</ul>
+      <ul>${recipe.strIngredient3}</ul>
+      <ul>${recipe.strIngredient4}</ul>
+      <ul>${recipe.strIngredient5}</ul>
+      <ul>${recipe.strIngredient6}</ul>
+      <ul>${recipe.strIngredient7}</ul>
+      <ul>${recipe.strIngredient8}</ul>
+      <ul>${recipe.strIngredient9}</ul>
+      <ul>${recipe.strIngredient10}</ul>
+      <ul>${recipe.strIngredient11}</ul>
+      <ul>${recipe.strIngredient12}</ul>
+      <ul>${recipe.strIngredient13}</ul>
+      <ul>${recipe.strIngredient14}</ul>
+      <ul>${recipe.strIngredient15}</ul>
+      <ul>${recipe.strIngredient16}</ul>
+      <ul>${recipe.strIngredient17}</ul>
+      <ul>${recipe.strIngredient18}</ul>
+      <ul>${recipe.strIngredient19}</ul>
+      <ul>${recipe.strIngredient20}</ul>
+      <ul>${recipe.strIngredient21}</ul>
+      <ul>${recipe.strIngredient22}</ul>
+      <ul>${recipe.strIngredient23}</ul>
+      <ul>${recipe.strIngredient24}</ul>
+      <ul>${recipe.strIngredient25}</ul>
+      <ul>${recipe.strIngredient26}</ul>
+      <ul>${recipe.strIngredient27}</ul>
+      <ul>${recipe.strIngredient28}</ul>
+      </li>
       </div>
       `
     )
     .join("");
-  console.log(recipies);
 };
 
 food.addEventListener("input", (e) => {
