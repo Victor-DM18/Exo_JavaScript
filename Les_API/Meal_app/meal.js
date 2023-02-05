@@ -15,45 +15,25 @@ const displayMeal = () => {
   }
 
   meal.innerHTML = recipies
-    .map(
-      (recipe) =>
-        `
-      <div id="recipe">
-      <img src="${recipe.strMealThumb}"/>
-      <h1>${recipe.strMeal}</h1 >
-      <li ="list">
-      <ul>${recipe.strIngredient1}</ul>
-      <ul>${recipe.strIngredient2}</ul>
-      <ul>${recipe.strIngredient3}</ul>
-      <ul>${recipe.strIngredient4}</ul>
-      <ul>${recipe.strIngredient5}</ul>
-      <ul>${recipe.strIngredient6}</ul>
-      <ul>${recipe.strIngredient7}</ul>
-      <ul>${recipe.strIngredient8}</ul>
-      <ul>${recipe.strIngredient9}</ul>
-      <ul>${recipe.strIngredient10}</ul>
-      <ul>${recipe.strIngredient11}</ul>
-      <ul>${recipe.strIngredient12}</ul>
-      <ul>${recipe.strIngredient13}</ul>
-      <ul>${recipe.strIngredient14}</ul>
-      <ul>${recipe.strIngredient15}</ul>
-      <ul>${recipe.strIngredient16}</ul>
-      <ul>${recipe.strIngredient17}</ul>
-      <ul>${recipe.strIngredient18}</ul>
-      <ul>${recipe.strIngredient19}</ul>
-      <ul>${recipe.strIngredient20}</ul>
-      <ul>${recipe.strIngredient21}</ul>
-      <ul>${recipe.strIngredient22}</ul>
-      <ul>${recipe.strIngredient23}</ul>
-      <ul>${recipe.strIngredient24}</ul>
-      <ul>${recipe.strIngredient25}</ul>
-      <ul>${recipe.strIngredient26}</ul>
-      <ul>${recipe.strIngredient27}</ul>
-      <ul>${recipe.strIngredient28}</ul>
-      </li>
-      </div>
-      `
-    )
+    .map((recipe) => {
+      let ingredients = [];
+
+      for (i = 1; i < 21; i++) {
+        if (recipe[`strIngredient${i}`]) {
+          let ingredient = recipe[`strIngredient${i}`];
+          let quantity = recipe[`strMeasure${i}`];
+
+          ingredients.push(`<li>${ingredient} : ${quantity}</li>`);
+        }
+      }
+      return `
+        <div id="recipe">
+        <img src="${recipe.strMealThumb}"/>
+        <h1>${recipe.strMeal}</h1 >
+        <ul>${ingredients.join("")}</ul>
+        </div>
+        `;
+    })
     .join("");
 };
 
