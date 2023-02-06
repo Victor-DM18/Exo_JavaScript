@@ -21,6 +21,7 @@ input {
   width: 200px;
   text-align: center;
   font-size: larger;
+  box-shadow: 0px 2px 20px 1px;
 }
 
 #display {
