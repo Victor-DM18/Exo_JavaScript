@@ -4,7 +4,7 @@ const dataFetch = async () => {
   await fetch("https://restcountries.com/v3.1/all").then((res) =>
     res.json().then((data) => {
       countries = data;
-      console.log(countries[0].name.common);
+      console.log(countries[0].flags.png);
     })
   );
 };
@@ -14,9 +14,11 @@ const displayCountries = async () => {
 
   display.innerHTML = countries.map(
     (country) =>
-      `<div id="box">
-    <h2>${country.name.common}</h2>
-    </div>`
+      `
+      <div id="box">
+      <img src="${country.flags.png}" />
+      <h2>${country.name.common}</h2>
+      </div>`
   );
 };
 

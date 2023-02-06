@@ -39,3 +39,7 @@ input {
   width: 300px;
 }
 
+#box img {
+  width: 100%;
+}
+
