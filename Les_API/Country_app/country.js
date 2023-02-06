@@ -4,7 +4,7 @@ const dataFetch = async () => {
   await fetch("https://restcountries.com/v3.1/all").then((res) =>
     res.json().then((data) => {
       countries = data;
-      console.log(countries[0].flags.png);
+      console.log(countries[0]);
     })
   );
 };
@@ -17,7 +17,9 @@ const displayCountries = async () => {
       `
       <div id="box">
       <img src="${country.flags.png}" />
-      <h2>${country.name.common}</h2>
+      <h2>${country.translations.fra.common}</h2>
+      <span>Capitale :${country.capital}</span>
+      <span>Population :${country.population}</span>
       </div>`
   );
 };
