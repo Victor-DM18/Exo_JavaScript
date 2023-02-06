@@ -12,16 +12,18 @@ const dataFetch = async () => {
 const displayCountries = async () => {
   await dataFetch();
 
-  display.innerHTML = countries.map(
-    (country) =>
-      `
+  display.innerHTML = countries
+    .map(
+      (country) =>
+        `
       <div id="box">
       <img src="${country.flags.png}" />
       <h2>${country.translations.fra.common}</h2>
-      <span>Capitale :${country.capital}</span>
-      <span>Population :${country.population}</span>
+      <span>Capitale : <strong>${country.capital}</strong></span>
+      <span>Population : <strong>${country.population}</strong></span>
       </div>`
-  );
+    )
+    .join("");
 };
 
 displayCountries();
