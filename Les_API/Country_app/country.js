@@ -13,20 +13,13 @@ const dataFetch = async () => {
 const displayCountries = async () => {
   await dataFetch();
   display.innerHTML = countries
-    .filter((e) => e.translations.fra.common.includes(value))
-    .sort((a, b) => {
-      if (sortA()) {
-        a - b;
-      } else if (sortZ()) {
-        b - a;
-      }
-    })
-    .map((country) => {
-      for (i = 0; i < countries.lrngth; i++) {
-        let number = countries[i].population;
-        let nb = new Intl.NumberFormat().format(number);
-      }
-      return `
+    .filter((country) =>
+      country.translations.fra.common.toLowerCase().includes(value)
+    )
+    .sort()
+    .map(
+      (country) =>
+        `
   <div id="box">
   <img src="${country.flags.png}" />
   <h2>${country.translations.fra.common}</h2>
@@ -34,28 +27,17 @@ const displayCountries = async () => {
   <span>Population : <strong>${new Intl.NumberFormat(["ban", "id"]).format(
     country.population
   )}</strong></span>
-  </div>`;
-    })
+  </div>
+  `
+    )
     .join("");
 };
-
-displayCountries();
 
 search.addEventListener("input", (e) => {
   value = e.target.value;
   displayCountries();
 });
 
-const sortA = () => {
-  triA.addEventListener("click", (e) => {
-    displayCountries().sort((a, b) => a - b);
-  });
-};
-sortA();
-
-const sortZ = () => {
-  triZ.addEventListener("click", (e) => {
-    displayCountries().sort((a, b) => b - a);
-  });
-};
-sortZ();
+window.addEventListener("load", () => {
+  displayCountries();
+});
