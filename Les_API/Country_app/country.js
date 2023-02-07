@@ -1,23 +1,33 @@
 let countries = [];
+let sortButton = "";
 
 const dataFetch = async () => {
-  await fetch("https://restcountries.com/v3.1/all").then((res) =>
-    res.json().then((data) => {
-      countries = data;
-      console.log(countries[0].population);
-    })
-  );
+  await fetch("https://restcountries.com/v3.1/all")
+    .then((res) => res.json())
+    .then((data) => (countries = data));
+
+  console.log(countries[0]);
+  displayCountries();
 };
 
-const displayCountries = async () => {
-  await dataFetch();
+const displayCountries = () => {
   display.innerHTML = countries
     .filter((country) =>
       country.translations.fra.common
         .toLowerCase()
         .includes(search.value.toLowerCase())
     )
-    .sort()
+    .sort((a, b) => {
+      if (sortButton === "alphaA") {
+        return a.translations.fra.common.localeCompare(
+          b.translations.fra.common
+        );
+      } else if (sortButton === "alphaZ") {
+        return b.translations.fra.common.localeCompare(
+          a.translations.fra.common
+        );
+      }
+    })
     .map(
       (country) =>
         `
@@ -34,5 +44,15 @@ const displayCountries = async () => {
     .join("");
 };
 
-window.addEventListener("load", displayCountries);
+window.addEventListener("load", dataFetch);
 search.addEventListener("input", displayCountries);
+
+triA.addEventListener("click", () => {
+  sortButton = "alphaA";
+  displayCountries();
+});
+
+triZ.addEventListener("click", () => {
+  sortButton = "alphaZ";
+  displayCountries();
+});
