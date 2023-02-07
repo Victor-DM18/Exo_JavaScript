@@ -1,5 +1,4 @@
 let countries = [];
-let value = "";
 
 const dataFetch = async () => {
   await fetch("https://restcountries.com/v3.1/all").then((res) =>
@@ -14,7 +13,9 @@ const displayCountries = async () => {
   await dataFetch();
   display.innerHTML = countries
     .filter((country) =>
-      country.translations.fra.common.toLowerCase().includes(value)
+      country.translations.fra.common
+        .toLowerCase()
+        .includes(search.value.toLowerCase())
     )
     .sort()
     .map(
@@ -33,11 +34,5 @@ const displayCountries = async () => {
     .join("");
 };
 
-search.addEventListener("input", (e) => {
-  value = e.target.value;
-  displayCountries();
-});
-
-window.addEventListener("load", () => {
-  displayCountries();
-});
+window.addEventListener("load", displayCountries);
+search.addEventListener("input", displayCountries);
