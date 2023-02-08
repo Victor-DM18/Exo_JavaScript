@@ -1,3 +1,5 @@
+const btn = document.querySelectorAll("button");
+
 let countries = [];
 let sortButton = "";
 
@@ -18,11 +20,11 @@ const displayCountries = () => {
         .includes(search.value.toLowerCase())
     )
     .sort((a, b) => {
-      if (sortButton === "alphaA") {
+      if (sortButton === "triA") {
         return a.translations.fra.common.localeCompare(
           b.translations.fra.common
         );
-      } else if (sortButton === "alphaZ") {
+      } else if (sortButton === "triZ") {
         return b.translations.fra.common.localeCompare(
           a.translations.fra.common
         );
@@ -47,12 +49,9 @@ const displayCountries = () => {
 window.addEventListener("load", dataFetch);
 search.addEventListener("input", displayCountries);
 
-triA.addEventListener("click", () => {
-  sortButton = "alphaA";
-  displayCountries();
-});
-
-triZ.addEventListener("click", () => {
-  sortButton = "alphaZ";
-  displayCountries();
+btn.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    sortButton = e.target.id;
+    displayCountries();
+  });
 });
