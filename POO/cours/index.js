@@ -30,7 +30,6 @@ console.log("after deleted :");
 console.log(obj);
 
 //Checked
-
 console.log("-----------------------------");
 console.log("for checking : ");
 console.log("pseudo" in obj, "language" in obj);
@@ -41,3 +40,26 @@ console.log("browse an object : ");
 for (const key in obj) {
   console.log(key + " : " + obj[key]);
 }
+
+//Méthode native en JS
+
+//Obtenir les keys
+const key = Object.keys(obj);
+
+console.log("-----------------------------");
+console.log("method.Object.keys() : ");
+console.log(key);
+
+//Obtenir les keys
+const value = Object.values(obj);
+
+console.log("-----------------------------");
+console.log("method Object.values() : ");
+console.log(value);
+
+// Creer un tableau pour chaque éléments de l'objet
+const entrie = Object.entries(obj);
+
+console.log("-----------------------------");
+console.log("method Object.entries() : ");
+console.log(entrie);
