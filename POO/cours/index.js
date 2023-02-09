@@ -63,3 +63,15 @@ const entrie = Object.entries(obj);
 console.log("-----------------------------");
 console.log("method Object.entries() : ");
 console.log(entrie);
+
+// Fusion objects
+const obj2 = {
+  taille: "1m70",
+  hair: "black",
+  administrator: true,
+};
+
+const fusion = Object.assign({}, obj, obj2);
+console.log("-----------------------------");
+console.log("method Object.assign() : ");
+console.log(fusion);
