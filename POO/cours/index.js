@@ -94,3 +94,23 @@ obj.color = "blue";
 console.log("-----------------------------");
 console.log("method Object.freeze() : ");
 console.log(obj);
+
+//--------------------
+// CONSTRUCTEUR D'OBJET
+//--------------------
+
+// constructor function
+
+function User(pseudo, age, hobby, from, admin) {
+  this.pseudo = pseudo;
+  this.age = age;
+  this.hobby = hobby;
+  this.from = from;
+  this.admin = admin;
+}
+
+const user_01 = new User("Vikito", 33, "gaming", "Paris", true);
+
+console.log("-----------------------------");
+console.log("after constructor function : ");
+console.log(user_01);
