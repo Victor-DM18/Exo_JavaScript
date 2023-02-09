@@ -75,3 +75,22 @@ const fusion = Object.assign({}, obj, obj2);
 console.log("-----------------------------");
 console.log("method Object.assign() : ");
 console.log(fusion);
+
+// empeche d'ajouter un élément
+const ad = Object.seal(obj);
+
+obj.hair = "69 du buissons dans la forêt";
+obj.color = "orange";
+
+console.log("-----------------------------");
+console.log("method Object.seal() : ");
+console.log(obj);
+
+// Enpeche toutes les modifications
+const modif = Object.freeze(obj);
+obj.hair = "69 du buissons dans la forêt";
+obj.color = "blue";
+
+console.log("-----------------------------");
+console.log("method Object.freeze() : ");
+console.log(obj);
