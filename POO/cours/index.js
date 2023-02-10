@@ -107,10 +107,22 @@ function User(pseudo, age, hobby, from, admin) {
   this.hobby = hobby;
   this.from = from;
   this.admin = admin;
+
+  this.getUser = function () {
+    console.log(
+      this.pseudo + " à " + this.age + " ans, et vient de " + this.from
+    );
+  };
 }
 
 const user_01 = new User("Vikito", 33, "gaming", "Paris", true);
+const user_02 = new User("Pegi", 18, "cinema", "Amsterdam", false);
 
 console.log("-----------------------------");
 console.log("after constructor function : ");
 console.log(user_01);
+
+console.log("-----------------------------");
+console.log("after method getUser : ");
+console.log(user_01.getUser());
+console.log(user_02.getUser());
