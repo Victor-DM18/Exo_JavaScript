@@ -155,11 +155,11 @@ class User3 {
     this.admin = admin;
   }
 
-  getUser3() {
+  getUser3 = function () {
     console.log(
       this.pseudo + " à " + this.age + " ans, et vient de " + this.from
     );
-  }
+  };
 }
 
 const user04 = new User3(
