@@ -154,6 +154,12 @@ class User3 {
     this.from = from;
     this.admin = admin;
   }
+
+  getUser3() {
+    console.log(
+      this.pseudo + " à " + this.age + " ans, et vient de " + this.from
+    );
+  }
 }
 
 const user04 = new User3(
@@ -166,3 +172,6 @@ const user04 = new User3(
 console.log("-----------------------------");
 console.log("with class : ");
 console.log(user04);
+console.log("-----------------------------");
+console.log("with getUser3() function : ");
+console.log(user04.getUser3());
