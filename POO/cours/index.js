@@ -126,3 +126,20 @@ console.log("-----------------------------");
 console.log("after method getUser : ");
 console.log(user_01.getUser());
 console.log(user_02.getUser());
+
+// factory function
+
+function User2(pseudo, age, hobby, from, admin) {
+  return {
+    pseudo,
+    age,
+    hobby,
+    from,
+    admin,
+  };
+}
+
+const user03 = User2("fanta", 5, "sleep", "Chicago", false);
+console.log("-----------------------------");
+console.log("after factory function : ");
+console.log(user03);
