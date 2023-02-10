@@ -143,3 +143,26 @@ const user03 = User2("fanta", 5, "sleep", "Chicago", false);
 console.log("-----------------------------");
 console.log("after factory function : ");
 console.log(user03);
+
+// class
+
+class User3 {
+  constructor(pseudo, age, hobby, from, admin) {
+    this.pseudo = pseudo;
+    this.age = age;
+    this.hobby = hobby;
+    this.from = from;
+    this.admin = admin;
+  }
+}
+
+const user04 = new User3(
+  "Dieu",
+  33,
+  "videur du paradie",
+  "l'autre monde",
+  true
+);
+console.log("-----------------------------");
+console.log("with class : ");
+console.log(user04);
