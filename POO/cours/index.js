@@ -184,6 +184,16 @@ class Animals {
     this.age = age;
     this.color = color;
   }
+  sayHello() {
+    console.log(
+      "je m'appel " +
+        this.name +
+        ", j'ai " +
+        this.age +
+        " ans, et je suis de couleur " +
+        this.color
+    );
+  }
 }
 
 class Cat extends Animals {
@@ -192,7 +202,8 @@ class Cat extends Animals {
   }
 }
 
-const kitty = new Cat("kitty", 2, "black");
+const kitty = new Cat("kitty", 2, "noire");
 console.log("-----------------------------");
 console.log("en utilisant l'héritage : ");
 console.log(kitty);
+console.log(kitty.sayHello());
