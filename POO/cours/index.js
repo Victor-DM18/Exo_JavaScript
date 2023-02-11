@@ -175,3 +175,24 @@ console.log(user04);
 console.log("-----------------------------");
 console.log("with getUser3() function : ");
 console.log(user04.getUser3());
+
+// héritage
+
+class Animals {
+  constructor(name, age, color) {
+    this.name = name;
+    this.age = age;
+    this.color = color;
+  }
+}
+
+class Cat extends Animals {
+  run() {
+    console.log("le chat court");
+  }
+}
+
+const kitty = new Cat("kitty", 2, "black");
+console.log("-----------------------------");
+console.log("en utilisant l'héritage : ");
+console.log(kitty);
