@@ -19,4 +19,6 @@ const display = {
     exercice.innerHTML = "";
     btn.innerHTML = "<button id='start'>START</button>";
   },
+  displayxercice: function () {},
+  endExercice: function () {},
 };
