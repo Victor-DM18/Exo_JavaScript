@@ -11,14 +11,24 @@ const exerciceArray = [
   { exo: 9, time: 1 },
 ];
 
+const page = {
+  pageContent: function (title, content, button) {
+    pageTitle.innerHTML = title;
+    exercice.innerHTML = content;
+    btn.innerHTML = button;
+  },
+};
+
 const display = {
   exrcices: function () {
-    pageTitle.innerHTML = "Paranétrage";
-    exercice.innerHTML = "";
-    btn.innerHTML = "<button id='start'>START</button>";
+    page.pageContent("Paranétrage", "", "<button id='start'>START</button>");
   },
-  displayxercice: function () {},
-  endExercice: function () {},
+  displayxercice: function () {
+    page.pageContent();
+  },
+  endExercice: function () {
+    page.pageContenta();
+  },
 };
 
 display.exrcices();
