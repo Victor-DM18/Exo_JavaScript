@@ -24,10 +24,14 @@ const display = {
     page.pageContent("Paranétrage", "", "<button id='start'>START</button>");
   },
   displayxercice: function () {
-    page.pageContent();
+    page.pageContent("Exercice", "", null);
   },
   endExercice: function () {
-    page.pageContenta();
+    page.pageContenta(
+      "Terminé !",
+      "<button id='restart'>Recommencer</button>",
+      "<button id='refresh'>Réinitialiser</button>"
+    );
   },
 };
 
