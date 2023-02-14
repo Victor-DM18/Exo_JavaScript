@@ -1,5 +1,3 @@
-const { Title } = require("chart.js");
-
 const exerciceArray = [
   { exo: 0, time: 1 },
   { exo: 1, time: 1 },
@@ -15,10 +13,12 @@ const exerciceArray = [
 
 const display = {
   exrcices: function () {
-    title.innerHTML = "Paranétrage";
+    pageTitle.innerHTML = "Paranétrage";
     exercice.innerHTML = "";
     btn.innerHTML = "<button id='start'>START</button>";
   },
   displayxercice: function () {},
   endExercice: function () {},
 };
+
+display.exrcices();
