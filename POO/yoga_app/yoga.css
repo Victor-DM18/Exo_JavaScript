@@ -28,6 +28,9 @@ h1 {
 }
 
 #card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: rgb(191, 195, 199, 0.5);
   margin: 10px;
   border-radius: 20px;

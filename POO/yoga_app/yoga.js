@@ -26,8 +26,11 @@ const display = {
         (exercice) =>
           `
       <div id="card">
+      <div>
       <input type="number" id=${exercice.exo} min="1" max="10" value=${exercice.time}>
       <spam">min</spam>
+      </div>
+      <img src="./img/${exercice.exo}.png" />
       </div>
       `
       )
