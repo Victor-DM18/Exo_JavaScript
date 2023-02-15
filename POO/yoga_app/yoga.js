@@ -26,6 +26,7 @@ const display = {
         (exercice) =>
           `
       <div id="card">
+      <span id="icon">&#9747;</span>
       <div id="timer">
       <input type="number" id=${exercice.exo} min="1" max="10" value=${exercice.time}>
       <spam">min</spam>

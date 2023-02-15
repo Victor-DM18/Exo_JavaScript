@@ -12,6 +12,7 @@ body {
 
 h1 {
   color: aliceblue;
+  text-align: center;
 }
 
 #app {
@@ -19,6 +20,17 @@ h1 {
   flex-direction: column;
   align-items: center;
   width: 90%;
+}
+
+#icon-reload {
+  color: aliceblue;
+}
+
+#reload {
+  color: aliceblue;
+  font-size: 50px;
+  margin-left: 20px;
+  font-weight: bolder;
 }
 
 #exercice {
@@ -47,6 +59,7 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 #card input {
@@ -56,7 +69,7 @@ h1 {
 }
 
 #card img {
-  max-width: 100%;
+  max-width: 70%;
   max-height: 70%;
 }
 
@@ -74,4 +87,9 @@ h1 {
   padding: 20px 0px 20px 0px;
   width: 40%;
   font-weight: bolder;
+}
+
+#icon {
+  align-self: flex-end;
+  margin: 5px;
 }
