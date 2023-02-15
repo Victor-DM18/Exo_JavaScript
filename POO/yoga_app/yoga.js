@@ -25,8 +25,8 @@ const display = {
       .map(
         (exercice) =>
           `
-      <div id="card">
-      <span id="icon">&#9747;</span>
+      <div id="cards">
+      <span id="icons">&#9747;</span>
       <div id="timer">
       <input type="number" id=${exercice.exo} min="1" max="10" value=${exercice.time}>
       <spam">min</spam>
@@ -56,3 +56,7 @@ const display = {
 };
 
 display.exrcices();
+
+icons.addEventListener("click", (e) => {
+  console.log(e.target);
+});

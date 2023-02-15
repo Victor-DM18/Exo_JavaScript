@@ -41,7 +41,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-#card {
+#cards {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,20 +55,20 @@ h1 {
   margin-bottom: 20px;
 }
 
-#card #timer {
+#cards #timer {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-bottom: 10px;
 }
 
-#card input {
+#cards input {
   border: none;
   background: none;
   font-size: xx-large;
 }
 
-#card img {
+#cards img {
   max-width: 70%;
   max-height: 70%;
 }
@@ -89,7 +89,7 @@ h1 {
   font-weight: bolder;
 }
 
-#icon {
+#icons {
   align-self: flex-end;
   margin: 5px;
 }
