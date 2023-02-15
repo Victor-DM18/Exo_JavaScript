@@ -21,7 +21,23 @@ const page = {
 
 const display = {
   exrcices: function () {
-    page.pageContent("Paranétrage", "", "<button id='start'>START</button>");
+    const mapExo = exerciceArray
+      .map(
+        (exercice) =>
+          `
+      <div id="card">
+      <input type="number" id=${exercice.exo} min="1" max="10" value=${exercice.time}>
+      <spam">min</spam>
+      </div>
+      `
+      )
+      .join("");
+
+    page.pageContent(
+      "Paranétrage",
+      mapExo,
+      "<button id='start'>START</button>"
+    );
   },
   displayxercice: function () {
     page.pageContent("Exercice", "", null);

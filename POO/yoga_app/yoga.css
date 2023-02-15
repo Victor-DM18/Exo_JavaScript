@@ -21,6 +21,24 @@ h1 {
   width: 90%;
 }
 
+#exercice {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#card {
+  background-color: rgb(191, 195, 199, 0.5);
+  margin: 10px;
+  border-radius: 20px;
+
+}
+
+#card input {
+  border: none;
+  background: none;
+}
+
 #app #btn {
   width: 100%;
   display: flex;
