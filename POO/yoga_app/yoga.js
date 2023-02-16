@@ -32,6 +32,7 @@ const page = {
     document.querySelectorAll("span[id='icons']").forEach((icon) => {
       icon.addEventListener("click", (e) => {
         console.log("cross : " + e.target);
+        document.getElementById("cards").remove();
       });
     });
   },
@@ -55,8 +56,8 @@ const display = {
       .map(
         (exercice) =>
           `
-      <div id="cards">
-      <span id="icons" data-icon=${exercice.xo} >&#9747;</span>
+      <div id="cards" class=${exercice.exo}>
+      <span id="icons" data-icon=${exercice.exo} >&#9747;</span>
       <div id="timer">
       <input type="number" id=${exercice.exo} min="1" max="10" value=${exercice.time}>
       <spam">min</spam>
