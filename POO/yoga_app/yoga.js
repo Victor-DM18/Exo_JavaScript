@@ -17,6 +17,13 @@ const page = {
     exercice.innerHTML = content;
     btn.innerHTML = button;
   },
+  handleInput: function () {
+    document.querySelectorAll("input[type='number']").forEach((input) => {
+      input.addEventListener("input", (e) => {
+        console.log(e.target.value);
+      });
+    });
+  },
 };
 
 const display = {
@@ -43,6 +50,7 @@ const display = {
       mapExo,
       "<button id='start'>START</button>"
     );
+    page.handleInput();
   },
   displayxercice: function () {
     page.pageContent("Exercice", "", null);
@@ -57,7 +65,3 @@ const display = {
 };
 
 display.exrcices();
-
-icons.addEventListener("click", (e) => {
-  console.log(e.target);
-});
