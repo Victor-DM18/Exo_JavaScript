@@ -42,6 +42,11 @@ const page = {
       });
     });
   },
+  handleReload: function () {
+    reload.addEventListener("click", (e) => {
+      location.reload();
+    });
+  },
 };
 
 const display = {
@@ -71,6 +76,7 @@ const display = {
     page.handleInput();
     page.handleCross();
     page.handleArrow();
+    page.handleReload();
   },
   displayxercice: function () {
     page.pageContent("Exercice", "", null);
