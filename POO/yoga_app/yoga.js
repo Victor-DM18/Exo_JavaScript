@@ -31,8 +31,7 @@ const page = {
   handleCross: function () {
     document.querySelectorAll("span[id='icons']").forEach((icon) => {
       icon.addEventListener("click", (e) => {
-        console.log(e.target);
-        cards.delete();
+        console.log("cross : " + e.target);
       });
     });
   },
