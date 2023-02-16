@@ -10,8 +10,15 @@ const exerciceArray = [
   { exo: 8, time: 1 },
   { exo: 9, time: 1 },
 ];
+// const storage = function () {
+//   window.localStorage.listExo = exerciceArray;
+// };
 
-const page = {
+// const getStorage = function () {
+//   exerciceArray = window.localStorage.listExo;
+// };
+
+const tools = {
   pageContent: function (title, content, button) {
     pageTitle.innerHTML = title;
     exercice.innerHTML = content;
@@ -59,6 +66,7 @@ const page = {
   },
   handleReload: function () {
     reload.addEventListener("click", (e) => {
+      localStorage.removeItem("listExo");
       location.reload();
     });
   },
@@ -67,9 +75,8 @@ const page = {
 const display = {
   exrcices: function () {
     const mapExo = exerciceArray
-      .map(
-        (exercice) =>
-          `
+      .map((exercice) => {
+        return `
       <div id="cards" class=${exercice.exo}>
       <span id="icons" data-icon=${exercice.exo} >&#9747;</span>
       <div id="timer">
@@ -79,25 +86,24 @@ const display = {
       <img src="./img/${exercice.exo}.png" />
       <span id="arrows" data-exo="${exercice.exo}">&#8678;</span>
       </div>
-      `
-      )
+      `;
+      })
       .join("");
-
-    page.pageContent(
+    tools.pageContent(
       "Paranétrage",
       mapExo,
       "<button id='start'>START</button>"
     );
-    page.handleInput();
-    page.handleCross();
-    page.handleArrow();
-    page.handleReload();
+    tools.handleInput();
+    tools.handleCross();
+    tools.handleArrow();
+    tools.handleReload();
   },
   displayxercice: function () {
-    page.pageContent("Exercice", "", null);
+    tools.pageContent("Exercice", "", null);
   },
   endExercice: function () {
-    page.pageContenta(
+    tools.pageContent(
       "Terminé !",
       "<button id='restart'>Recommencer</button>",
       "<button id='refresh'>Réinitialiser</button>"
