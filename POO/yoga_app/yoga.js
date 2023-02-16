@@ -31,15 +31,18 @@ const page = {
   handleCross: function () {
     document.querySelectorAll("span[id='icons']").forEach((icon) => {
       icon.addEventListener("click", (e) => {
-        console.log("cross : " + e.target);
-        document.getElementById("cards").remove();
+        exerciceArray.map((exercice) => {
+          exercice.exo == e.target.dataset.icon
+            ? document.querySelector(`div[class='${exercice.exo}']`).remove()
+            : null;
+        });
       });
     });
   },
   handleArrow: function () {
     document.querySelectorAll("span[id='arrows']").forEach((arrow) => {
       arrow.addEventListener("click", (e) => {
-        console.log("arrow : " + e.target);
+        console.log("arrow : " + e.target.dataset);
       });
     });
   },
