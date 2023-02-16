@@ -20,7 +20,26 @@ const page = {
   handleInput: function () {
     document.querySelectorAll("input[type='number']").forEach((input) => {
       input.addEventListener("input", (e) => {
-        console.log(e.target.value);
+        exerciceArray.map((exercice) => {
+          exercice.exo == e.target.id
+            ? (exercice.time = parseInt(e.target.value))
+            : null;
+        });
+      });
+    });
+  },
+  handleCross: function () {
+    document.querySelectorAll("span[id='icons']").forEach((icon) => {
+      icon.addEventListener("click", (e) => {
+        console.log(e.target);
+        cards.delete();
+      });
+    });
+  },
+  handleArrow: function () {
+    document.querySelectorAll("span[id='arrows']").forEach((arrow) => {
+      arrow.addEventListener("click", (e) => {
+        console.log("arrow : " + e.target);
       });
     });
   },
@@ -33,13 +52,13 @@ const display = {
         (exercice) =>
           `
       <div id="cards">
-      <span id="icons">&#9747;</span>
+      <span id="icons" data-icon=${exercice.xo} >&#9747;</span>
       <div id="timer">
       <input type="number" id=${exercice.exo} min="1" max="10" value=${exercice.time}>
       <spam">min</spam>
       </div>
       <img src="./img/${exercice.exo}.png" />
-      <span id="arrow" data-exo="${exercice.exo}">&#8678;</span>
+      <span id="arrows" data-exo="${exercice.exo}">&#8678;</span>
       </div>
       `
       )
@@ -51,6 +70,8 @@ const display = {
       "<button id='start'>START</button>"
     );
     page.handleInput();
+    page.handleCross();
+    page.handleArrow();
   },
   displayxercice: function () {
     page.pageContent("Exercice", "", null);

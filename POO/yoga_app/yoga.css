@@ -73,7 +73,7 @@ h1 {
   max-height: 70%;
 }
 
-#cards #arrow {
+#cards #arrows {
   position: absolute;
   align-self: flex-start;
 }
