@@ -42,7 +42,18 @@ const page = {
   handleArrow: function () {
     document.querySelectorAll("span[id='arrows']").forEach((arrow) => {
       arrow.addEventListener("click", (e) => {
-        console.log("arrow : " + e.target.dataset);
+        let place = 0;
+        exerciceArray.map((exercice) => {
+          if (exercice.exo == e.target.dataset.exo && place !== 0) {
+            [exerciceArray[place], exerciceArray[place - 1]] = [
+              exerciceArray[place - 1],
+              exerciceArray[place],
+            ];
+            display.exrcices();
+          } else {
+            place++;
+          }
+        });
       });
     });
   },
