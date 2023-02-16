@@ -32,6 +32,7 @@ const display = {
       <spam">min</spam>
       </div>
       <img src="./img/${exercice.exo}.png" />
+      <span id="arrow" data-exo="${exercice.exo}">&#8678;</span>
       </div>
       `
       )

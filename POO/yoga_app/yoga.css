@@ -73,6 +73,11 @@ h1 {
   max-height: 70%;
 }
 
+#cards #arrow {
+  position: absolute;
+  align-self: flex-start;
+}
+
 #app #btn {
   width: 100%;
   display: flex;
