@@ -1,4 +1,4 @@
-const exerciceArray = [
+const baseArray = [
   { exo: 0, time: 1 },
   { exo: 1, time: 1 },
   { exo: 2, time: 1 },
@@ -10,13 +10,15 @@ const exerciceArray = [
   { exo: 8, time: 1 },
   { exo: 9, time: 1 },
 ];
-// const storage = function () {
-//   window.localStorage.listExo = exerciceArray;
-// };
 
-// const getStorage = function () {
-//   exerciceArray = window.localStorage.listExo;
-// };
+let exerciceArray = [];
+
+// get localStorage
+(() => {
+  localStorage.listExercices
+    ? (exerciceArray = localStorage.listExercices)
+    : (exerciceArray = baseArray);
+})();
 
 const tools = {
   pageContent: function (title, content, button) {
