@@ -73,11 +73,9 @@ const tools = {
     });
   },
   handleReload: function () {
-    reload.addEventListener("click", (e) => {
-      exerciceArray = baseArray;
-      display.exrcices();
-      this.storage();
-    });
+    exerciceArray = baseArray;
+    display.exrcices();
+    this.storage();
   },
   storage: function () {
     localStorage.listExercices = JSON.stringify(exerciceArray);
@@ -112,10 +110,12 @@ const display = {
     tools.handleInput();
     tools.handleCross();
     tools.handleArrow();
-    tools.handleReload();
+    reload.addEventListener("click", () => tools.handleReload());
+    start.addEventListener("click", () => this.displayExercice());
   },
-  displayxercice: function () {
-    tools.pageContent("Exercice", "", null);
+  displayExercice: function () {
+    tools.pageContent("Exercice", null, null);
+    // tools.handleReload();
   },
   endExercice: function () {
     tools.pageContent(
@@ -125,5 +125,4 @@ const display = {
     );
   },
 };
-
 display.exrcices();
