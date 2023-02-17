@@ -20,6 +20,7 @@ let exerciceArray = [];
     : (exerciceArray = baseArray);
 })();
 
+//tools Object & eventListener
 const tools = {
   pageContent: function (title, content, button) {
     pageTitle.innerHTML = title;
@@ -83,6 +84,7 @@ const tools = {
   },
 };
 
+// display page
 const display = {
   exrcices: function () {
     const mapExo = exerciceArray
