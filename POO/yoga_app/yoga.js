@@ -16,7 +16,7 @@ let exerciceArray = [];
 // get localStorage
 (() => {
   localStorage.listExercices
-    ? (exerciceArray = localStorage.listExercices)
+    ? (exerciceArray = JSON.parse(localStorage.listExercices))
     : (exerciceArray = baseArray);
 })();
 
@@ -31,7 +31,7 @@ const tools = {
       input.addEventListener("input", (e) => {
         exerciceArray.map((exercice) => {
           exercice.exo == e.target.id
-            ? (exercice.time = parseInt(e.target.value))
+            ? ((exercice.time = parseInt(e.target.value)), this.storage())
             : null;
         });
       });
@@ -48,6 +48,7 @@ const tools = {
         });
         exerciceArray = newExerciceArray;
         display.exrcices();
+        this.storage();
       });
     });
   },
@@ -62,6 +63,7 @@ const tools = {
               exerciceArray[place],
             ];
             display.exrcices();
+            this.storage();
           } else {
             place++;
           }
@@ -71,9 +73,13 @@ const tools = {
   },
   handleReload: function () {
     reload.addEventListener("click", (e) => {
-      localStorage.removeItem("listExo");
-      location.reload();
+      exerciceArray = baseArray;
+      display.exrcices();
+      this.storage();
     });
+  },
+  storage: function () {
+    localStorage.listExercices = JSON.stringify(exerciceArray);
   },
 };
 
