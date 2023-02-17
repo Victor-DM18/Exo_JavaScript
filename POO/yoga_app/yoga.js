@@ -38,7 +38,7 @@ const tools = {
     });
   },
   handleCross: function () {
-    document.querySelectorAll("span[id='icons']").forEach((icon) => {
+    document.querySelectorAll("i[id='cross']").forEach((icon) => {
       icon.addEventListener("click", (e) => {
         exerciceArray.map((exercice) => {
           exercice.exo == e.target.dataset.icon
@@ -49,7 +49,7 @@ const tools = {
     });
   },
   handleArrow: function () {
-    document.querySelectorAll("span[id='arrows']").forEach((arrow) => {
+    document.querySelectorAll("i[id='arrows']").forEach((arrow) => {
       arrow.addEventListener("click", (e) => {
         let place = 0;
         exerciceArray.map((exercice) => {
@@ -80,13 +80,15 @@ const display = {
       .map((exercice) => {
         return `
       <div id="cards" class=${exercice.exo}>
-      <span id="icons" data-icon=${exercice.exo} >&#9747;</span>
+      <div id="icons">
+      <i id="arrows" class="fas fa-arrow-alt-circle-left arrow" data-exo="${exercice.exo}"></i>
+      <i id="cross" class="fas fa-times-circle deleteBtn" data-icon=${exercice.exo} ></i>
+      </div>
       <div id="timer">
       <input type="number" id=${exercice.exo} min="1" max="10" value=${exercice.time}>
       <spam">min</spam>
       </div>
       <img src="./img/${exercice.exo}.png" />
-      <span id="arrows" data-exo="${exercice.exo}">&#8678;</span>
       </div>
       `;
       })

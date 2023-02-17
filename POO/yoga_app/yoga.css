@@ -73,10 +73,16 @@ h1 {
   max-height: 70%;
 }
 
-#cards #arrows {
-  position: absolute;
-  align-self: flex-start;
+
+
+#cards #icons {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
 }
+
+
 
 #app #btn {
   width: 100%;
@@ -92,9 +98,4 @@ h1 {
   padding: 20px 0px 20px 0px;
   width: 40%;
   font-weight: bolder;
-}
-
-#icons {
-  align-self: flex-end;
-  margin: 5px;
 }
