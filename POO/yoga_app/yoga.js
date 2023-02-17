@@ -40,11 +40,14 @@ const tools = {
   handleCross: function () {
     document.querySelectorAll("i[id='cross']").forEach((icon) => {
       icon.addEventListener("click", (e) => {
+        let newExerciceArray = [];
         exerciceArray.map((exercice) => {
-          exercice.exo == e.target.dataset.icon
-            ? document.querySelector(`div[class='${exercice.exo}']`).remove()
+          exercice.exo != e.target.dataset.icon
+            ? newExerciceArray.push(exercice)
             : null;
         });
+        exerciceArray = newExerciceArray;
+        display.exrcices();
       });
     });
   },
