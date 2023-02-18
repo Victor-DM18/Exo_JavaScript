@@ -12,6 +12,8 @@ const baseArray = [
 ];
 
 let exerciceArray = [];
+let totalSecond;
+let interval;
 
 // get localStorage
 (() => {
@@ -19,6 +21,23 @@ let exerciceArray = [];
     ? (exerciceArray = JSON.parse(localStorage.listExercices))
     : (exerciceArray = baseArray);
 })();
+
+class Exercices {
+  constructor() {
+    this.index = 0;
+    this.minutes = exerciceArray[this.index].time;
+    this.seconds = 0;
+  }
+
+  displayCountdown() {
+    return (exercice.innerHTML = `
+    <div id="cards" >
+    <p>${this.minutes} : ${this.seconds}</p>
+      <img src="./img/${exerciceArray[this.index].exo}.png" />
+      </div>
+    `);
+  }
+}
 
 //tools Object & eventListener
 const tools = {
@@ -72,6 +91,13 @@ const tools = {
       });
     });
   },
+  countdown: function () {
+    const minutes = Math.floor(totalSecond / 60);
+    const seconds = totalSecond % 60;
+    const sec = seconds < 10 ? "0" + seconds : seconds;
+
+    totalSecond = exerciceArray.time * 60;
+  },
   handleReload: function () {
     exerciceArray = baseArray;
     display.exrcices();
@@ -114,7 +140,9 @@ const display = {
     start.addEventListener("click", () => this.displayExercice());
   },
   displayExercice: function () {
-    tools.pageContent("Exercice", null, null);
+    const exercice = new Exercices();
+
+    tools.pageContent("Exercice", exercice.displayCountdown(), null);
     // tools.handleReload();
   },
   endExercice: function () {
