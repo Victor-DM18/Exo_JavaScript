@@ -117,6 +117,7 @@ h1 {
 }
 
 #countdownCard img {
+  background-color: transparent;
   max-width: 80%;
   max-height: 70%;
 }

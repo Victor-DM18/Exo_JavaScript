@@ -9,6 +9,17 @@ const baseArray = [
   { exo: 7, time: 1 },
   { exo: 8, time: 1 },
   { exo: 9, time: 1 },
+  { exo: 10, time: 1 },
+  { exo: 11, time: 1 },
+  { exo: 12, time: 1 },
+  { exo: 13, time: 1 },
+  { exo: 14, time: 1 },
+  { exo: 15, time: 1 },
+  { exo: 16, time: 1 },
+  { exo: 17, time: 1 },
+  { exo: 18, time: 1 },
+  { exo: 19, time: 1 },
+  { exo: 20, time: 1 },
 ];
 
 let exerciceArray = [];
