@@ -31,9 +31,10 @@ class Exercices {
 
   displayCountdown() {
     return (exercice.innerHTML = `
-    <div id="cards" >
+    <div id="countdownCard" >
     <p>${this.minutes} : ${this.seconds}</p>
       <img src="./img/${exerciceArray[this.index].exo}.png" />
+      <p>${this.index + 1} / ${exerciceArray.length}</p>
       </div>
     `);
   }
