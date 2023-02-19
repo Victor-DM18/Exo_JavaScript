@@ -41,6 +41,8 @@ class Exercices {
   }
 
   displayCountdown() {
+    this.seconds = this.seconds < 10 ? this.seconds + "0" : this.seconds;
+
     return (exercice.innerHTML = `
     <div id="countdownCard" >
     <p>${this.minutes} : ${this.seconds}</p>
