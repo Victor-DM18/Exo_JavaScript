@@ -41,7 +41,28 @@ class Exercices {
   }
 
   displayCountdown() {
-    this.seconds = this.seconds < 10 ? this.seconds + "0" : this.seconds;
+    this.seconds = this.seconds < 10 ? "0" + this.seconds : this.seconds;
+
+    setTimeout(() => {
+      if (this.minutes === 0 && this.seconds === "00") {
+        this.index++;
+
+        if (this.index < exerciceArray.length) {
+          this.minutes = exerciceArray[this.index].time;
+          this.seconds = 0;
+          this.displayCountdown();
+        } else {
+          return display.endExercice();
+        }
+      } else if (this.seconds === "00") {
+        this.minutes--;
+        this.seconds = 59;
+        this.displayCountdown();
+      } else {
+        this.seconds--;
+        this.displayCountdown();
+      }
+    }, 10);
 
     return (exercice.innerHTML = `
     <div id="countdownCard" >
@@ -156,14 +177,16 @@ const display = {
   displayExercice: function () {
     const exercice = new Exercices();
 
-    tools.pageContent("Exercice", exercice.displayCountdown(), null);
-    // tools.handleReload();
+    tools.pageContent("Let's go !", exercice.displayCountdown(), null);
   },
   endExercice: function () {
     tools.pageContent(
       "Terminé !",
+      null,
+      `
       "<button id='restart'>Recommencer</button>",
       "<button id='refresh'>Réinitialiser</button>"
+      `
     );
   },
 };
