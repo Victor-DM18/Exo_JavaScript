@@ -72,6 +72,12 @@ class Exercices {
       </div>
     `);
   }
+
+  ring() {
+    const song = new Audio();
+    audio.src = "ring.mp3";
+    audio.play();
+  }
 }
 
 //tools Object & eventListener
