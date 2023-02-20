@@ -170,6 +170,11 @@ const display = {
       `;
       })
       .join("");
+
+    iconReload.innerHTML = `
+        <span id="reload">&#10226;</span>
+        <span>Réinitialiser</span>
+      `;
     tools.pageContent(
       "Paranétrage",
       mapExo,
@@ -184,9 +189,12 @@ const display = {
   displayExercice: function () {
     const exercice = new Exercices();
 
+    iconReload.innerHTML = "";
+
     tools.pageContent("Let's go !", exercice.displayCountdown(), null);
   },
   endExercice: function () {
+    iconReload.innerHTML = "";
     tools.pageContent(
       "Terminé !",
       null,
