@@ -139,8 +139,11 @@ const tools = {
     this.storage();
   },
 
-  restart: function () {
+  handleRestart: function () {
     restart.addEventListener("click", () => display.displayExercice());
+  },
+  handleReturn: function () {
+    returnBtn.addEventListener("click", () => display.exrcices());
   },
   storage: function () {
     localStorage.listExercices = JSON.stringify(exerciceArray);
@@ -189,10 +192,11 @@ const display = {
       null,
       `
       "<button id='restart'>Recommencer</button>",
-      "<button id='refresh'>Réinitialiser</button>"
+      "<button id='returnBtn'>retour à la liste d'exercices</button>"
       `
     );
-    tools.restart();
+    tools.handleRestart();
+    tools.handleReturn();
   },
 };
 display.exrcices();
