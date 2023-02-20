@@ -142,9 +142,9 @@ const tools = {
             exercice.exo == e.target.dataset.right &&
             place !== exerciceArray.length - 1
           ) {
-            [exerciceArray[place + 1], exerciceArray[place]] = [
-              exerciceArray[place],
+            [exerciceArray[place], exerciceArray[place + 1]] = [
               exerciceArray[place + 1],
+              exerciceArray[place],
             ];
             display.exrcices();
             this.storage();
