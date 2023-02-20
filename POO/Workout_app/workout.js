@@ -138,6 +138,10 @@ const tools = {
     display.exrcices();
     this.storage();
   },
+
+  restart: function () {
+    restart.addEventListener("click", () => display.displayExercice());
+  },
   storage: function () {
     localStorage.listExercices = JSON.stringify(exerciceArray);
   },
@@ -188,6 +192,7 @@ const display = {
       "<button id='refresh'>Réinitialiser</button>"
       `
     );
+    tools.restart();
   },
 };
 display.exrcices();
