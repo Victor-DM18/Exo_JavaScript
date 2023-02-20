@@ -114,15 +114,37 @@ const tools = {
       });
     });
   },
-  handleArrow: function () {
-    document.querySelectorAll("i[id='arrows']").forEach((arrow) => {
-      arrow.addEventListener("click", (e) => {
+  handleArrowLeft: function () {
+    document.querySelectorAll("i[id='arrowLeft']").forEach((arrowLeft) => {
+      arrowLeft.addEventListener("click", (e) => {
         let place = 0;
         exerciceArray.map((exercice) => {
-          if (exercice.exo == e.target.dataset.exo && place !== 0) {
+          if (exercice.exo == e.target.dataset.left && place !== 0) {
             [exerciceArray[place], exerciceArray[place - 1]] = [
               exerciceArray[place - 1],
               exerciceArray[place],
+            ];
+            display.exrcices();
+            this.storage();
+          } else {
+            place++;
+          }
+        });
+      });
+    });
+  },
+  handleArrowRight: function () {
+    document.querySelectorAll("i[id='arrowRight']").forEach((arrowRight) => {
+      arrowRight.addEventListener("click", (e) => {
+        let place = 0;
+        exerciceArray.map((exercice) => {
+          if (
+            exercice.exo == e.target.dataset.right &&
+            place !== exerciceArray.length - 1
+          ) {
+            [exerciceArray[place + 1], exerciceArray[place]] = [
+              exerciceArray[place],
+              exerciceArray[place + 1],
             ];
             display.exrcices();
             this.storage();
@@ -165,7 +187,8 @@ const display = {
         return `
       <div id="cards" class=${exercice.exo}>
       <div id="icons">
-      <i id="arrows" class="fas fa-arrow-alt-circle-left arrow" data-exo="${exercice.exo}"></i>
+      <i id="arrowLeft" class="fas fa-arrow-alt-circle-left arrow" data-left="${exercice.exo}"></i>
+      <i id="arrowRight" class="fas fa-arrow-alt-circle-right arrow" data-right="${exercice.exo}"></i>
       <i id="cross" class="fas fa-times-circle deleteBtn" data-icon=${exercice.exo} ></i>
       </div>
       <div id="timer">
@@ -189,7 +212,8 @@ const display = {
     );
     tools.handleInput();
     tools.handleCross();
-    tools.handleArrow();
+    tools.handleArrowLeft();
+    tools.handleArrowRight();
     reload.addEventListener("click", () => tools.handleReload());
     start.addEventListener("click", () => this.displayExercice());
   },
