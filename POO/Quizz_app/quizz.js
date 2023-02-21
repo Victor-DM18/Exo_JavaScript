@@ -53,11 +53,11 @@ const questions = [
 ];
 
 const display = {
-  displayQuestions: function (id, questinn) {
+  displayQuestions: function (id, question) {
     let text = document.getElementById(id);
     text.innerHTML = question;
   },
   question: function () {
-    this.displayQuestions("question", quizz.getQuestionIndex().text);
+    this.displayQuestions("question", Quizz.getQuestionIndex().text);
   },
 };
