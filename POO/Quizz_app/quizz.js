@@ -51,3 +51,13 @@ const questions = [
   ["NaN", "undefined", "'Paris18'", "0"],
   "'Paris18",
 ];
+
+const display = {
+  displayQuestions: function (id, questinn) {
+    let text = document.getElementById(id);
+    text.innerHTML = question;
+  },
+  question: function () {
+    this.displayQuestions("question", quizz.getQuestionIndex().text);
+  },
+};
