@@ -10,6 +10,27 @@ class Question {
   }
 }
 
+class Quizz {
+  constructor(questions) {
+    this.score = 0;
+    this.questions = questions;
+    this.questionsIndex = 0;
+  }
+
+  getQuestionIndex() {
+    return this.questios[this.questionsIndex];
+  }
+
+  response(answer) {
+    this.getQuestionIndex().isCorrectAnswer(answer) ? this.score++ : null;
+    this.getQuestionIndex++;
+  }
+
+  isEnded() {
+    return this.questionsIndex >= this.questions.length;
+  }
+}
+
 const questions = [
   new Question(
     "Quelle méthode JavaScript permet de filtrer les élément d'un tableau ?",
