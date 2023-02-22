@@ -18,7 +18,7 @@ class Quizz {
   }
 
   getQuestionIndex() {
-    return this.questios[this.questionsIndex];
+    return this.questions[this.questionsIndex];
   }
 
   response(answer) {
@@ -58,6 +58,17 @@ const display = {
     text.innerHTML = question;
   },
   question: function () {
-    this.displayQuestions("question", Quizz.getQuestionIndex().text);
+    this.displayQuestions("question", quizz.getQuestionIndex().question);
   },
 };
+
+runQuizz = function () {
+  if (quizz.isEnded()) {
+    null;
+  } else {
+    display.question();
+  }
+};
+
+let quizz = new Quizz(questions);
+runQuizz();

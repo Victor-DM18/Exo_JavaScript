@@ -25,6 +25,11 @@ h1 {
   color: rgb(220, 152, 49);
 }
 
+#question {
+  color: aliceblue;
+  text-align: center;
+}
+
 #responses {
   width: 60%;
   display: flex;
