@@ -28,6 +28,7 @@ h1 {
 #question {
   color: aliceblue;
   text-align: center;
+  width: 90%;
 }
 
 #responses {
