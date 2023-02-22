@@ -82,15 +82,21 @@ const display = {
       `${quizz.questionsIndex + 1} sur ${quizz.questions.length}`
     );
   },
-
   end: function () {
     this.displayQuestions("question", "Terminé !");
     this.displayQuestions(
       "score",
-      `${quizz.score} sur ${quizz.questions.length}`
+      `Votre score : ${quizz.score} sur ${quizz.questions.length}`
     );
     this.displayQuestions("responses", "");
     this.displayQuestions("progression", "");
+    this.displayQuestions(
+      "restart",
+      "<button id='btnRestart'>Recommencer</button>"
+    );
+    btnRestart.addEventListener("click", (e) => {
+      location.reload();
+    });
   },
 };
 
