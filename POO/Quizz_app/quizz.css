@@ -46,3 +46,8 @@ h1 {
   font-weight: bolder ;
   font-size: larger;
 }
+
+#progression {
+  color: rgb(220, 152, 49);
+  font-size: larger;
+}

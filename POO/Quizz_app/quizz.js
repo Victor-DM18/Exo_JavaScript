@@ -74,6 +74,12 @@ const display = {
       handleResponse("res" + i, choices[i]);
     }
   },
+  progression: function () {
+    this.displayQuestions(
+      "progression",
+      `${quizz.questionsIndex + 1} sur ${quizz.questions.length}`
+    );
+  },
 };
 
 runQuizz = function () {
@@ -82,6 +88,7 @@ runQuizz = function () {
   } else {
     display.question();
     display.choices();
+    display.progression();
   }
 };
 
