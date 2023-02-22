@@ -60,6 +60,19 @@ const display = {
   question: function () {
     this.displayQuestions("question", quizz.getQuestionIndex().question);
   },
+  choices: function () {
+    let choices = quizz.getQuestionIndex().choices;
+
+    handleResponse = function (id, response) {
+      document.getElementById(id).onclick = function () {
+        quizz.response(response);
+        runQuizz();
+      };
+    };
+    for (i = 0; i < choices.length; i++) {
+      this.displayQuestions("res" + i, choices[i]);
+    }
+  },
 };
 
 runQuizz = function () {
@@ -67,6 +80,7 @@ runQuizz = function () {
     null;
   } else {
     display.question();
+    display.choices();
   }
 };
 
