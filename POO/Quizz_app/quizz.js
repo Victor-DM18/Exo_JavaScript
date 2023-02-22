@@ -48,9 +48,9 @@ const questions = [
     "Object"
   ),
   new Question(
-    "Quelle est le resultat code suivant : << 'Paris' + 18 >> ?",
-    ["NaN", "undefined", "'Paris18'", "0"],
-    "Paris18"
+    'Quelle est le resultat code suivant : << "Paris" + 18 >> ?',
+    ["NaN", "undefined", '"Paris18"', "0"],
+    '"Paris18"'
   ),
 ];
 
