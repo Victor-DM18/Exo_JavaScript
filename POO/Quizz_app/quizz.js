@@ -52,6 +52,21 @@ const questions = [
     ["NaN", "undefined", '"Paris18"', "0"],
     '"Paris18"'
   ),
+  new Question(
+    "Lequelle de ces propositions n'est pas un framework JavaScript ?",
+    ["React", "Angular", "JQuery", "Ajax"],
+    "Ajax"
+  ),
+  new Question(
+    "Que permet de faire une fonction asynchrone ?",
+    [
+      "Interrompre une fonction jusqu'à la résolution d'une promesse",
+      "Appeler plusieurs fonctions à la fois",
+      "permet au navigateur de lire le code en JSON",
+      "Ça n'existe pas",
+    ],
+    "Interrompre une fonction jusqu'à la résolution d'une promesse"
+  ),
 ];
 
 const display = {
