@@ -82,11 +82,21 @@ const display = {
       `${quizz.questionsIndex + 1} sur ${quizz.questions.length}`
     );
   },
+
+  end: function () {
+    this.displayQuestions("question", "Terminé !");
+    this.displayQuestions(
+      "score",
+      `${quizz.score} sur ${quizz.questions.length}`
+    );
+    this.displayQuestions("responses", "");
+    this.displayQuestions("progression", "");
+  },
 };
 
 runQuizz = function () {
   if (quizz.isEnded()) {
-    null;
+    display.end();
   } else {
     display.question();
     display.choices();
