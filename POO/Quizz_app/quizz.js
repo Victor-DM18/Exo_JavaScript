@@ -47,9 +47,11 @@ const questions = [
     ["Array", "Object", "Number", "undefiined"],
     "Object"
   ),
-  new Question("Quelle est le resultat code suivant : << 'Paris' + 18 >> ?"),
-  ["NaN", "undefined", "'Paris18'", "0"],
-  "Paris18",
+  new Question(
+    "Quelle est le resultat code suivant : << 'Paris' + 18 >> ?",
+    ["NaN", "undefined", "'Paris18'", "0"],
+    "Paris18"
+  ),
 ];
 
 const display = {
