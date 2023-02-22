@@ -17,13 +17,13 @@ class Quizz {
     this.questionsIndex = 0;
   }
 
-  getQuestionIndex() {
+  getQuestionsIndex() {
     return this.questions[this.questionsIndex];
   }
 
   response(answer) {
-    this.getQuestionIndex().isCorrectAnswer(answer) ? this.score++ : null;
-    this.getQuestionIndex++;
+    this.getQuestionsIndex().isCorrectAnswer(answer) ? this.score++ : null;
+    this.questionsIndex++;
   }
 
   isEnded() {
@@ -49,7 +49,7 @@ const questions = [
   ),
   new Question("Quelle est le resultat code suivant : << 'Paris' + 18 >> ?"),
   ["NaN", "undefined", "'Paris18'", "0"],
-  "'Paris18",
+  "Paris18",
 ];
 
 const display = {
@@ -58,10 +58,10 @@ const display = {
     text.innerHTML = question;
   },
   question: function () {
-    this.displayQuestions("question", quizz.getQuestionIndex().question);
+    this.displayQuestions("question", quizz.getQuestionsIndex().question);
   },
   choices: function () {
-    let choices = quizz.getQuestionIndex().choices;
+    let choices = quizz.getQuestionsIndex().choices;
 
     handleResponse = function (id, response) {
       document.getElementById(id).onclick = function () {
@@ -69,8 +69,9 @@ const display = {
         runQuizz();
       };
     };
-    for (i = 0; i < choices.length; i++) {
-      this.displayQuestions("res" + i, choices[i]);
+    for (let i = 0; i < choices.length; i++) {
+      this.displayQuestions("choice" + i, choices[i]);
+      handleResponse("res" + i, choices[i]);
     }
   },
 };
