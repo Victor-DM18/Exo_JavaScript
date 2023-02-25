@@ -10,7 +10,15 @@ const getLocation = (e) => {
   });
 };
 
+const mouseMove = (e) => {
+  const mousePosition = getLocation(e);
+  ctx.lineTo(mousePosition.x, mousePosition.y);
+  ctx.stroke();
+};
+
 canvas.addEventListener("mousedown", (e) => {
   e.preventDefault();
-  getLocation(e);
+  const mousePosition = getLocation(e);
+  ctx.beginPath();
+  ctx.moveTo(mousePosition.x, mousePosition.y);
 });
