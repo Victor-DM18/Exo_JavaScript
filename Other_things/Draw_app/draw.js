@@ -13,6 +13,8 @@ const mouseMove = (e) => {
   const mousePosition = getLocation(e);
   ctx.lineTo(mousePosition.x, mousePosition.y);
   ctx.stroke();
+  ctx.strokeStyle = "orange";
+  ctx.lineWidth = "5";
 };
 
 canvas.addEventListener("mousedown", (e) => {
@@ -22,4 +24,7 @@ canvas.addEventListener("mousedown", (e) => {
   ctx.moveTo(mousePosition.x, mousePosition.y);
 
   canvas.addEventListener("mousemove", mouseMove);
+  canvas.addEventListener("mouseup", () => {
+    canvas.removeEventListener("mousemove", mouseMove);
+  });
 });
