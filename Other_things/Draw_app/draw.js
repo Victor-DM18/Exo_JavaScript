@@ -36,6 +36,8 @@ reset.addEventListener("click", () => {
 });
 
 inputColor.forEach((input) => {
+  input.style.background = input.id;
+
   input.addEventListener("click", (e) => {
     color = e.target.id;
   });
