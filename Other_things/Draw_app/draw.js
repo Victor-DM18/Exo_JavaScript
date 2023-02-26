@@ -1,6 +1,7 @@
 const canvas = document.getElementById("draw");
 const inputColor = document.querySelectorAll("#colors input");
 const ctx = canvas.getContext("2d");
+let color = "black";
 
 const getLocation = (e) => {
   const rect = canvas.getBoundingClientRect();
@@ -14,11 +15,9 @@ const mouseMove = (e) => {
   const mousePosition = getLocation(e);
   ctx.lineTo(mousePosition.x, mousePosition.y);
   ctx.stroke();
-  ctx.strokeStyle = "orange";
+  ctx.strokeStyle = color;
   ctx.lineWidth = "5";
 };
-
-const drawColor = () => {};
 
 canvas.addEventListener("mousedown", (e) => {
   e.preventDefault();
@@ -34,4 +33,10 @@ canvas.addEventListener("mousedown", (e) => {
 
 reset.addEventListener("click", () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+
+inputColor.forEach((input) => {
+  input.addEventListener("click", (e) => {
+    color = e.target.id;
+  });
 });
