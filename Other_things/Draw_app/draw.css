@@ -5,6 +5,7 @@ body {
   align-items: center;
   background-color: rgb(43, 50, 65);
   cursor: crosshair;
+
 }
 
 h1 {
@@ -25,14 +26,39 @@ h1 {
 #reset {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bolder;
-  width: 40%;
+  width: 30%;
   height: 50px;
   border: none;
   border-radius: 20px;
   font-size: 20px;
+  margin: 30px;
+}
+
+#container #draw {
+  background-color: white;
+}
+
+#colors {
+  display: flex;
+  flex-direction: row;
+}
+
+#colors input {
   margin: 20px;
 }
 
-#draw {
-  background-color: white;
+#red {
+  background-color: red;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#black {
+  background-color: black;
+}
+
+#orange {
+  background-color: orange;
 }

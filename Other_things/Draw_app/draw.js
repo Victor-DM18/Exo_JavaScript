@@ -1,4 +1,5 @@
 const canvas = document.getElementById("draw");
+const inputColor = document.querySelectorAll("#colors input");
 const ctx = canvas.getContext("2d");
 
 const getLocation = (e) => {
@@ -16,6 +17,8 @@ const mouseMove = (e) => {
   ctx.strokeStyle = "orange";
   ctx.lineWidth = "5";
 };
+
+const drawColor = () => {};
 
 canvas.addEventListener("mousedown", (e) => {
   e.preventDefault();
