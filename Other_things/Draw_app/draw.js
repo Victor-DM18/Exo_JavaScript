@@ -1,6 +1,8 @@
 const canvas = document.getElementById("draw");
 const inputColor = document.querySelectorAll("#colors input");
 const ctx = canvas.getContext("2d");
+ctx.globalAlpha = 0.5;
+
 let color = "black";
 
 const getLocation = (e) => {
@@ -13,6 +15,7 @@ const getLocation = (e) => {
 
 const mouseMove = (e) => {
   const mousePosition = getLocation(e);
+  ctx.globalAlpha = 0.5;
   ctx.lineTo(mousePosition.x, mousePosition.y);
   ctx.stroke();
   ctx.strokeStyle = color;
