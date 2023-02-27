@@ -33,3 +33,7 @@ document.addEventListener("drop", (e) => {
     e.target.appendChild(object);
   }
 });
+
+document.addEventListener("dragend", () => {
+  object = null;
+});
