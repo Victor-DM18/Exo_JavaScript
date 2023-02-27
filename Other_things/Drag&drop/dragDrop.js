@@ -19,7 +19,6 @@ list.forEach((item) => {
 });
 
 document.addEventListener("dragstart", (e) => {
-  // e.preventDefault();
   object = e.target;
 });
 
@@ -28,6 +27,9 @@ document.addEventListener("dragover", (e) => {
 });
 
 document.addEventListener("drop", (e) => {
-  e.preventDefault(e);
-  e.target.appendChild(object);
+  console.log(e.target);
+  if (e.target.getAttribute("data-drag") == "container") {
+    e.preventDefault(e);
+    e.target.appendChild(object);
+  }
 });
