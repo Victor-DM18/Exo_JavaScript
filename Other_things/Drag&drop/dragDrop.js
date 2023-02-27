@@ -1,5 +1,14 @@
 const list = document.querySelectorAll("li");
-const color = ["red", "blue", "black"];
+const color = [
+  "red",
+  "green",
+  "gray",
+  "orangered",
+  "aqua",
+  "yellow",
+  "pink",
+  "brown",
+];
 let object;
 
 list.forEach((item) => {
