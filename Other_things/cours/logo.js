@@ -43,3 +43,20 @@ const logo = () => {
 };
 
 window.addEventListener("load", logo);
+
+//------------------------------------
+// Try / catch / finally
+
+const nb = 18;
+const str = "11";
+
+try {
+  // code test
+  nb = str;
+} catch (err) {
+  // if wrong catch the err
+  console.log(err);
+} finally {
+  //but alway run this code
+  console.log("test terminé !");
+}
