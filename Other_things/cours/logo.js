@@ -46,6 +46,8 @@ window.addEventListener("load", logo);
 
 //------------------------------------
 // Try / catch / finally
+console.log("----------------------------------");
+console.log("test try / catch / finally : ");
 
 const nb = 18;
 const str = "11";
@@ -58,5 +60,25 @@ try {
   console.log(err);
 } finally {
   //but alway run this code
+  console.log("test terminé !");
+}
+
+// Throw
+console.log("----------------------------------");
+console.log("test throw : ");
+
+const isNumber = (nb) => {
+  if (isNaN(nb)) {
+    throw nb + "n'est pas un nombre !";
+  } else {
+    console.log(nb + " est un nombre");
+  }
+};
+
+try {
+  isNumber("viki");
+} catch (err) {
+  console.log("ERREUR : " + err);
+} finally {
   console.log("test terminé !");
 }
