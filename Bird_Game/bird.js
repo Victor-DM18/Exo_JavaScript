@@ -18,3 +18,9 @@ let currentScore = 0;
 let pipe = [];
 let flight;
 let flyHeight;
+
+const display = () => {
+  index++;
+  window.requestAnimationFrame(display);
+};
+img.onload = display;
