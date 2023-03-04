@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  margin: 0;
+  text-align: center;
+  font-family: 'Press Start 2P';
+
+}
+
+header {
+  margin: 0 auto;
+  width: 431px;
+} 
+
+h1 {
+  background-image: url("./images/bqckground.png") ;
+  background-size: contain;
+  margin: 0;
+  padding: 20px 0;
+}
+
+#score {
+  padding: 10px 0;
+  background-color: rgb(199, 230, 180);
+}
+
+canvas {
+  border: 1px solid black;
+}
+
+
+
