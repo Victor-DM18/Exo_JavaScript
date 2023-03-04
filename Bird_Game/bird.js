@@ -22,10 +22,11 @@ let flyHeight = canvas.height / 2;
 const display = () => {
   index++;
 
+  // params => (image, sx, sy, sLargeur, sHauteur, dx, dy, dLargeur, dHauteur)
   ctx.drawImage(
     img,
     432,
-    0,
+    Math.floor((index % 9) / 3) * size[1],
     ...size,
     canvas.width / 2 - size[0] / 2,
     flyHeight,
