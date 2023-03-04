@@ -17,10 +17,20 @@ let highScore = 0;
 let currentScore = 0;
 let pipe = [];
 let flight;
-let flyHeight;
+let flyHeight = canvas.height / 2;
 
 const display = () => {
   index++;
+
+  ctx.drawImage(
+    img,
+    432,
+    0,
+    ...size,
+    canvas.width / 2 - size[0] / 2,
+    flyHeight,
+    ...size
+  );
   window.requestAnimationFrame(display);
 };
 img.onload = display;
