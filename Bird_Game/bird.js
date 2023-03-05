@@ -22,6 +22,31 @@ let flyHeight = canvas.height / 2;
 const display = () => {
   index++;
 
+  // background moving
+  ctx.drawImage(
+    img,
+    0,
+    0,
+    canvas.width,
+    canvas.height,
+    -((index * (speed / 2)) % canvas.width) + canvas.width,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+  ctx.drawImage(
+    img,
+    0,
+    0,
+    canvas.width,
+    canvas.height,
+    -((index * (speed / 2)) % canvas.width),
+    0,
+    canvas.width,
+    canvas.height
+  );
+
   // params => (image, sx, sy, sLargeur, sHauteur, dx, dy, dLargeur, dHauteur)
   ctx.drawImage(
     img,
@@ -32,6 +57,7 @@ const display = () => {
     flyHeight,
     ...size
   );
+
   window.requestAnimationFrame(display);
 };
 img.onload = display;
