@@ -19,6 +19,48 @@ let pipe = [];
 let flight;
 let flyHeight = canvas.height / 2;
 
+const start = () => {
+  index++;
+  ctx.drawImage(
+    img,
+    0,
+    0,
+    canvas.width,
+    canvas.height,
+    -((index * (speed / 2)) % canvas.width),
+    0,
+    canvas.width,
+    canvas.height
+  );
+  ctx.drawImage(
+    img,
+    0,
+    0,
+    canvas.width,
+    canvas.height,
+    -((index * (speed / 2)) % canvas.width) + canvas.width,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+  ctx.drawImage(
+    img,
+    432,
+    Math.floor((index % 9) / 3) * size[1],
+    ...size,
+    canvas.width / 3 - size[0] / 2,
+    flyHeight,
+    ...size
+  );
+  ctx.font = "bold 30px courier";
+  ctx.fillText(`High score : ${highScore}`, 100, 150);
+  ctx.font = "bold 40px courier";
+  ctx.fillText("Click to start !", 35, 500);
+
+  canvas.addEventListener("click", display);
+};
+
 const display = () => {
   index++;
 
@@ -65,11 +107,16 @@ const display = () => {
     432,
     Math.floor((index % 9) / 3) * size[1],
     ...size,
-    canvas.width / 2 - size[0] / 2,
+    canvas.width / 3 - size[0] / 2,
     flyHeight,
     ...size
   );
 
+  canvas.addEventListener("click", () => {
+    location.reload();
+  });
+
   window.requestAnimationFrame(display);
 };
-img.onload = display;
+
+window.addEventListener("load", start);
