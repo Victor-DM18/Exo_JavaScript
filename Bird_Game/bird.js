@@ -71,7 +71,7 @@ const display = () => {
     ctx.font = "bold 30px courier";
     ctx.fillText(`High score : ${highScore}`, 100, 150);
     ctx.font = "bold 40px courier";
-    ctx.fillText("Click to start !", 35, 500);
+    ctx.fillText("Click to start !", 35, 420);
   }
 
   window.requestAnimationFrame(display);
