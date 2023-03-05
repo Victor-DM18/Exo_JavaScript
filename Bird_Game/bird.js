@@ -47,6 +47,18 @@ const display = () => {
     canvas.height
   );
 
+  ctx.drawImage(
+    img,
+    510,
+    110,
+    canvas.width,
+    canvas.height,
+    -((index * speed) % 500) + canvas.width,
+    canvas.height - 200,
+    canvas.width,
+    canvas.height
+  );
+
   // params => (image, sx, sy, sLargeur, sHauteur, dx, dy, dLargeur, dHauteur)
   ctx.drawImage(
     img,
