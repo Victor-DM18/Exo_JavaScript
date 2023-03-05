@@ -54,10 +54,13 @@ const display = () => {
       432,
       Math.floor((index % 9) / 3) * size[1],
       ...size,
-      canvas.width / 3 - size[0] / 2,
-      flyHeight,
+      cTenth,
+      flyHeight - 50,
       ...size
     );
+
+    flight += gravity;
+    flyHeight = Math.min(flyHeight + flight, canvas.height - size[1]);
   } else {
     ctx.drawImage(
       img,
@@ -78,7 +81,21 @@ const display = () => {
 };
 
 window.addEventListener("load", display);
-
+document.addEventListener("keypress", (e) => {
+  console.log(e);
+  if ((e.key = "up")) {
+    flight = jump;
+  }
+});
+document.addEventListener("click", (e) => {
+  flight = jump;
+});
 canvas.addEventListener("click", () => {
   displayGame = true;
+});
+document.addEventListener("keypress", (e) => {
+  console.log(e);
+  if ((e.key = "enter")) {
+    displayGame = true;
+  }
 });
