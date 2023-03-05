@@ -19,48 +19,6 @@ let pipe = [];
 let flight;
 let flyHeight = canvas.height / 2;
 
-const start = () => {
-  index++;
-  ctx.drawImage(
-    img,
-    0,
-    0,
-    canvas.width,
-    canvas.height,
-    -((index * (speed / 2)) % canvas.width),
-    0,
-    canvas.width,
-    canvas.height
-  );
-  ctx.drawImage(
-    img,
-    0,
-    0,
-    canvas.width,
-    canvas.height,
-    -((index * (speed / 2)) % canvas.width) + canvas.width,
-    0,
-    canvas.width,
-    canvas.height
-  );
-
-  ctx.drawImage(
-    img,
-    432,
-    Math.floor((index % 9) / 3) * size[1],
-    ...size,
-    canvas.width / 3 - size[0] / 2,
-    flyHeight,
-    ...size
-  );
-  ctx.font = "bold 30px courier";
-  ctx.fillText(`High score : ${highScore}`, 100, 150);
-  ctx.font = "bold 40px courier";
-  ctx.fillText("Click to start !", 35, 500);
-
-  canvas.addEventListener("click", display);
-};
-
 const display = () => {
   index++;
 
@@ -89,34 +47,38 @@ const display = () => {
     canvas.height
   );
 
-  ctx.drawImage(
-    img,
-    510,
-    110,
-    canvas.width,
-    canvas.height,
-    -((index * speed) % 500) + canvas.width,
-    canvas.height - 200,
-    canvas.width,
-    canvas.height
-  );
-
-  // params => (image, sx, sy, sLargeur, sHauteur, dx, dy, dLargeur, dHauteur)
-  ctx.drawImage(
-    img,
-    432,
-    Math.floor((index % 9) / 3) * size[1],
-    ...size,
-    canvas.width / 3 - size[0] / 2,
-    flyHeight,
-    ...size
-  );
-
-  canvas.addEventListener("click", () => {
-    location.reload();
-  });
+  if (displayGame) {
+    // params => (image, sx, sy, sLargeur, sHauteur, dx, dy, dLargeur, dHauteur)
+    ctx.drawImage(
+      img,
+      432,
+      Math.floor((index % 9) / 3) * size[1],
+      ...size,
+      canvas.width / 3 - size[0] / 2,
+      flyHeight,
+      ...size
+    );
+  } else {
+    ctx.drawImage(
+      img,
+      432,
+      Math.floor((index % 9) / 3) * size[1],
+      ...size,
+      canvas.width / 2 - size[0] / 2,
+      flyHeight - 50,
+      ...size
+    );
+    ctx.font = "bold 30px courier";
+    ctx.fillText(`High score : ${highScore}`, 100, 150);
+    ctx.font = "bold 40px courier";
+    ctx.fillText("Click to start !", 35, 500);
+  }
 
   window.requestAnimationFrame(display);
 };
 
-window.addEventListener("load", start);
+window.addEventListener("load", display);
+
+canvas.addEventListener("click", () => {
+  displayGame = true;
+});
