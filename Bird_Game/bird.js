@@ -9,15 +9,34 @@ let displayGame = false;
 const gravity = 0.5;
 const speed = 6;
 const size = [51, 36];
-const jump = -11;
+const jump = -10;
 const cTenth = canvas.width / 10;
 
+// pipes value
+const pipeWidth = 78;
+const piepoGap = 270;
+const pipePosition = () =>
+  Math.random * (canvas.height - (piepoGap + pipeWidth) - pipeWidth) +
+  pipeWidth;
+
+// bird value
 let index = 0;
 let highScore = 0;
 let currentScore = 0;
 let pipe = [];
 let flight;
 let flyHeight = canvas.height / 2;
+
+const initialiaze = () => {
+  currentScore = 0;
+  flight = jump;
+  flyHeight = canvas.height / 2 - size[1] / 2;
+
+  pipe = Array(3)
+    .fill()
+    .map((e, i) => [canvas.width + i * (piepoGap + pipeWidth), pipePosition]);
+  console.log(pipe);
+};
 
 const display = () => {
   index++;
@@ -72,13 +91,15 @@ const display = () => {
       ...size
     );
     ctx.font = "bold 30px courier";
-    ctx.fillText(`High score : ${highScore}`, 100, 150);
-    ctx.font = "bold 40px courier";
-    ctx.fillText("Click to start !", 35, 420);
+    ctx.fillText(`High score : ${highScore}`, 60, 150);
+    ctx.font = "bold 30px courier";
+    ctx.fillText("Click to start !", 45, 420);
   }
 
   window.requestAnimationFrame(display);
 };
+
+initialiaze();
 
 window.addEventListener("load", display);
 document.addEventListener("keypress", (e) => {
