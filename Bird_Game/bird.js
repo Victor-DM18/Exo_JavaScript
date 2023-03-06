@@ -126,6 +126,11 @@ const display = () => {
         pipeWidth,
         canvas.height - p[1] + pipeGap
       );
+
+      if (p[0] <= -pipeWidth) {
+        currentScore++;
+        highScore = Math.max(currentScore, highScore);
+      }
     });
   }
 
