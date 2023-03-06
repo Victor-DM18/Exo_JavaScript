@@ -16,9 +16,10 @@ const cTenth = canvas.width / 10;
 const pipeWidth = 78;
 const piepoGap = 270;
 const pipePosition = () =>
-  Math.random * (canvas.height - (piepoGap + pipeWidth) - pipeWidth) +
+  Math.random() * (canvas.height - (piepoGap + pipeWidth) - pipeWidth) +
   pipeWidth;
 
+console.log(pipePosition);
 // bird value
 let index = 0;
 let highScore = 0;
@@ -34,8 +35,7 @@ const initialiaze = () => {
 
   pipe = Array(3)
     .fill()
-    .map((e, i) => [canvas.width + i * (piepoGap + pipeWidth), pipePosition]);
-  console.log(pipe);
+    .map((e, i) => [canvas.width + i * (piepoGap + pipeWidth), pipePosition()]);
 };
 
 const display = () => {
@@ -94,6 +94,26 @@ const display = () => {
     ctx.fillText(`High score : ${highScore}`, 60, 150);
     ctx.font = "bold 30px courier";
     ctx.fillText("Click to start !", 45, 420);
+  }
+
+  // pipes
+  if (displayGame) {
+    pipe.map((p) => {
+      p[0] -= speed;
+
+      //top
+      ctx.drawImage(
+        img,
+        432,
+        588 - p[1],
+        pipeWidth,
+        p[1],
+        p[0],
+        0,
+        pipeWidth,
+        p[1]
+      );
+    });
   }
 
   window.requestAnimationFrame(display);
