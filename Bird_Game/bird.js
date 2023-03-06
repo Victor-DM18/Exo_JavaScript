@@ -14,9 +14,9 @@ const cTenth = canvas.width / 10;
 
 // pipes value
 const pipeWidth = 78;
-const piepoGap = 270;
+const pipeGap = 270;
 const pipePosition = () =>
-  Math.random() * (canvas.height - (piepoGap + pipeWidth) - pipeWidth) +
+  Math.random() * (canvas.height - (pipeGap + pipeWidth) - pipeWidth) +
   pipeWidth;
 
 console.log(pipePosition);
@@ -35,7 +35,7 @@ const initialiaze = () => {
 
   pipe = Array(3)
     .fill()
-    .map((e, i) => [canvas.width + i * (piepoGap + pipeWidth), pipePosition()]);
+    .map((e, i) => [canvas.width + i * (pipeGap + pipeWidth), pipePosition()]);
 };
 
 const display = () => {
@@ -112,6 +112,19 @@ const display = () => {
         0,
         pipeWidth,
         p[1]
+      );
+
+      // botton
+      ctx.drawImage(
+        img,
+        432 + pipeWidth,
+        108,
+        pipeWidth,
+        canvas.height - p[1] + pipeGap,
+        p[0],
+        p[1] + pipeGap,
+        pipeWidth,
+        canvas.height - p[1] + pipeGap
       );
     });
   }
