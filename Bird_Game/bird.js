@@ -19,7 +19,6 @@ const pipePosition = () =>
   Math.random() * (canvas.height - (pipeGap + pipeWidth) - pipeWidth) +
   pipeWidth;
 
-console.log(pipePosition);
 // bird value
 let index = 0;
 let highScore = 0;
@@ -74,7 +73,7 @@ const display = () => {
       Math.floor((index % 9) / 3) * size[1],
       ...size,
       cTenth,
-      flyHeight - 50,
+      flyHeight,
       ...size
     );
 
@@ -87,7 +86,7 @@ const display = () => {
       Math.floor((index % 9) / 3) * size[1],
       ...size,
       canvas.width / 2 - size[0] / 2,
-      flyHeight - 50,
+      flyHeight,
       ...size
     );
     ctx.font = "bold 30px courier";
@@ -136,6 +135,18 @@ const display = () => {
           ...pipe.slice(1),
           [pipe[pipe.length - 1][0] + pipeGap + pipeWidth, pipePosition()],
         ];
+      }
+
+      // lost
+      if (
+        [
+          p[0] <= cTenth + size[0],
+          p[0] + pipeWidth >= cTenth,
+          p[1] > flyHeight || p[1] + pipeGap < flyHeight + size[1],
+        ].every((e) => e)
+      ) {
+        displayGame = false;
+        initialiaze();
       }
     });
   }
