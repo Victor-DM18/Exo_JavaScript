@@ -139,6 +139,8 @@ const display = () => {
       }
     });
   }
+  document.getElementById("highScore").innerHTML = `high score : ${highScore}`;
+  document.getElementById("currentScore").innerHTML = `score : ${currentScore}`;
 
   window.requestAnimationFrame(display);
 };
