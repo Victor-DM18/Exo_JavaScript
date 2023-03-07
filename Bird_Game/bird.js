@@ -9,12 +9,12 @@ let displayGame = false;
 const gravity = 0.5;
 const speed = 6;
 const size = [51, 36];
-const jump = -10;
-const cTenth = canvas.width / 10;
+const jump = -8;
+const cTenth = canvas.width / 12;
 
 // pipes value
 const pipeWidth = 78;
-const pipeGap = 270;
+const pipeGap = 250;
 const pipePosition = () =>
   Math.random() * (canvas.height - (pipeGap + pipeWidth) - pipeWidth) +
   pipeWidth;
@@ -130,6 +130,12 @@ const display = () => {
       if (p[0] <= -pipeWidth) {
         currentScore++;
         highScore = Math.max(currentScore, highScore);
+
+        // new pipes
+        pipe = [
+          ...pipe.slice(1),
+          [pipe[pipe.length - 1][0] + pipeGap + pipeWidth, pipePosition()],
+        ];
       }
     });
   }
