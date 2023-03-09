@@ -22,5 +22,19 @@ arr2 = [18];
 arr2 = ["hello"];
 arr2 = [8, 29, 23, 1];
 let array = [];
-// array = [{ nom: 34 }, false, 18] erroe detected
+// array = [{ nom: 34 }, false, 18] erroe
 array = [4, true, 29];
+const Vikito = {
+    pseudo: "Vikito",
+    age: 33,
+    administrator: true,
+    equipements: [{ equip: "sword", nb: 2 }, { equip: "shield", nb: 1 }, { equip: "potions", nb: 10 }, { equip: "knife", nb: 5 }, { equip: "armor", nb: 1 }]
+};
+const Pegi = {
+    pseudo: "Pegi",
+    age: 18,
+    administrator: false,
+    equipements: [null]
+};
+console.log(Vikito);
+console.log(Pegi);
