@@ -54,7 +54,7 @@ interface Player {
   pseudo : string
   age : number
   administrator: boolean
-  equipements: ({equip : string, nb: number} | null)[] 
+  equipements?: ({equip : string, nb: number} | null)[] 
 }
 interface PNJ {
   id: number
@@ -77,7 +77,6 @@ const Pegi:Player = {
   pseudo: "Pegi",
   age: 18,
   administrator: false,
-  equipements :  [null] 
 }
 
 const Paul:PNJ = {
@@ -102,3 +101,33 @@ const Eric:PNJ = {
 
 console.log(Vikito);
 console.log(Pegi);
+
+
+//-----------
+// Class
+//-----------
+
+
+
+class Footballer {
+  firstName;
+  lastName;
+  pseudo;
+  retired;
+  position;
+
+
+  constructor(lastName: string, retired: boolean, position: string | string[], firstName?: string, pseudo?: string ) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.pseudo = pseudo;
+    this.retired = retired;
+    this.position = position
+  }
+}
+
+const zidane = new Footballer("Zidane", true, "middleField", "Zinédine", "Zizou")
+const ronaldinho = new Footballer("Ronaldino", true, ["middleField", "ForwardLeft"],"" , "Ronny")
+
+console.log(zidane);
+console.log(ronaldinho);

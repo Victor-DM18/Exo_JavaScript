@@ -37,7 +37,6 @@ const Pegi = {
     pseudo: "Pegi",
     age: 18,
     administrator: false,
-    equipements: [null]
 };
 const Paul = {
     id: 1,
@@ -56,3 +55,19 @@ const Eric = {
 // }
 console.log(Vikito);
 console.log(Pegi);
+//-----------
+// Class
+//-----------
+class Footballer {
+    constructor(lastName, retired, position, firstName, pseudo) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.pseudo = pseudo;
+        this.retired = retired;
+        this.position = position;
+    }
+}
+const zidane = new Footballer("Zidane", true, "middleField", "Zinédine", "Zizou");
+const ronaldinho = new Footballer("Ronaldino", true, ["middleField", "ForwardLeft"], "", "Ronny");
+console.log(zidane);
+console.log(ronaldinho);
