@@ -46,9 +46,9 @@ let array: (boolean | number)[] = []
 array = [4, true, 29]
 
 
- //-----------
-// Object
- //-----------
+//-----------
+// Object interface
+//-----------
 
 interface Player { 
   pseudo : string
@@ -56,8 +56,16 @@ interface Player {
   administrator: boolean
   equipements: ({equip : string, nb: number} | null)[] 
 }
- 
+interface PNJ {
+  id: number
+  pseudo: string
+  interaction : boolean
+}
 
+//-----------
+// Object
+//-----------
+ 
 const Vikito:Player = {
   pseudo: "Vikito",
   age: 33,
@@ -71,6 +79,26 @@ const Pegi:Player = {
   administrator: false,
   equipements :  [null] 
 }
+
+const Paul:PNJ = {
+  id: 1,
+  pseudo: "Paul",
+  interaction : true
+}
+
+const Eric:PNJ = {
+  id: 2,
+  pseudo: "Eric",
+  interaction : false
+}
+
+//Error detected 
+
+// const Jean: PNJ = {
+//   pseudo: "Jean"
+//   age : 23
+// }
+
 
 console.log(Vikito);
 console.log(Pegi);

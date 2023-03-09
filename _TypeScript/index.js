@@ -24,6 +24,9 @@ arr2 = [8, 29, 23, 1];
 let array = [];
 // array = [{ nom: 34 }, false, 18] erroe
 array = [4, true, 29];
+//-----------
+// Object
+//-----------
 const Vikito = {
     pseudo: "Vikito",
     age: 33,
@@ -36,5 +39,20 @@ const Pegi = {
     administrator: false,
     equipements: [null]
 };
+const Paul = {
+    id: 1,
+    pseudo: "Paul",
+    interaction: true
+};
+const Eric = {
+    id: 2,
+    pseudo: "Eric",
+    interaction: false
+};
+//Error detected 
+// const Jean: PNJ = {
+//   pseudo: "Jean"
+//   age : 23
+// }
 console.log(Vikito);
 console.log(Pegi);
