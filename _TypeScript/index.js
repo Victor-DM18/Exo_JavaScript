@@ -71,3 +71,15 @@ const zidane = new Footballer("Zidane", true, "middleField", "Zinédine", "Zizou
 const ronaldinho = new Footballer("Ronaldino", true, ["middleField", "ForwardLeft"], "", "Ronny");
 console.log(zidane);
 console.log(ronaldinho);
+//-----------
+// Function
+//-----------
+const hello = (pseudo, language, age, size) => {
+    if (size) {
+        console.log(`je m'appel ${pseudo}, je suis développeur ${language}, j'ai ${age} ans et je mesure ${size} cm`);
+    }
+    else {
+        console.log(`je m'appel ${pseudo}, je suis développeur ${language}, et j'ai ${age} ans`);
+    }
+};
+hello("Vikito", "JavaScript", 33, 170);

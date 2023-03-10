@@ -107,8 +107,6 @@ console.log(Pegi);
 // Class
 //-----------
 
-
-
 class Footballer {
   firstName;
   lastName;
@@ -131,3 +129,18 @@ const ronaldinho = new Footballer("Ronaldino", true, ["middleField", "ForwardLef
 
 console.log(zidane);
 console.log(ronaldinho);
+
+
+//-----------
+// Function
+//-----------
+
+const hello = (pseudo: string, language: string, age: number, size?: number): void => {
+  if (size) {
+    console.log(`je m'appel ${pseudo}, je suis développeur ${language}, j'ai ${age} ans et je mesure ${size} cm`);
+  } else {
+        console.log(`je m'appel ${pseudo}, je suis développeur ${language}, et j'ai ${age} ans`);
+  }
+}
+
+hello("Vikito", "JavaScript", 33, 170)
