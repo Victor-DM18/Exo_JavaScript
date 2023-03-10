@@ -53,6 +53,8 @@ const Eric = {
 //   pseudo: "Jean"
 //   age : 23
 // }
+console.log("-------------------");
+console.log("Test TypeScritp Object : ");
 console.log(Vikito);
 console.log(Pegi);
 //-----------
@@ -69,6 +71,8 @@ class Footballer {
 }
 const zidane = new Footballer("Zidane", true, "middleField", "Zinédine", "Zizou");
 const ronaldinho = new Footballer("Ronaldino", true, ["middleField", "ForwardLeft"], "", "Ronny");
+console.log("-------------------");
+console.log("Test TypeScript class : ");
 console.log(zidane);
 console.log(ronaldinho);
 //-----------
@@ -82,4 +86,48 @@ const hello = (pseudo, language, age, size) => {
         console.log(`je m'appel ${pseudo}, je suis développeur ${language}, et j'ai ${age} ans`);
     }
 };
+console.log("-------------------");
+console.log("Test TypeScript function : ");
 hello("Vikito", "JavaScript", 33, 170);
+//---------------
+// Enum & Tuple
+//---------------
+var Autorization;
+(function (Autorization) {
+    Autorization[Autorization["ADMIN"] = 0] = "ADMIN";
+    Autorization[Autorization["GOLD"] = 1] = "GOLD";
+    Autorization[Autorization["PRENIUM"] = 2] = "PRENIUM";
+    Autorization[Autorization["BASIC"] = 3] = "BASIC";
+})(Autorization || (Autorization = {}));
+const vikito = {
+    pseudo: "Vikito",
+    language: { front: ["HTML", "JavaScript", "React.js", "Next.js", "TypeScript"], back: ["Node.js", "Knex.js", "Express.js", "Objection.js"], style: ["CSS", "Bootstrap", "Tailwind"] },
+    autorization: Autorization.ADMIN
+};
+const pegi = {
+    pseudo: "Pegi",
+    language: { front: ["HTML", "JavaScript", "React.js", "Next.js", "TypeScript"] },
+    autorization: Autorization.BASIC
+};
+const display = (e) => {
+    if (e.autorization === Autorization.ADMIN) {
+        console.log(`Autorization Admin pour ${e.pseudo}`);
+        console.log(e);
+    }
+    else if (e.autorization === Autorization.GOLD) {
+        console.log(`Autorization Gold pour ${e.pseudo}`);
+        console.log(e);
+    }
+    else if (e.autorization === Autorization.PRENIUM) {
+        console.log(`Autorization Prenium pour ${e.pseudo}`);
+        console.log(e);
+    }
+    else {
+        console.log(`Autorization Basic pour ${e.pseudo}`);
+        console.log(e);
+    }
+};
+console.log("-------------------");
+console.log("Test TypeScript enum & Tuple : ");
+display(vikito);
+display(pegi);
