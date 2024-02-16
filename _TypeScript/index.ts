@@ -197,4 +197,4 @@ const display = (e:User) => {
 console.log("-------------------");
 console.log("Test TypeScript enum & Tuple : ");
 display(vikito)
-display(pegi)
+display(vikito)

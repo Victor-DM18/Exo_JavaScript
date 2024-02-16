@@ -558,14 +558,15 @@ function hmrAccept(bundle, id) {
 
 },{}],"8lqZg":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _auto = require("chart.js/auto");
+var _auto = require("../node_modules/chart.js/auto");
 var _autoDefault = parcelHelpers.interopDefault(_auto);
+const title = document.getElementById("title");
+const core = document.getElementById("core");
 document.body.addEventListener("click", (e)=>{
     location.reload();
 });
 (async function displayStat() {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 150 + 1)}/`).then((res)=>res.json()).then((data)=>{
-        console.log(data.sprites.front_default);
+    await fetch(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 1008 + 1)}/`).then((res)=>res.json()).then((data)=>{
         const graph = [
             {
                 stat: data.stats[0].stat.name,
@@ -632,7 +633,7 @@ document.body.addEventListener("click", (e)=>{
     });
 })();
 
-},{"chart.js/auto":"d8NN9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d8NN9":[function(require,module,exports) {
+},{"../node_modules/chart.js/auto":"d8NN9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"d8NN9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _chartJs = require("../dist/chart.js");

@@ -1,17 +1,17 @@
-import Chart, { controllers, Title } from "chart.js/auto";
+import Chart, { controllers, Title } from "../node_modules/chart.js/auto";
 
+const title = document.getElementById("title");
+const core = document.getElementById("core");
 document.body.addEventListener("click", (e) => {
   location.reload();
 });
 
 (async function displayStat() {
-  fetch(
-    `https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 150 + 1)}/`
+  await fetch(
+    `https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 1008 + 1)}/`
   )
     .then((res) => res.json())
     .then((data) => {
-      console.log(data.sprites.front_default);
-
       const graph = [
         { stat: data.stats[0].stat.name, count: data.stats[0].base_stat },
         { stat: data.stats[1].stat.name, count: data.stats[1].base_stat },
