@@ -1,1 +1,3 @@
-console.log("Hello world");
+let sentence = prompt("enter un mot : ");
+
+console.log(sentence);
