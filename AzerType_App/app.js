@@ -2,7 +2,7 @@ const initialWord = ["paris", "noir", "renard"];
 
 let score = 0;
 
-let sentence = prompt("enter le premier mot : ");
+let sentence = prompt("enter le mot : " + initialWord[0]);
 
 if (sentence === initialWord[0]) {
   score++;
@@ -13,7 +13,7 @@ if (sentence === initialWord[0]) {
   console.log("score = " + score);
 }
 
-sentence = prompt("enter le deuxième mot : ");
+sentence = prompt("enter le mot : " + initialWord[1]);
 
 if (sentence === initialWord[1]) {
   score++;
@@ -24,7 +24,7 @@ if (sentence === initialWord[1]) {
   console.log("score = " + score);
 }
 
-sentence = prompt("enter le troisième mot : ");
+sentence = prompt("enter le mot : " + initialWord[2]);
 
 if (sentence === initialWord[2]) {
   score++;
@@ -32,5 +32,5 @@ if (sentence === initialWord[2]) {
   console.log("score = " + score);
 } else {
   console.log("Try again !");
-  console.log("score final = " + score + " sur 3");
+  console.log("score final = " + score + " sur " + initialWord.length);
 }
