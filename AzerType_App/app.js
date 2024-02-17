@@ -1,3 +1,9 @@
+const initialWord = "Paris";
+
 let sentence = prompt("enter un mot : ");
 
-console.log(sentence);
+if (sentence === initialWord) {
+  console.log("Well done !");
+} else {
+  console.log("Try again !");
+}
