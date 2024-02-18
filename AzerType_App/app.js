@@ -48,6 +48,10 @@ let score = 0;
 
 let choice = "";
 
+const scoreReturn = (score, totalScore) => {
+  console.log("score = " + score + " sur " + [totalScore]);
+};
+
 while (choice !== "phrase" && choice !== "mot") {
   choice = prompt("Ecrivez votre choix entre 'phrase' ou 'mot' : ");
 }
@@ -61,7 +65,7 @@ if (choice === "mot") {
     } else {
       console.log("Try again !");
     }
-    console.log("score = " + score + " sur " + [i + 1]);
+    scoreReturn(score, i + 1);
   }
 } else {
   for (let i = 0; i < initialSentence.length; i++) {
@@ -72,6 +76,6 @@ if (choice === "mot") {
     } else {
       console.log("Try again !");
     }
-    console.log("score = " + score + " sur " + [i + 1]);
+    scoreReturn(score, i + 1);
   }
 }
