@@ -52,8 +52,13 @@ const scoreReturn = (score, totalScore) => {
   console.log("score = " + score + " sur " + [totalScore]);
 };
 
+const makeChoice = () => {
+  let choice = prompt("Ecrivez votre choix entre 'phrase' ou 'mot' : ");
+  return choice;
+};
+
 while (choice !== "phrase" && choice !== "mot") {
-  choice = prompt("Ecrivez votre choix entre 'phrase' ou 'mot' : ");
+  choice = makeChoice();
 }
 
 if (choice === "mot") {
