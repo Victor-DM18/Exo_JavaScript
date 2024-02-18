@@ -43,7 +43,7 @@ let score = 0;
 // }
 
 // ============================================
-// EXO CONDITION BOUCLE FOR
+// EXO CONDITION BOUCLE FOR & WHILE
 // ============================================
 
 let choice = "";
@@ -65,7 +65,7 @@ if (choice === "mot") {
   }
 } else {
   for (let i = 0; i < initialSentence.length; i++) {
-    let sentence = prompt("enter le mot : " + initialSentence[i]);
+    let sentence = prompt("enter la phrase : " + initialSentence[i]);
     if (sentence === initialSentence[i]) {
       score++;
       console.log("Well done !");
