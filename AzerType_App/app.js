@@ -61,10 +61,10 @@ while (choice !== "phrase" && choice !== "mot") {
   choice = makeChoice();
 }
 
-if (choice === "mot") {
-  for (let i = 0; i < initialWord.length; i++) {
-    let sentence = prompt("enter le mot : " + initialWord[i]);
-    if (sentence === initialWord[i]) {
+const startGame = (list) => {
+  for (let i = 0; i < list.length; i++) {
+    let sentence = prompt("enter le mot : " + list[i]);
+    if (sentence === list[i]) {
       score++;
       console.log("Well done !");
     } else {
@@ -72,15 +72,4 @@ if (choice === "mot") {
     }
     scoreReturn(score, i + 1);
   }
-} else {
-  for (let i = 0; i < initialSentence.length; i++) {
-    let sentence = prompt("enter la phrase : " + initialSentence[i]);
-    if (sentence === initialSentence[i]) {
-      score++;
-      console.log("Well done !");
-    } else {
-      console.log("Try again !");
-    }
-    scoreReturn(score, i + 1);
-  }
-}
+};
