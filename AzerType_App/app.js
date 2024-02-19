@@ -57,10 +57,6 @@ const makeChoice = () => {
   return choice;
 };
 
-while (choice !== "phrase" && choice !== "mot") {
-  choice = makeChoice();
-}
-
 const startGame = (list) => {
   for (let i = 0; i < list.length; i++) {
     let sentence = prompt("enter le mot : " + list[i]);
@@ -73,3 +69,13 @@ const startGame = (list) => {
     scoreReturn(score, i + 1);
   }
 };
+
+while (choice !== "phrase" && choice !== "mot") {
+  choice = makeChoice();
+}
+
+if (choice === "mot") {
+  startGame(initialWord);
+} else {
+  startGame(initialSentence);
+}
