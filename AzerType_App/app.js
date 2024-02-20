@@ -37,8 +37,6 @@
 // EXO CONDITION BOUCLE FOR & WHILE
 // ============================================
 
-let choice = "";
-
 const scoreReturn = (score, totalScore) => {
   console.log("score = " + score + " sur " + [totalScore]);
 };
@@ -52,6 +50,7 @@ const makeChoice = () => {
 };
 
 const loopFor = (list) => {
+  let score = 0;
   for (let i = 0; i < list.length; i++) {
     let sentence = prompt("enter le mot : " + list[i]);
     if (sentence === list[i]) {
@@ -73,3 +72,5 @@ const startGame = () => {
     loopFor(initialSentence);
   }
 };
+
+startGame();
