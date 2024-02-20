@@ -72,5 +72,3 @@ const startGame = () => {
     loopFor(initialSentence);
   }
 };
-
-startGame();
