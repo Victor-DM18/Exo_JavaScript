@@ -1,5 +1,3 @@
-let score = 0;
-
 // ============================================
 // EXO CONDITION IF
 // ============================================
@@ -66,8 +64,12 @@ const loopFor = (list) => {
   }
 };
 
-if (choice === "mot") {
-  loopFor(initialWord);
-} else {
-  loopFor(initialSentence);
-}
+const startGame = () => {
+  let choice = makeChoice();
+
+  if (choice === "mot") {
+    loopFor(initialWord);
+  } else {
+    loopFor(initialSentence);
+  }
+};
