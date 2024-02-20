@@ -1,10 +1,3 @@
-const initialWord = ["paris", "noir", "renard"];
-const initialSentence = [
-  "l'eau ça mouille",
-  "que'est ce qu'on mange",
-  "vive les phoques",
-];
-
 let score = 0;
 
 // ============================================
@@ -54,6 +47,9 @@ const scoreReturn = (score, totalScore) => {
 
 const makeChoice = () => {
   let choice = prompt("Ecrivez votre choix entre 'phrase' ou 'mot' : ");
+  while (choice !== "phrase" && choice !== "mot") {
+    choice = prompt("Ecrivez 'phrase' ou 'mot' : ");
+  }
   return choice;
 };
 
@@ -69,10 +65,6 @@ const startGame = (list) => {
     scoreReturn(score, i + 1);
   }
 };
-
-while (choice !== "phrase" && choice !== "mot") {
-  choice = makeChoice();
-}
 
 if (choice === "mot") {
   startGame(initialWord);
