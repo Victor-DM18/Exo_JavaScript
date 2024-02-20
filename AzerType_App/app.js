@@ -53,7 +53,7 @@ const makeChoice = () => {
   return choice;
 };
 
-const startGame = (list) => {
+const loopFor = (list) => {
   for (let i = 0; i < list.length; i++) {
     let sentence = prompt("enter le mot : " + list[i]);
     if (sentence === list[i]) {
@@ -67,7 +67,7 @@ const startGame = (list) => {
 };
 
 if (choice === "mot") {
-  startGame(initialWord);
+  loopFor(initialWord);
 } else {
-  startGame(initialSentence);
+  loopFor(initialSentence);
 }
