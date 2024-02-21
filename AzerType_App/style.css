@@ -13,7 +13,7 @@ header {
   padding: 10px 10px;
 }
 
-#info-section {
+#info-section, #input-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,6 +21,16 @@ header {
   gap: 10px;
 }
 
+#input-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#input-section div {
+  display: flex;
+  flex-direction: column;
+}
 
 h1 {
   text-align: center;
