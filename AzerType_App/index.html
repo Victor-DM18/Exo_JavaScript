@@ -15,22 +15,30 @@
       <p>L'application pouur écrire plus vite</p>
     </header>
     <main>
-      <section>
+      <section id="option-section">
         Choisissez une des deux options et recopier le mot / la phrase qui
         s'affiche
         <div id="optionChoice">
           <label for="wordChoice">Mots</label>
-          <input type="radio" id="wordChoice" value="mot" />
+          <input
+            type="radio"
+            name="optionChoice"
+            id="wordChoice"
+            value="mot"
+            checked
+          />
           <label for="sentenceChoice">Phrases</label>
-          <input type="radio" id="sentenceChoice" value="phrase" />
+          <input
+            type="radio"
+            name="optionChoice"
+            id="sentenceChoice"
+            value="phrase"
+          />
         </div>
       </section>
       <section id="info-section">
         <div id="word-proposition">
-          <p>
-            Mot à écrire :
-            <span id="word">paris</span>
-          </p>
+          <span id="word">paris</span>
         </div>
         <div>
           <p>Score : <span id="score">0</span></p>
