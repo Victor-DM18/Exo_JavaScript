@@ -12,8 +12,19 @@
   <body>
     <header>
       <h1>Azertype</h1>
+      <p>L'application pouur écrire plus vite</p>
     </header>
     <main>
+      <section>
+        Choisissez une des deux options et recopier le mot / la phrase qui
+        s'affiche
+        <div id="optionChoice">
+          <label for="wordChoice">Mots</label>
+          <input type="radio" id="wordChoice" value="mot" />
+          <label for="sentenceChoice">Phrases</label>
+          <input type="radio" id="sentenceChoice" value="phrase" />
+        </div>
+      </section>
       <section id="info-section">
         <div id="word-proposition">
           <p>
@@ -26,13 +37,10 @@
         </div>
       </section>
       <section id="input-section">
-        <form action="get">
-          <div>
-            <label for="text-input">Tapez le mot : </label>
-            <input id="text-input" type="text" />
-          </div>
+        <div>
+          <input id="text-input" type="text" />
           <input id="submit-input" type="submit" value="Valider" />
-        </form>
+        </div>
       </section>
     </main>
     <footer></footer>
