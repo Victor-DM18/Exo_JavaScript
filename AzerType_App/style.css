@@ -21,6 +21,10 @@ header {
   gap: 10px;
 }
 
+#word, #score {
+  font-weight: bold;
+}
+
 #input-section form {
   display: flex;
   flex-direction: column;
