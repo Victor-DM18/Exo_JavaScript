@@ -37,8 +37,12 @@
 // EXO CONDITION BOUCLE FOR & WHILE
 // ============================================
 
-const scoreReturn = (score, totalScore) => {
-  console.log("score = " + score + " sur " + [totalScore]);
+const scoreReturn = (actualScore, totalScore) => {
+  const score = document.querySelector("#score");
+
+  let updateScore = `score :  ${actualScore}  sur ${[totalScore]}`;
+
+  score.innerHTML = updateScore;
 };
 
 const makeChoice = () => {

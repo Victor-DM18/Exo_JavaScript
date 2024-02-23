@@ -1,4 +1,4 @@
-// startGame();
+startGame();
 
 const wordInput = document.getElementById("text-input");
 const submitButton = document.getElementById("submit-input");
