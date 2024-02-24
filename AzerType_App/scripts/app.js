@@ -48,10 +48,12 @@ const scoreReturn = (actualScore, totalScore) => {
 const startGame = () => {
   let score = 0;
 
+  const inputTxt = document.getElementById("text-input");
   const submitBtn = document.getElementById("submit-input");
 
-  submitBtn.addEventListener("click", (e) => {
-    console.log(e);
+  submitBtn.addEventListener("click", () => {
+    console.log("j'ai cliqué");
+    console.log(inputTxt.value);
     score++;
   });
 };
