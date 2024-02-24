@@ -36,6 +36,7 @@
 // ============================================
 // EXO CONDITION BOUCLE FOR & WHILE
 // ============================================
+const proposeWord = document.getElementById("word");
 
 const scoreReturn = (actualScore, totalScore) => {
   const score = document.querySelector("#score");
@@ -46,7 +47,6 @@ const scoreReturn = (actualScore, totalScore) => {
 };
 
 const displayWord = (word) => {
-  const proposeWord = document.getElementById("word");
   proposeWord.innerText = word;
 };
 
@@ -60,15 +60,22 @@ const startGame = () => {
   const submitBtn = document.getElementById("submit-input");
 
   submitBtn.addEventListener("click", () => {
-    console.log("j'ai cliqué");
     console.log(inputTxt.value);
+
+    if (inputTxt.value === initialWord[index]) {
+      score++;
+    }
+
+    scoreReturn(score, initialWord.length);
+
+    inputTxt.value = "";
     index++;
+
     if (initialWord[index] === undefined) {
       displayWord("Le jeu est terminé !");
       submitBtn.disabled = true;
     } else {
       displayWord(initialWord[index]);
     }
-    score++;
   });
 };
