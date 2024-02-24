@@ -47,6 +47,7 @@ const scoreReturn = (actualScore, totalScore) => {
 
 const startGame = () => {
   let score = 0;
+  let index = 0;
 
   const inputTxt = document.getElementById("text-input");
   const submitBtn = document.getElementById("submit-input");
@@ -54,6 +55,8 @@ const startGame = () => {
   submitBtn.addEventListener("click", () => {
     console.log("j'ai cliqué");
     console.log(inputTxt.value);
+    index++;
+    console.log(initialWord[index]);
     score++;
   });
 };
