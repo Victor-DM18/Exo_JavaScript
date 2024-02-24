@@ -45,9 +45,16 @@ const scoreReturn = (actualScore, totalScore) => {
   score.innerText = updateScore;
 };
 
+const displayWord = (word) => {
+  const proposeWord = document.getElementById("word");
+  proposeWord.innerText = word;
+};
+
 const startGame = () => {
   let score = 0;
   let index = 0;
+
+  displayWord(initialWord[index]);
 
   const inputTxt = document.getElementById("text-input");
   const submitBtn = document.getElementById("submit-input");
@@ -56,7 +63,7 @@ const startGame = () => {
     console.log("j'ai cliqué");
     console.log(inputTxt.value);
     index++;
-    console.log(initialWord[index]);
+    displayWord(initialWord[index]);
     score++;
   });
 };
