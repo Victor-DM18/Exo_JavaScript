@@ -45,4 +45,13 @@ const scoreReturn = (actualScore, totalScore) => {
   score.innerText = updateScore;
 };
 
-const startGame = () => {};
+const startGame = () => {
+  let score = 0;
+
+  const submitBtn = document.getElementById("submit-input");
+
+  submitBtn.addEventListener("click", (e) => {
+    console.log(e);
+    score++;
+  });
+};
