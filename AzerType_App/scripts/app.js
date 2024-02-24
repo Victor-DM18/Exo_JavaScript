@@ -65,6 +65,7 @@ const startGame = () => {
     index++;
     if (initialWord[index] === undefined) {
       displayWord("Le jeu est terminé !");
+      submitBtn.disabled = true;
     } else {
       displayWord(initialWord[index]);
     }
