@@ -42,16 +42,16 @@ const scoreReturn = (actualScore, totalScore) => {
 
   let updateScore = `score :  ${actualScore}  sur ${[totalScore]}`;
 
-  score.innerHTML = updateScore;
+  score.innerText = updateScore;
 };
 
-const makeChoice = () => {
-  let choice = prompt("Ecrivez votre choix entre 'phrase' ou 'mot' : ");
-  while (choice !== "phrase" && choice !== "mot") {
-    choice = prompt("Ecrivez 'phrase' ou 'mot' : ");
-  }
-  return choice;
-};
+// const makeChoice = () => {
+//   let choice = prompt("Ecrivez votre choix entre 'phrase' ou 'mot' : ");
+//   while (choice !== "phrase" && choice !== "mot") {
+//     choice = prompt("Ecrivez 'phrase' ou 'mot' : ");
+//   }
+//   return choice;
+// };
 
 const loopFor = (list) => {
   let score = 0;
@@ -59,16 +59,16 @@ const loopFor = (list) => {
     let sentence = prompt("enter le mot : " + list[i]);
     if (sentence === list[i]) {
       score++;
-      console.log("Well done !");
+      // console.log("Well done !");
     } else {
-      console.log("Try again !");
+      // console.log("Try again !");
     }
     scoreReturn(score, i + 1);
   }
 };
 
 const startGame = () => {
-  let choice = makeChoice();
+  // let choice = makeChoice();
 
   if (choice === "mot") {
     loopFor(initialWord);
