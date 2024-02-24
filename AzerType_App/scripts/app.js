@@ -63,7 +63,11 @@ const startGame = () => {
     console.log("j'ai cliqué");
     console.log(inputTxt.value);
     index++;
-    displayWord(initialWord[index]);
+    if (initialWord[index] === undefined) {
+      displayWord("Le jeu est terminé !");
+    } else {
+      displayWord(initialWord[index]);
+    }
     score++;
   });
 };
