@@ -49,7 +49,7 @@ main {
 
 #input-section div {
   display: flex;
-  flex-direction: column;
+  gap: 10px;
 }
 
 h1 {
