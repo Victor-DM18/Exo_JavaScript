@@ -66,7 +66,7 @@ const startGame = () => {
       score++;
     }
 
-    scoreReturn(score, initialWord.length);
+    scoreReturn(score, index + 1);
 
     inputTxt.value = "";
     index++;
