@@ -37,7 +37,7 @@
 // EXO CONDITION BOUCLE FOR & WHILE
 // ============================================
 const proposeWord = document.getElementById("word");
-const radioChoice = document.getElementById(`input[name = "optionChoice"]`);
+const radioChoice = document.querySelectorAll(`input[name = "optionChoice"]`);
 
 const scoreReturn = (actualScore, totalScore) => {
   const score = document.querySelector("#score");
@@ -55,8 +55,23 @@ const startGame = () => {
   let score = 0;
   let index = 0;
   let choice = "";
+  let proposedList = initialWord;
 
-  displayWord(initialWord[index]);
+  for (let i = 0; i < radioChoice.length; i++) {
+    if (radioChoice[i].checked) {
+      choice = radioChoice[i].value;
+
+      break;
+    }
+  }
+
+  if (choice === "mots") {
+    proposedList = initialWord;
+  } else if (choice === "phrases") {
+    proposedList = initialSentence;
+  }
+
+  displayWord(proposedList[index]);
 
   const inputTxt = document.getElementById("text-input");
   const submitBtn = document.getElementById("submit-input");
@@ -64,7 +79,7 @@ const startGame = () => {
   submitBtn.addEventListener("click", () => {
     console.log(inputTxt.value);
 
-    if (inputTxt.value === initialWord[index]) {
+    if (inputTxt.value === proposedList[index]) {
       score++;
     }
 
@@ -72,11 +87,11 @@ const startGame = () => {
     index++;
     scoreReturn(score, index);
 
-    if (initialWord[index] === undefined) {
+    if (proposedList[index] === undefined) {
       displayWord("Le jeu est terminé !");
       submitBtn.disabled = true;
     } else {
-      displayWord(initialWord[index]);
+      displayWord(proposedList[index]);
     }
   });
 };
