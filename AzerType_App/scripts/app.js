@@ -37,8 +37,9 @@
 // EXO CONDITION BOUCLE FOR & WHILE
 // ============================================
 const proposeWord = document.getElementById("word");
-const radioChoice = document.querySelectorAll(`input[name = "optionChoice"]`);
+const radioChoice = document.querySelectorAll(`input[name="optionChoice"]`);
 
+console.log(radioChoice);
 const scoreReturn = (actualScore, totalScore) => {
   const score = document.querySelector("#score");
 
