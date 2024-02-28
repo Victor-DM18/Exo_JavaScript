@@ -37,6 +37,7 @@
 // EXO CONDITION BOUCLE FOR & WHILE
 // ============================================
 const proposeWord = document.getElementById("word");
+const radioChoice = document.getElementById(`input[name = "optionChoice"]`);
 
 const scoreReturn = (actualScore, totalScore) => {
   const score = document.querySelector("#score");
@@ -53,6 +54,7 @@ const displayWord = (word) => {
 const startGame = () => {
   let score = 0;
   let index = 0;
+  let choice = "";
 
   displayWord(initialWord[index]);
 
