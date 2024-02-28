@@ -37,7 +37,7 @@
 // EXO CONDITION BOUCLE FOR & WHILE
 // ============================================
 const proposeWord = document.getElementById("word");
-const radioChoice = document.querySelectorAll(`input[name="optionChoice"]`);
+const radioChoice = document.querySelectorAll("#optionChoice input");
 
 console.log(radioChoice);
 const scoreReturn = (actualScore, totalScore) => {
@@ -55,21 +55,18 @@ const displayWord = (word) => {
 const startGame = () => {
   let score = 0;
   let index = 0;
-  let choice = "";
   let proposedList = initialWord;
 
   for (let i = 0; i < radioChoice.length; i++) {
-    if (radioChoice[i].checked) {
-      choice = radioChoice[i].value;
-
-      break;
-    }
-  }
-
-  if (choice === "mots") {
-    proposedList = initialWord;
-  } else if (choice === "phrases") {
-    proposedList = initialSentence;
+    radioChoice[i].addEventListener("change", (e) => {
+      console.log(e.target.value);
+      if (e.target.value === "mots") {
+        proposedList = initialWord;
+      } else if (e.target.value === "phrases") {
+        proposedList = initialSentence;
+      }
+      displayWord(proposedList[index]);
+    });
   }
 
   displayWord(proposedList[index]);
@@ -78,8 +75,6 @@ const startGame = () => {
   const submitBtn = document.getElementById("submit-input");
 
   submitBtn.addEventListener("click", () => {
-    console.log(inputTxt.value);
-
     if (inputTxt.value === proposedList[index]) {
       score++;
     }
