@@ -41,7 +41,7 @@ const proposeWord = document.getElementById("word");
 const scoreReturn = (actualScore, totalScore) => {
   const score = document.querySelector("#score");
 
-  let updateScore = `score :  ${actualScore}  sur ${[totalScore]}`;
+  let updateScore = `Votre score :  ${actualScore} / ${[totalScore]}`;
 
   score.innerText = updateScore;
 };
@@ -66,10 +66,9 @@ const startGame = () => {
       score++;
     }
 
-    scoreReturn(score, index + 1);
-
     inputTxt.value = "";
     index++;
+    scoreReturn(score, index);
 
     if (initialWord[index] === undefined) {
       displayWord("Le jeu est terminé !");
