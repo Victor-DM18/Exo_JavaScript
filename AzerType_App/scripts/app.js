@@ -65,6 +65,9 @@ const startGame = () => {
       } else if (e.target.value === "phrases") {
         proposedList = initialSentence;
       }
+      if (proposedList[index] === undefined) {
+        displayWord("Le jeu est terminé !");
+      }
       displayWord(proposedList[index]);
     });
   }
