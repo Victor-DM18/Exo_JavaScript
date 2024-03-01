@@ -26,6 +26,10 @@ form {
   border-radius: 20px;
   padding: 10px;
 }
+form div {
+  display: flex;
+  flex-direction: column;
+}
 
 form input {
   margin: auto;
