@@ -24,6 +24,11 @@ form {
   gap: 10px;
 }
 
+form input {
+  margin: auto;
+  border-radius: 10px;
+}
+
 main {
   display: flex;
   flex-direction: column;
