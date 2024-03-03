@@ -31,7 +31,7 @@ form div {
   flex-direction: column;
 }
 
-form input {
+form input, form #buton {
   margin: auto;
   border-radius: 10px;
 }
