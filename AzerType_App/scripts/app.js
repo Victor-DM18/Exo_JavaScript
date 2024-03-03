@@ -38,6 +38,7 @@
 // ============================================
 const proposeWord = document.getElementById("word");
 const radioChoice = document.querySelectorAll("#optionChoice input");
+const shareBtn = document.getElementById("sahre");
 
 console.log(radioChoice);
 const scoreReturn = (actualScore, totalScore) => {
@@ -62,13 +63,16 @@ const startGame = () => {
       console.log(e.target.value);
       if (e.target.value === "mots") {
         proposedList = initialWord;
+        displayWord(proposedList[index]);
       } else if (e.target.value === "phrases") {
         proposedList = initialSentence;
+        displayWord(proposedList[index]);
       }
       if (proposedList[index] === undefined) {
         displayWord("Le jeu est terminé !");
+        submitBtn.disabled = true;
+        shareBtn.disabled = false;
       }
-      displayWord(proposedList[index]);
     });
   }
 
@@ -89,6 +93,7 @@ const startGame = () => {
     if (proposedList[index] === undefined) {
       displayWord("Le jeu est terminé !");
       submitBtn.disabled = true;
+      shareBtn.disabled = false;
     } else {
       displayWord(proposedList[index]);
     }
