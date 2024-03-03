@@ -81,3 +81,7 @@ main {
 h1 {
   text-align: center;
 }
+
+#share-score {
+  display: none;
+}
