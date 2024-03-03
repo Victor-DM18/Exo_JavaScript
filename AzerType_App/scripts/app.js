@@ -38,7 +38,7 @@
 // ============================================
 const proposeWord = document.getElementById("word");
 const radioChoice = document.querySelectorAll("#optionChoice input");
-const shareBtn = document.getElementById("sahre");
+const shareBtn = document.getElementById("share");
 
 console.log(radioChoice);
 const scoreReturn = (actualScore, totalScore) => {
@@ -70,8 +70,6 @@ const startGame = () => {
       }
       if (proposedList[index] === undefined) {
         displayWord("Le jeu est terminé !");
-        submitBtn.disabled = true;
-        shareBtn.disabled = false;
       }
     });
   }
