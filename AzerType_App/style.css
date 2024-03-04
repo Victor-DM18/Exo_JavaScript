@@ -82,6 +82,10 @@ h1 {
   text-align: center;
 }
 
+button {
+  margin: auto;
+}
+
 #share-score {
   display: none;
 }

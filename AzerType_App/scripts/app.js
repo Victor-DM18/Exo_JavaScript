@@ -39,6 +39,7 @@
 const proposeWord = document.getElementById("word");
 const radioChoice = document.querySelectorAll("#optionChoice input");
 const shareBtn = document.getElementById("share");
+const shareSection = document.getElementById("share-score");
 
 const scoreReturn = (actualScore, totalScore) => {
   const score = document.querySelector("#score");
@@ -96,6 +97,6 @@ const startGame = () => {
   });
 
   shareBtn.addEventListener("click", (e) => {
-    console.log(e.target);
+    shareSection.style.display = "flex";
   });
 };
