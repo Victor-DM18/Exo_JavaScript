@@ -40,7 +40,6 @@ const proposeWord = document.getElementById("word");
 const radioChoice = document.querySelectorAll("#optionChoice input");
 const shareBtn = document.getElementById("share");
 
-console.log(radioChoice);
 const scoreReturn = (actualScore, totalScore) => {
   const score = document.querySelector("#score");
 
