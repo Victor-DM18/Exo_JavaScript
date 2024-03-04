@@ -60,7 +60,6 @@ const startGame = () => {
 
   for (let i = 0; i < radioChoice.length; i++) {
     radioChoice[i].addEventListener("change", (e) => {
-      console.log(e.target.value);
       if (e.target.value === "mots") {
         proposedList = initialWord;
         displayWord(proposedList[index]);
