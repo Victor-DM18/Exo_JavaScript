@@ -95,4 +95,8 @@ const startGame = () => {
       displayWord(proposedList[index]);
     }
   });
+
+  shareBtn.addEventListener("click", (e) => {
+    console.log(e.target);
+  });
 };
