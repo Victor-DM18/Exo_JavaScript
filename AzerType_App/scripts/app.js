@@ -59,6 +59,10 @@ const displayMail = (name, email, score) => {
 };
 
 const startGame = () => {
+  const inputTxt = document.getElementById("text-input");
+  const submitBtn = document.getElementById("submit-input");
+  const form = document.querySelector("form");
+
   let score = 0;
   let index = 0;
   let proposedList = initialWord;
@@ -80,9 +84,6 @@ const startGame = () => {
 
   displayWord(proposedList[index]);
 
-  const inputTxt = document.getElementById("text-input");
-  const submitBtn = document.getElementById("submit-input");
-
   submitBtn.addEventListener("click", () => {
     if (inputTxt.value === proposedList[index]) {
       score++;
@@ -103,5 +104,9 @@ const startGame = () => {
 
   shareBtn.addEventListener("click", (e) => {
     shareSection.style.display = "flex";
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
   });
 };
