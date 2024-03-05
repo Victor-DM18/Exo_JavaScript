@@ -53,6 +53,11 @@ const displayWord = (word) => {
   proposeWord.innerText = word;
 };
 
+const displayMail = (name, email, score) => {
+  let mailto = `mailto:${email}?subject=Partage du score Azertype&body=Salut, je suis ${name} et je viens de réaliser le score de ${score} sur le site d'Azertype !`;
+  location.href = mailto;
+};
+
 const startGame = () => {
   let score = 0;
   let index = 0;
