@@ -53,8 +53,8 @@ const displayWord = (word) => {
   proposeWord.innerText = word;
 };
 
-const displayMail = (name, email, score) => {
-  let mailto = `mailto:${email}?subject=Partage du score Azertype&body=Salut, je suis ${name} et je viens de réaliser le score de ${score} sur le site d'Azertype !`;
+const displayMail = (name, email, score, index) => {
+  let mailto = `mailto:${email}?subject=Partage du score Azertype&body=Salut, je suis ${name} et je viens de réaliser le score de ${score} / ${index} sur le site d'Azertype !`;
   location.href = mailto;
 };
 
@@ -107,6 +107,9 @@ const startGame = () => {
   });
 
   form.addEventListener("submit", (event) => {
+    const name = document.getElementById("my-name");
+    const email = document.getElementById("email");
     event.preventDefault();
+    displayMail(name, email, score, index);
   });
 };
