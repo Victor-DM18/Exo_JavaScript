@@ -107,8 +107,10 @@ const startGame = () => {
   });
 
   form.addEventListener("submit", (event) => {
-    const name = document.getElementById("my-name");
+    const myName = document.getElementById("my-name");
     const email = document.getElementById("email");
+    const name = myName.value;
+
     event.preventDefault();
     displayMail(name, email, score, index);
   });
