@@ -58,6 +58,12 @@ const displayMail = (name, email, score, index) => {
   location.href = mailto;
 };
 
+const nameValidation = (value) => {
+  let regex = new RegExp("^[a-zA-z0-9]{2,15}$");
+  let test = regex.test(value);
+  return test;
+};
+
 const startGame = () => {
   const inputTxt = document.getElementById("text-input");
   const submitBtn = document.getElementById("submit-input");
