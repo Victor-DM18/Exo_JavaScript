@@ -119,6 +119,9 @@ const startGame = () => {
   });
 
   form.addEventListener("submit", (event) => {
+    const nameError = document.getElementById("name-error");
+    const emailError = document.getElementById("email-error");
+    const formError = document.getElementById("form-error");
     const myName = document.getElementById("my-name");
     const myEmail = document.getElementById("email");
 
@@ -128,10 +131,16 @@ const startGame = () => {
     event.preventDefault();
     if (nameValidation(name) === true && emailValidation(email) === true) {
       displayMail(name, email, score, index);
-    } else if (nameValidation(name) === false) {
-      console.log("ERROR NAME");
     } else {
-      console.log("ERROR EMAIL");
+      formError.innerHTML = "Erreur dans le formulaire";
+    }
+
+    if (nameValidation(name) === false) {
+      nameError.innerHTML = "Veuiilez écrire un nom à 2 lettre ou +";
+    }
+
+    if (emailValidation(email) === false) {
+      emailError.innerHTML = "Veuiilez écrire un email valide";
     }
   });
 };
