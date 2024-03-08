@@ -65,7 +65,7 @@ const nameValidation = (value) => {
 };
 
 const emailValidation = (email) => {
-  let regex = new RegExp("^[w.=-]+@[w.-]+.[w]{2,3}$");
+  let regex = new RegExp("^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,})$");
   let test = regex.test(email);
   return test;
 };
@@ -127,7 +127,7 @@ const startGame = () => {
 
     event.preventDefault();
     if (nameValidation(name) === true && emailValidation(email) === true) {
-      displayMail(name, myEmail, score, index);
+      displayMail(name, email, score, index);
     } else if (nameValidation(name) === false) {
       console.log("ERROR NAME");
     } else {
