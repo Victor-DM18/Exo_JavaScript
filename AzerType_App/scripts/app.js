@@ -120,10 +120,18 @@ const startGame = () => {
 
   form.addEventListener("submit", (event) => {
     const myName = document.getElementById("my-name");
-    const email = document.getElementById("email");
+    const myEmail = document.getElementById("email");
+
+    const email = myEmail.value;
     const name = myName.value;
 
     event.preventDefault();
-    displayMail(name, email, score, index);
+    if (nameValidation(name) === true && emailValidation(email) === true) {
+      displayMail(name, myEmail, score, index);
+    } else if (nameValidation(name) === false) {
+      console.log("ERROR NAME");
+    } else {
+      console.log("ERROR EMAIL");
+    }
   });
 };
