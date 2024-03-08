@@ -64,6 +64,12 @@ const nameValidation = (value) => {
   return test;
 };
 
+const emailValidation = (email) => {
+  let regex = new RegExp("^[w.=-]+@[w.-]+.[w]{2,3}$");
+  let test = regex.test(email);
+  return test;
+};
+
 const startGame = () => {
   const inputTxt = document.getElementById("text-input");
   const submitBtn = document.getElementById("submit-input");
