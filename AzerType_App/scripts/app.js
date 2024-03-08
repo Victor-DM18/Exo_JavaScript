@@ -133,14 +133,19 @@ const startGame = () => {
       displayMail(name, email, score, index);
     } else {
       formError.innerHTML = "Erreur dans le formulaire";
+      formError.textContent = "";
     }
 
     if (nameValidation(name) === false) {
       nameError.innerHTML = "Veuiilez écrire un nom à 2 lettre ou +";
+    } else {
+      nameError.textContent = "";
     }
 
     if (emailValidation(email) === false) {
       emailError.innerHTML = "Veuiilez écrire un email valide";
+    } else {
+      emailError.textContent = "";
     }
   });
 };
