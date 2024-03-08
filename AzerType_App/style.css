@@ -89,3 +89,7 @@ button {
 #share-score {
   display: none;
 }
+
+#share-score span {
+  color: red;
+}
