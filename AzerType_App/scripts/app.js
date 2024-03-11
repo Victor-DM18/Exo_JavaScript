@@ -39,7 +39,7 @@
 const proposeWord = document.getElementById("word");
 const radioChoice = document.querySelectorAll("#optionChoice input");
 const shareBtn = document.getElementById("share");
-const shareSection = document.getElementById("share-score");
+const shareSection = document.getElementById("popup");
 
 const scoreReturn = (actualScore, totalScore) => {
   const score = document.querySelector("#score");
