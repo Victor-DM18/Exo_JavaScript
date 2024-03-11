@@ -7,6 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: rgb(176, 176, 176);
+  z-index: 1;
 }
 
 
@@ -88,6 +89,10 @@ button {
 
 #share-score {
   display: none;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  z-index: 50;
 }
 
 #share-score span {
