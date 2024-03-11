@@ -115,7 +115,7 @@ const startGame = () => {
   });
 
   shareBtn.addEventListener("click", (e) => {
-    shareSection.style.display = "flex";
+    shareSection.classList.add("active");
   });
 
   form.addEventListener("submit", (event) => {
