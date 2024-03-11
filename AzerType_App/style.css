@@ -96,13 +96,20 @@ button {
 }
 
 #share-score {
-  display: none;
   position: absolute;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
   top: 50%;
-  right: 50%;
+  left: 50%;
   z-index: 50;
 }
 
 #share-score span {
   color: red;
+}
+
+.active {
+  display: flex !important;
 }
