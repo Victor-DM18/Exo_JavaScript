@@ -28,6 +28,7 @@ form {
   border-radius: 20px;
   padding: 10px;
 }
+
 form div {
   display: flex;
   flex-direction: column;
@@ -98,6 +99,7 @@ button {
 
 #share-score {
   position: absolute;
+  transform: translate(-50%, -50%);
   justify-content: center;
   align-items: center;
   padding: 20px;
