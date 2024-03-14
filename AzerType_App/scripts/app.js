@@ -141,5 +141,6 @@ const startGame = () => {
     } else {
       emailError.textContent = "";
     }
+    removePopup();
   });
 };
