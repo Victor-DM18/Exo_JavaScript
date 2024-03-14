@@ -38,8 +38,6 @@
 // ============================================
 const proposeWord = document.getElementById("word");
 const radioChoice = document.querySelectorAll("#optionChoice input");
-const shareBtn = document.getElementById("share");
-const shareSection = document.getElementById("popup");
 
 const scoreReturn = (actualScore, totalScore) => {
   const score = document.querySelector("#score");
@@ -112,10 +110,6 @@ const startGame = () => {
     } else {
       displayWord(proposedList[index]);
     }
-  });
-
-  shareBtn.addEventListener("click", (e) => {
-    shareSection.classList.add("active");
   });
 
   form.addEventListener("submit", (event) => {
