@@ -73,9 +73,6 @@ const emailValidation = (email) => {
 };
 
 const formManager = (score, index) => {
-  const nameError = document.getElementById("name-error");
-  const emailError = document.getElementById("email-error");
-  const formError = document.getElementById("form-error");
   const myName = document.getElementById("my-name");
   const myEmail = document.getElementById("email");
 
