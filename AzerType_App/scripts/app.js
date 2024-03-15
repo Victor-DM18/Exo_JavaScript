@@ -80,21 +80,21 @@ const formManager = (score, index) => {
   const name = myName.value;
 
   try {
-    if (nameValidation(name) === true && emailValidation(email) === true) {
-      displayMail(name, email, score, index);
-      errorMessage();
-    }
+    nameValidation(name);
+    emailValidation(email);
+    errorMessage("");
+    displayMail(name, email, score, index);
   } catch (error) {
-    console.log("Une erreur est survenue : " + error.message);
     errorMessage(error.message);
   }
 };
 
 const errorMessage = (message) => {
   const form = document.getElementById("share-score");
-  const errMessage = `<spam>${message}<span>`;
+  const errMessage = document.createElement("span");
 
-  form.innerHTML = errMessage;
+  errMessage.innerHTML = message;
+  form.append(errMessage);
 };
 
 const startGame = () => {
