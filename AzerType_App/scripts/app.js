@@ -82,9 +82,11 @@ const formManager = (score, index) => {
   try {
     if (nameValidation(name) === true && emailValidation(email) === true) {
       displayMail(name, email, score, index);
+      errorMessage();
     }
   } catch (error) {
     console.log("Une erreur est survenue : " + error.message);
+    errorMessage(error.message);
   }
 };
 
