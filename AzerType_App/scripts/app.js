@@ -58,14 +58,18 @@ const displayMail = (name, email, score, index) => {
 
 const nameValidation = (value) => {
   let regex = new RegExp("^[a-zA-z0-9]{2,15}$");
-  let test = regex.test(value);
-  return test;
+  if (regex.test(value)) {
+    return true;
+  }
+  throw new Error("le nom est trop court");
 };
 
 const emailValidation = (email) => {
   let regex = new RegExp("^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,})$");
-  let test = regex.test(email);
-  return test;
+  if (regex.test(email)) {
+    return true;
+  }
+  throw new Error("l'e-mail n'est pas valide");
 };
 
 const formManager = (score, index) => {
