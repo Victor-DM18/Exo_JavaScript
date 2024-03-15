@@ -82,23 +82,12 @@ const formManager = (score, index) => {
   const email = myEmail.value;
   const name = myName.value;
 
-  if (nameValidation(name) === true && emailValidation(email) === true) {
-    displayMail(name, email, score, index);
-  } else {
-    formError.innerHTML = "Erreur dans le formulaire";
-    formError.textContent = "";
-  }
-
-  if (nameValidation(name) === false) {
-    nameError.innerHTML = "Veuiilez écrire un nom à 2 lettre ou +";
-  } else {
-    nameError.textContent = "";
-  }
-
-  if (emailValidation(email) === false) {
-    emailError.innerHTML = "Veuiilez écrire un email valide";
-  } else {
-    emailError.textContent = "";
+  try {
+    if (nameValidation(name) === true && emailValidation(email) === true) {
+      displayMail(name, email, score, index);
+    }
+  } catch (error) {
+    console.log("Une erreur est survenue : " + error.message);
   }
 };
 
