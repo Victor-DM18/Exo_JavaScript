@@ -68,6 +68,36 @@ const emailValidation = (email) => {
   return test;
 };
 
+const formManager = (score, index) => {
+  const nameError = document.getElementById("name-error");
+  const emailError = document.getElementById("email-error");
+  const formError = document.getElementById("form-error");
+  const myName = document.getElementById("my-name");
+  const myEmail = document.getElementById("email");
+
+  const email = myEmail.value;
+  const name = myName.value;
+
+  if (nameValidation(name) === true && emailValidation(email) === true) {
+    displayMail(name, email, score, index);
+  } else {
+    formError.innerHTML = "Erreur dans le formulaire";
+    formError.textContent = "";
+  }
+
+  if (nameValidation(name) === false) {
+    nameError.innerHTML = "Veuiilez écrire un nom à 2 lettre ou +";
+  } else {
+    nameError.textContent = "";
+  }
+
+  if (emailValidation(email) === false) {
+    emailError.innerHTML = "Veuiilez écrire un email valide";
+  } else {
+    emailError.textContent = "";
+  }
+};
+
 const startGame = () => {
   const inputTxt = document.getElementById("text-input");
   const submitBtn = document.getElementById("submit-input");
@@ -113,34 +143,7 @@ const startGame = () => {
   });
 
   form.addEventListener("submit", (event) => {
-    const nameError = document.getElementById("name-error");
-    const emailError = document.getElementById("email-error");
-    const formError = document.getElementById("form-error");
-    const myName = document.getElementById("my-name");
-    const myEmail = document.getElementById("email");
-
-    const email = myEmail.value;
-    const name = myName.value;
-
     event.preventDefault();
-    if (nameValidation(name) === true && emailValidation(email) === true) {
-      displayMail(name, email, score, index);
-    } else {
-      formError.innerHTML = "Erreur dans le formulaire";
-      formError.textContent = "";
-    }
-
-    if (nameValidation(name) === false) {
-      nameError.innerHTML = "Veuiilez écrire un nom à 2 lettre ou +";
-    } else {
-      nameError.textContent = "";
-    }
-
-    if (emailValidation(email) === false) {
-      emailError.innerHTML = "Veuiilez écrire un email valide";
-    } else {
-      emailError.textContent = "";
-    }
-    removePopup();
+    formManager(score, index);
   });
 };
