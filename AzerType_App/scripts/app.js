@@ -88,6 +88,13 @@ const formManager = (score, index) => {
   }
 };
 
+const errorMessage = (message) => {
+  const form = document.getElementById("share-score");
+  const errMessage = `<spam>${message}<span>`;
+
+  form.innerHTML = errMessage;
+};
+
 const startGame = () => {
   const inputTxt = document.getElementById("text-input");
   const submitBtn = document.getElementById("submit-input");
