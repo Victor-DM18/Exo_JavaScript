@@ -58,18 +58,28 @@ const displayMail = (name, email, score, index) => {
 
 const nameValidation = (value) => {
   let regex = new RegExp("^[a-zA-z0-9]{2,15}$");
-  if (regex.test(value)) {
-    return true;
+  if (!regex.test(value)) {
+    throw new Error("le nom est trop court");
   }
-  throw new Error("le nom est trop court");
 };
 
 const emailValidation = (email) => {
   let regex = new RegExp("^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,})$");
-  if (regex.test(email)) {
-    return true;
+  if (!regex.test(email)) {
+    throw new Error("l'e-mail n'est pas valide");
   }
-  throw new Error("l'e-mail n'est pas valide");
+};
+
+const errorMessage = (message) => {
+  if (!document.getElementById("error-message")) {
+    const form = document.getElementById("share-score");
+    const errMessage = document.createElement("span");
+    errMessage.id = "error-message";
+
+    form.append(errMessage);
+  }
+
+  document.getElementById("error-message").innerText = message;
 };
 
 const formManager = (score, index) => {
@@ -87,14 +97,6 @@ const formManager = (score, index) => {
   } catch (error) {
     errorMessage(error.message);
   }
-};
-
-const errorMessage = (message) => {
-  const form = document.getElementById("share-score");
-  const errMessage = document.createElement("span");
-
-  errMessage.innerHTML = message;
-  form.append(errMessage);
 };
 
 const startGame = () => {
