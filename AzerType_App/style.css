@@ -107,6 +107,7 @@ button {
   position: absolute;
   transform: translate(-50%, -50%);
   box-shadow: 10px 10px 25px gray;
+  background-color: rgb(247, 195, 107);
   border-radius: 20px;
   text-align: center;
   top: 50%;
