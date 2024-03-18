@@ -17,10 +17,10 @@ priceElement.innerText = `Prix : ${article.prix} € (${
   article.prix < 35 ? "€" : "€€€"
 })`;
 categoryElement.innerText = article.categorie ?? "Aucune catégorie";
-descriptionElement.innerText = `Déscription : ${
+descriptionElement.innerText = `${
   article.description ?? "Aucune déscription pour le moment"
 }`;
-stockElement.innerText = `Disponibilité : ${
+stockElement.innerText = `${
   article.disponibilité ? "En stock" : "En rupture de stock"
 }`;
 
