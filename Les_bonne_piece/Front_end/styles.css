@@ -42,10 +42,20 @@ main {
 	text-align: center;
 }
 
+
 .fiches {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
 	flex: 1;
 	margin: 8px;
 }
+
+.fiches article {
+	border: 1px solid black;
+	width: 270px;
+}
+
 .fiches img {
 	max-width: 200px;
 }
