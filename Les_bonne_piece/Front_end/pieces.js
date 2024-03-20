@@ -37,8 +37,15 @@ for (let i = 0; i < pieces.length; i++) {
 }
 
 priceOrder.addEventListener("click", () => {
-  pieces.sort((a, b) => {
+  const piecesSort = pieces.sort((a, b) => {
     return a.prix - b.prix;
   });
-  console.log(pieces);
+  console.log(piecesSort);
+});
+
+priceFilter.addEventListener("click", () => {
+  const piecesFilter = pieces.filter((piece) => {
+    return piece.prix <= 35;
+  });
+  console.log(piecesFilter);
 });
