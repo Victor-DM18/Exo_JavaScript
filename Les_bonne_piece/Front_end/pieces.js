@@ -1,9 +1,10 @@
-const filtreSection = document.querySelector(".fiches");
+const ficheSection = document.querySelector(".fiches");
 
 const res = await fetch("./pieces-autos.json");
 const pieces = await res.json();
 
 for (let i = 0; i < pieces.length; i++) {
+  const piexeElement = document.createElement("article");
   const imgElement = document.createElement("img");
   const nameElement = document.createElement("h2");
   const priceElement = document.createElement("p");
@@ -24,10 +25,11 @@ for (let i = 0; i < pieces.length; i++) {
     pieces[i].disponibilité ? "En stock" : "En rupture de stock"
   }`;
 
-  filtreSection.appendChild(imgElement);
-  filtreSection.appendChild(nameElement);
-  filtreSection.appendChild(priceElement);
-  filtreSection.appendChild(categoryElement);
-  filtreSection.appendChild(descriptionElement);
-  filtreSection.appendChild(stockElement);
+  ficheSection.appendChild(piexeElement);
+  piexeElement.appendChild(imgElement);
+  piexeElement.appendChild(nameElement);
+  piexeElement.appendChild(priceElement);
+  piexeElement.appendChild(categoryElement);
+  piexeElement.appendChild(descriptionElement);
+  piexeElement.appendChild(stockElement);
 }
