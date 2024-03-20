@@ -1,4 +1,6 @@
 const ficheSection = document.querySelector(".fiches");
+const priceOrder = document.querySelector(".btn-trier");
+const priceFilter = document.querySelector(".btn-filtrer");
 
 const res = await fetch("./pieces-autos.json");
 const pieces = await res.json();
@@ -33,3 +35,10 @@ for (let i = 0; i < pieces.length; i++) {
   piexeElement.appendChild(descriptionElement);
   piexeElement.appendChild(stockElement);
 }
+
+priceOrder.addEventListener("click", () => {
+  pieces.sort((a, b) => {
+    return a.prix - b.prix;
+  });
+  console.log(pieces);
+});
