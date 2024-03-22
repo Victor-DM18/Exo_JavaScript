@@ -2,7 +2,7 @@ const ficheSection = document.querySelector(".fiches");
 const priceOrder = document.querySelector(".btn-trier");
 const priceFilter = document.querySelector(".btn-filtrer");
 const priceReverseSort = document.querySelector(".btn-reverse-tri");
-const descriptionFilter = document.querySelector(".btn-filtrer-description");
+const descriptionFilter = document.querySelector(".btn-filtre-description");
 
 const res = await fetch("./pieces-autos.json");
 const pieces = await res.json();
@@ -46,10 +46,10 @@ priceOrder.addEventListener("click", () => {
 });
 
 priceReverseSort.addEventListener("click", () => {
-  const piecesFilter = pieces.sort((a, b) => {
+  const reverseSort = pieces.sort((a, b) => {
     return b.prix - a.prix;
   });
-  console.log(piecesFilter);
+  console.log(reverseSort);
 });
 
 priceFilter.addEventListener("click", () => {
@@ -57,4 +57,11 @@ priceFilter.addEventListener("click", () => {
     return piece.prix <= 35;
   });
   console.log(piecesFilter);
+});
+
+descriptionFilter.addEventListener("click", () => {
+  const piecesDescription = pieces.filter((piece) => {
+    return piece.description;
+  });
+  console.log(piecesDescription);
 });
