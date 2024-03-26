@@ -3,6 +3,7 @@ const priceOrder = document.querySelector(".btn-trier");
 const priceFilter = document.querySelector(".btn-filtrer");
 const priceReverseSort = document.querySelector(".btn-reverse-tri");
 const descriptionFilter = document.querySelector(".btn-filtre-description");
+const affordablePrice = document.querySelector(".affordable-price");
 
 const res = await fetch("./pieces-autos.json");
 const pieces = await res.json();
