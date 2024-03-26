@@ -8,6 +8,17 @@ const affordablePrice = document.querySelector(".affordable-price");
 const res = await fetch("./pieces-autos.json");
 const pieces = await res.json();
 
+const affordableElement = document.createElement("ul");
+const elementName = pieces.map((piece) => piece.nom);
+
+for (let i = 0; i < elementName.length; i++) {
+  const elementList = document.createElement("li");
+  elementList.innerText = elementName[i];
+  affordableElement.appendChild(elementList);
+}
+
+affordablePrice.appendChild(affordableElement);
+
 for (let i = 0; i < pieces.length; i++) {
   const piexeElement = document.createElement("article");
   const imgElement = document.createElement("img");
