@@ -5,9 +5,11 @@ const priceReverseSort = document.querySelector(".btn-reverse-tri");
 const descriptionFilter = document.querySelector(".btn-filtre-description");
 const affordablePrice = document.querySelector(".affordable-price");
 
+//data fetching
 const res = await fetch("./pieces-autos.json");
 const pieces = await res.json();
 
+//list of affordable articles
 const affordableElement = document.createElement("ul");
 const elementName = pieces
   .filter((price) => price.prix < "35")
@@ -21,6 +23,7 @@ for (let i = 0; i < elementName.length; i++) {
 
 affordablePrice.appendChild(affordableElement);
 
+//list of all articles
 for (let i = 0; i < pieces.length; i++) {
   const piexeElement = document.createElement("article");
   const imgElement = document.createElement("img");
@@ -52,6 +55,7 @@ for (let i = 0; i < pieces.length; i++) {
   piexeElement.appendChild(stockElement);
 }
 
+//eventListener for filter buttons
 priceOrder.addEventListener("click", () => {
   const piecesSort = pieces.sort((a, b) => {
     return a.prix - b.prix;
