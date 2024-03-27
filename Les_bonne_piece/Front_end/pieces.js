@@ -4,6 +4,7 @@ const priceFilter = document.querySelector(".btn-filtrer");
 const priceReverseSort = document.querySelector(".btn-reverse-tri");
 const descriptionFilter = document.querySelector(".btn-filtre-description");
 const affordablePrice = document.querySelector(".affordable-price");
+const dispoPieces = document.querySelector(".disponiblity");
 
 //data fetching
 const res = await fetch("./pieces-autos.json");
@@ -22,6 +23,15 @@ for (let i = 0; i < elementName.length; i++) {
 }
 
 affordablePrice.appendChild(affordableElement);
+
+const dispoElement = document.createElement("ul");
+const disponibilitedElement = pieces
+  .filter((piece) => piece.disponiblité === true)
+  .map((dispo) => {
+    `${dispo.nom} - ${dispo.prix} €`;
+  });
+
+const dispoList = document.createElement("li");
 
 //list of all articles
 for (let i = 0; i < pieces.length; i++) {
