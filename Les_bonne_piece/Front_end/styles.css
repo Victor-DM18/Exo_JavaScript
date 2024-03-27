@@ -62,8 +62,11 @@ main {
 	margin: 8px;
 }
 
-.fiches div {
-width: 100%;
+.listPieces  {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%;
 }
 
 .fiches article {
