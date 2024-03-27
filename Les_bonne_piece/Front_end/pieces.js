@@ -24,6 +24,7 @@ for (let i = 0; i < elementName.length; i++) {
 
 affordablePrice.appendChild(affordableElement);
 
+// list of disponibilited artciles
 const dispoElement = document.createElement("ul");
 const disponibilitedElement = pieces
   .filter((piece) => piece.disponibilité === true)
