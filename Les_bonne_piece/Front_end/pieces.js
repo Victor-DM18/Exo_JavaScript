@@ -98,7 +98,8 @@ priceFilter.addEventListener("click", () => {
   const piecesFilter = pieces.filter((piece) => {
     return piece.prix <= 35;
   });
-  console.log(piecesFilter);
+  listArticles.innerHTML = "";
+  displayArtcilesList(piecesFilter);
 });
 
 descriptionFilter.addEventListener("click", () => {
