@@ -1,3 +1,4 @@
+// All general variables declarated
 const ficheSection = document.querySelector(".fiches");
 const listArticles = document.querySelector(".listArticles");
 const priceOrder = document.querySelector(".btn-trier");
@@ -77,7 +78,7 @@ const displayArtcilesList = (pieces) => {
 
 displayArtcilesList(pieces);
 
-//eventListener for filter buttons
+//eventListener for all filter buttons
 priceOrder.addEventListener("click", () => {
   const piecesSort = pieces.sort((a, b) => {
     return a.prix - b.prix;
