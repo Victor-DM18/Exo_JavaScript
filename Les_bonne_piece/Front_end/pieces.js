@@ -41,7 +41,7 @@ for (let i = 0; i < disponibilitedElement.length; i++) {
 dispoPieces.appendChild(dispoElement);
 
 //list of all articles
-const displayArtcilesList = () => {
+const displayArtcilesList = (pieces) => {
   for (let i = 0; i < pieces.length; i++) {
     const piexeElement = document.createElement("article");
     const imgElement = document.createElement("img");
@@ -74,7 +74,7 @@ const displayArtcilesList = () => {
   }
 };
 
-displayArtcilesList();
+displayArtcilesList(pieces);
 
 //eventListener for filter buttons
 priceOrder.addEventListener("click", () => {
