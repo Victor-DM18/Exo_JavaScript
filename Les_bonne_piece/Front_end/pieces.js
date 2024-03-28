@@ -106,5 +106,6 @@ descriptionFilter.addEventListener("click", () => {
   const piecesDescription = pieces.filter((piece) => {
     return piece.description;
   });
-  console.log(piecesDescription);
+  listArticles.innerHTML = "";
+  displayArtcilesList(piecesDescription);
 });
