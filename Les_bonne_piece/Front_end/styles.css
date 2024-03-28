@@ -54,7 +54,7 @@ main {
 }
 
 
-.fiches {
+.fiches .listArticles {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px;

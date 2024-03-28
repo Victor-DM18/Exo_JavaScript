@@ -1,4 +1,5 @@
 const ficheSection = document.querySelector(".fiches");
+const listArticles = document.querySelector(".listArticles");
 const priceOrder = document.querySelector(".btn-trier");
 const priceFilter = document.querySelector(".btn-filtrer");
 const priceReverseSort = document.querySelector(".btn-reverse-tri");
@@ -64,7 +65,7 @@ const displayArtcilesList = (pieces) => {
       pieces[i].disponibilité ? "En stock" : "En rupture de stock"
     }`;
 
-    ficheSection.appendChild(piexeElement);
+    listArticles.appendChild(piexeElement);
     piexeElement.appendChild(imgElement);
     piexeElement.appendChild(nameElement);
     piexeElement.appendChild(priceElement);
