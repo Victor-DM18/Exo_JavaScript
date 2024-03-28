@@ -82,7 +82,8 @@ priceOrder.addEventListener("click", () => {
   const piecesSort = pieces.sort((a, b) => {
     return a.prix - b.prix;
   });
-  console.log(piecesSort);
+  listArticles.innerHTML = "";
+  displayArtcilesList(piecesSort);
 });
 
 priceReverseSort.addEventListener("click", () => {
@@ -91,7 +92,6 @@ priceReverseSort.addEventListener("click", () => {
   });
   listArticles.innerHTML = "";
   displayArtcilesList(reverseSort);
-  console.log(reverseSort);
 });
 
 priceFilter.addEventListener("click", () => {
