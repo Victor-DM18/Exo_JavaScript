@@ -88,6 +88,8 @@ priceReverseSort.addEventListener("click", () => {
   const reverseSort = pieces.sort((a, b) => {
     return b.prix - a.prix;
   });
+  ficheSection.innerHTML = "";
+  displayArtcilesList(reverseSort);
   console.log(reverseSort);
 });
 
