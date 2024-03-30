@@ -40,10 +40,15 @@ main {
 	padding: 8px;
 	min-width: 300px;
 	min-height: 400px;
-	gap: 20px;
+	gap: 25px;
 }
 .filtres h3 {
 	text-align: center;
+}
+
+.filtres .range {
+	display: flex;
+	flex-direction: column;
 }
 
 .filtres button {
