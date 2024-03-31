@@ -7,6 +7,7 @@ const priceReverseSort = document.querySelector(".btn-reverse-tri");
 const descriptionFilter = document.querySelector(".btn-filtre-description");
 const affordablePrice = document.querySelector(".affordable-price");
 const dispoPieces = document.querySelector(".disponibility");
+const rangeBtn = document.querySelector(".range-price");
 
 //data fetching
 const res = await fetch("./pieces-autos.json");
@@ -110,3 +111,5 @@ descriptionFilter.addEventListener("click", () => {
   listArticles.innerHTML = "";
   displayArtcilesList(piecesDescription);
 });
+
+rangeBtn.addEventListener("change", () => {});
