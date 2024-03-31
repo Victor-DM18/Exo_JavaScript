@@ -8,10 +8,13 @@ const descriptionFilter = document.querySelector(".btn-filtre-description");
 const affordablePrice = document.querySelector(".affordable-price");
 const dispoPieces = document.querySelector(".disponibility");
 const rangeBtn = document.querySelector(".range-price");
+const maxPrice = document.querySelector(".price");
 
 //data fetching
 const res = await fetch("./pieces-autos.json");
 const pieces = await res.json();
+
+maxPrice.innerText = rangeBtn.value + " €";
 
 //list of affordable articles
 const affordableElement = document.createElement("ul");
