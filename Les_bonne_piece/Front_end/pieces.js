@@ -117,4 +117,9 @@ descriptionFilter.addEventListener("click", () => {
 
 rangeBtn.addEventListener("input", (e) => {
   maxPrice.innerHTML = `${e.target.value} €`;
+  const piecesFilter = pieces.filter((piece) => {
+    return piece.prix <= e.target.value;
+  });
+  listArticles.innerHTML = "";
+  displayArtcilesList(piecesFilter);
 });
