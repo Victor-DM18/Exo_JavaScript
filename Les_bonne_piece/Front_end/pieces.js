@@ -115,7 +115,6 @@ descriptionFilter.addEventListener("click", () => {
   displayArtcilesList(piecesDescription);
 });
 
-rangeBtn.addEventListener("change", (e) => {
-  maxPrice.innerHTML = "";
+rangeBtn.addEventListener("input", (e) => {
   maxPrice.innerHTML = `${e.target.value} €`;
 });
