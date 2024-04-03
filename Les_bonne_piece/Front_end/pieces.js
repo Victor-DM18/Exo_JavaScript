@@ -56,6 +56,7 @@ const displayArtcilesList = (pieces) => {
     const categoryElement = document.createElement("p");
     const descriptionElement = document.createElement("p");
     const stockElement = document.createElement("p");
+    const opinionBtn = document.createElement("button");
 
     imgElement.src = pieces[i].image;
     nameElement.innerText = pieces[i].nom;
@@ -69,7 +70,7 @@ const displayArtcilesList = (pieces) => {
     stockElement.innerText = `${
       pieces[i].disponibilité ? "En stock" : "En rupture de stock"
     }`;
-
+    opinionBtn.innerText = "Voir les avis";
     listArticles.appendChild(piexeElement);
     piexeElement.appendChild(imgElement);
     piexeElement.appendChild(nameElement);
@@ -77,6 +78,7 @@ const displayArtcilesList = (pieces) => {
     piexeElement.appendChild(categoryElement);
     piexeElement.appendChild(descriptionElement);
     piexeElement.appendChild(stockElement);
+    piexeElement.appendChild(opinionBtn);
   }
 };
 
