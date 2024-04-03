@@ -51,12 +51,20 @@ main {
 	flex-direction: column;
 }
 
-.filtres button, .opinion-button {
+.filtres button {
 	background-color: #7451eb;
 	color: aliceblue;
 	padding: 5px;
 	border-radius: 10px;
 	width: 70%;
+}
+
+.opinion-button {
+	background-color: #7451eb;
+	color: aliceblue;
+	padding: 5px;
+	border-radius: 10px;
+	margin: auto;
 }
 
 
@@ -78,6 +86,8 @@ main {
 .fiches article {
 	border: 1px solid black;
 	width: 270px;
+	display: flex;
+	flex-direction: column;
 }
 
 .fiches img {
