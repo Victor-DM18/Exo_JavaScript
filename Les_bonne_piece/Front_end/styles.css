@@ -51,7 +51,7 @@ main {
 	flex-direction: column;
 }
 
-.filtres button {
+.filtres button, .opinion-button {
 	background-color: #7451eb;
 	color: aliceblue;
 	padding: 5px;
