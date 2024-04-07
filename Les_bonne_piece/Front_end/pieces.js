@@ -1,3 +1,5 @@
+import { displayOpinionList } from "./avis.js";
+
 // All general variables declarated
 const ficheSection = document.querySelector(".fiches");
 const listArticles = document.querySelector(".listArticles");
@@ -82,6 +84,8 @@ const displayArtcilesList = (pieces) => {
     piexeElement.appendChild(stockElement);
     piexeElement.appendChild(opinionBtn);
   }
+
+  displayOpinionList();
 };
 
 displayArtcilesList(pieces);
