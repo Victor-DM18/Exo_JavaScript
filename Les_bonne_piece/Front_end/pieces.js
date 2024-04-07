@@ -73,6 +73,7 @@ const displayArtcilesList = (pieces) => {
       pieces[i].disponibilité ? "En stock" : "En rupture de stock"
     }`;
     opinionBtn.innerText = "Voir les avis";
+    opinionBtn.dataset.id = piexeElement.id;
     opinionBtn.classList.add("opinion-button");
 
     listArticles.appendChild(piexeElement);
