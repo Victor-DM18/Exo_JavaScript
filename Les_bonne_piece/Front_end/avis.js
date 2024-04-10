@@ -6,6 +6,15 @@ export const displayOpinionList = () => {
       const res = await fetch(`http://localhost:8081/pieces/${id}/avis`);
       const opinion = await res.json();
       console.log(opinion);
+
+      const opinionElement = e.target.parentElement;
+
+      const newOpinion = document.createElement("p");
+      for (let i = 0; i < opinion.length; i++) {
+        newOpinion.innerHTML += `<p>Nom : ${opinion[i].utilisateur} <br> Commentaire : ${opinion[i].commentaire}</p> `;
+      }
+
+      opinionElement.appendChild(newOpinion);
     });
   }
 };
