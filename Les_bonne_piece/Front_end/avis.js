@@ -1,5 +1,4 @@
 export const displayOpinionList = () => {
-  const opinionList = document.querySelector(".opinion-list");
   const pieceElement = document.querySelectorAll(".fiches article button");
   for (let i = 0; i < pieceElement.length; i++) {
     pieceElement[i].addEventListener("click", async (e) => {
@@ -13,11 +12,15 @@ export const displayOpinionList = () => {
       const newOpinion = document.createElement("p");
       newOpinion.classList.add("opinion-list");
 
-      for (let i = 0; i < opinion.length; i++) {
-        newOpinion.innerHTML += `<p>Nom : ${opinion[i].utilisateur} <br> Commentaire : ${opinion[i].commentaire}</p> `;
-      }
+      if (document.querySelector(".opinion-list")) {
+        document.querySelector(".opinion-list").remove();
+      } else {
+        for (let i = 0; i < opinion.length; i++) {
+          newOpinion.innerHTML += `<p>Nom : ${opinion[i].utilisateur} <br> Commentaire : ${opinion[i].commentaire}</p> `;
+        }
 
-      opinionElement.appendChild(newOpinion);
+        opinionElement.appendChild(newOpinion);
+      }
     });
   }
 };
