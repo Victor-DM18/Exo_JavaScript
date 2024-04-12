@@ -13,7 +13,9 @@ const rangeBtn = document.querySelector(".range-price");
 const maxPrice = document.querySelector(".price");
 
 //data fetching
-const res = await fetch("./pieces-autos.json");
+const res = await fetch(`http://localhost:8081/pieces`);
+
+// const res = await fetch("./pieces-autos.json");
 const pieces = await res.json();
 
 maxPrice.innerText = rangeBtn.value + " €";
