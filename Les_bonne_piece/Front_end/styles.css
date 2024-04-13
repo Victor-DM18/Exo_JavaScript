@@ -33,15 +33,27 @@ main {
 .filtres {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	border-radius: 4px;
 	box-shadow: 0px 0px 4px gray;
 	margin: 8px;
 	padding: 8px;
 	min-width: 300px;
 	min-height: 400px;
-	gap: 25px;
+	gap: 20px;
 }
+
+.filtres .filter-btn {
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 25px;
+	margin: 8px;
+	padding: 8px;
+	border-radius: 10px;
+}
+
+
 .filtres h3 {
 	text-align: center;
 }
@@ -57,6 +69,13 @@ main {
 	padding: 5px;
 	border-radius: 10px;
 	width: 70%;
+}
+
+.form-opinion {
+	border: 1px solid black;
+	margin: 8px;
+	padding: 8px;
+	border-radius: 10px;
 }
 
 .form-opinion form{

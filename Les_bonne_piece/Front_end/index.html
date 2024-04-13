@@ -14,15 +14,16 @@
     <main>
       <!-- Menu de recherche -->
       <section class="filtres">
-        <h3>Filtres</h3>
-        <button class="btn-trier">Trier par prix croissant</button>
-        <button class="btn-reverse-tri">Trier par prix décroissant</button>
-        <button class="btn-filtrer">Filtrer les pièces non abordables</button>
-        <button class="btn-filtre-description">
-          Filtrer les pièces sans déscription
-        </button>
-        <div class="range">
-          <input
+        <div class="filter-btn">
+          <h3>Filtres</h3>
+          <button class="btn-trier">Trier par prix croissant</button>
+          <button class="btn-reverse-tri">Trier par prix décroissant</button>
+          <button class="btn-filtrer">Filtrer les pièces non abordables</button>
+          <button class="btn-filtre-description">
+            Filtrer les pièces sans déscription
+          </button>
+          <div class="range">
+            <input
             type="range"
             id="range-input"
             class="range-price"
@@ -30,11 +31,12 @@
             min="0"
             max="60"
             step="5"
-          />
-          <label for="range-input"
+            />
+            <label for="range-input"
             >prix max :<span class="price"></span>
           </label>
         </div>
+      </div>
         <div class="form-opinion">
           <h3>Ajouter un avis</h3>
           <form class="formulaire-avis">
