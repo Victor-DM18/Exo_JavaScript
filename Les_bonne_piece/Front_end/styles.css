@@ -59,6 +59,10 @@ main {
 	width: 70%;
 }
 
+ .filtres .form-opinion {
+	gap: 20px;
+}
+
 .opinion-button {
 	background-color: #7451eb;
 	color: aliceblue;
