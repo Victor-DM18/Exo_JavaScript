@@ -35,20 +35,20 @@ for (let i = 0; i < elementName.length; i++) {
 affordablePrice.appendChild(affordableElement);
 
 // list of disponibilited artciles
-const dispoElement = document.createElement("ul");
-const disponibilitedElement = pieces
-  .filter((piece) => piece.disponibilité === true)
-  .map((dispo) => {
-    return `${dispo.nom}  -  ${dispo.prix} €`;
-  });
+// const dispoElement = document.createElement("ul");
+// const disponibilitedElement = pieces
+//   .filter((piece) => piece.disponibilité === true)
+//   .map((dispo) => {
+//     return `${dispo.nom}  -  ${dispo.prix} €`;
+//   });
 
-for (let i = 0; i < disponibilitedElement.length; i++) {
-  const dispoList = document.createElement("li");
-  dispoList.innerText = disponibilitedElement[i];
-  dispoElement.appendChild(dispoList);
-}
+// for (let i = 0; i < disponibilitedElement.length; i++) {
+//   const dispoList = document.createElement("li");
+//   dispoList.innerText = disponibilitedElement[i];
+//   dispoElement.appendChild(dispoList);
+// }
 
-dispoPieces.appendChild(dispoElement);
+// dispoPieces.appendChild(dispoElement);
 
 //list of all articles
 const displayArtcilesList = (pieces) => {

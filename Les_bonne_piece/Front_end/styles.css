@@ -92,6 +92,11 @@ main {
 	align-items: center;
 }
 
+.form-opinion input {
+	border-radius: 10px;
+	padding: 5px;
+}
+
 .opinion-button {
 	background-color: #7451eb;
 	color: aliceblue;
