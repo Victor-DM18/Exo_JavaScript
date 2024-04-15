@@ -27,5 +27,13 @@ export const displayOpinionList = () => {
 
 export const addOpinion = () => {
   const formOpinion = document.querySelector(".formulaire-avis");
-  formOpinion.addEventListener("submit", (e) => {});
+  formOpinion.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const opinion = {
+      pieceId: parseInt(e.target.querySelector("[name=piece-id]").value),
+      utilisateur: e.target.querySelector("[name=utilisateur]").value,
+      commentaire: e.target.querySelector("[name=commentaire]").value,
+    };
+    const payload = JSON.stringify(opinion);
+  });
 };
