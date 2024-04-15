@@ -1,4 +1,4 @@
-import { displayOpinionList } from "./avis.js";
+import { displayOpinionList, addOpinion } from "./avis.js";
 
 // All general variables declarated
 const ficheSection = document.querySelector(".fiches");
@@ -19,6 +19,8 @@ const res = await fetch(`http://localhost:8081/pieces`);
 const pieces = await res.json();
 
 maxPrice.innerText = rangeBtn.value + " €";
+
+addOpinion();
 
 //list of affordable articles
 const affordableElement = document.createElement("ul");
