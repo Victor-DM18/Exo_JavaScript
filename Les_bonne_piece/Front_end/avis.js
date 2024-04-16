@@ -35,5 +35,11 @@ export const addOpinion = () => {
       commentaire: e.target.querySelector("[name=commentaire]").value,
     };
     const payload = JSON.stringify(opinion);
+
+    fetch("http://localhost:8081/avis", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: payload,
+    });
   });
 };
