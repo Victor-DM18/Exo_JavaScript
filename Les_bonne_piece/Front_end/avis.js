@@ -33,6 +33,7 @@ export const addOpinion = () => {
       pieceId: parseInt(e.target.querySelector("[name=piece-id]").value),
       utilisateur: e.target.querySelector("[name=user]").value,
       commentaire: e.target.querySelector("[name=commentary]").value,
+      nbEtoiles: e.target.querySelector("[name=nbStar]").value,
     };
     const payload = JSON.stringify(opinion);
 
