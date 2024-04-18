@@ -11,6 +11,8 @@ const affordablePrice = document.querySelector(".affordable-price");
 const dispoPieces = document.querySelector(".disponibility");
 const rangeBtn = document.querySelector(".range-price");
 const maxPrice = document.querySelector(".price");
+const evalInput = document.querySelector(".evalInput");
+const pieceValue = document.querySelector(".evalPiece");
 
 //data fetching
 const res = await fetch(`http://localhost:8081/pieces`);
@@ -19,6 +21,7 @@ const res = await fetch(`http://localhost:8081/pieces`);
 const pieces = await res.json();
 
 maxPrice.innerText = rangeBtn.value + " €";
+pieceValue.innerHTML = evalInput.value + " sur5";
 
 addOpinion();
 
@@ -135,4 +138,8 @@ rangeBtn.addEventListener("input", (e) => {
   });
   listArticles.innerHTML = "";
   displayArtcilesList(piecesFilter);
+});
+
+evalInput.addEventListener("input", (e) => {
+  pieceValue.innerHTML = `${e.target.value} sur 5`;
 });

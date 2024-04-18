@@ -27,6 +27,7 @@ export const displayOpinionList = () => {
 
 export const addOpinion = () => {
   const formOpinion = document.querySelector(".formulaire-avis");
+
   formOpinion.addEventListener("submit", (e) => {
     e.preventDefault();
     const opinion = {
