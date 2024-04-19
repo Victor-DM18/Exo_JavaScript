@@ -20,6 +20,10 @@ const res = await fetch(`http://localhost:8081/pieces`);
 // const res = await fetch("./pieces-autos.json");
 const pieces = await res.json();
 
+const pieceValueStorage = JSON.stringify(pieces);
+
+window.localStorage.setItem("pieces", pieceValueStorage);
+
 maxPrice.innerText = rangeBtn.value + " €";
 pieceValue.innerHTML = evalInput.value + " sur5";
 
