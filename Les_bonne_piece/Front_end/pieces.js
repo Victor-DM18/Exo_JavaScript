@@ -22,7 +22,9 @@ const pieces = await res.json();
 
 const pieceValueStorage = JSON.stringify(pieces);
 
+//local storage
 window.localStorage.setItem("pieces", pieceValueStorage);
+window.localStorage.setItem("nom", "Les Bonnes Pièces !");
 
 maxPrice.innerText = rangeBtn.value + " €";
 pieceValue.innerHTML = evalInput.value + " sur5";
