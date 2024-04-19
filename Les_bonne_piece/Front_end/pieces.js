@@ -14,17 +14,25 @@ const maxPrice = document.querySelector(".price");
 const evalInput = document.querySelector(".evalInput");
 const pieceValue = document.querySelector(".evalPiece");
 
-//data fetching
-const res = await fetch(`http://localhost:8081/pieces`);
+// Récupération des pièces éventuellement stockées dans le localStorage
 
-// const res = await fetch("./pieces-autos.json");
-const pieces = await res.json();
-
-const pieceValueStorage = JSON.stringify(pieces);
-
-//local storage
-window.localStorage.setItem("pieces", pieceValueStorage);
+let pieces = window.localStorage.getItem("pieces");
 window.localStorage.setItem("nom", "Les Bonnes Pièces !");
+
+if (pieces === null) {
+  //data fetching
+  const res = await fetch(`http://localhost:8081/pieces`);
+
+  // const res = await fetch("./pieces-autos.json");
+  pieces = await res.json();
+
+  const pieceValueStorage = JSON.stringify(pieces);
+
+  //local storage
+  window.localStorage.setItem("pieces", pieceValueStorage);
+} else {
+  pieces = JSON.parse(pieces);
+}
 
 maxPrice.innerText = rangeBtn.value + " €";
 pieceValue.innerHTML = evalInput.value + " sur5";
