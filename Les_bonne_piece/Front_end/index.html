@@ -24,19 +24,19 @@
           </button>
           <div class="range">
             <input
-            type="range"
-            id="range-input"
-            class="range-price"
-            value="60"
-            min="0"
-            max="60"
-            step="5"
+              type="range"
+              id="range-input"
+              class="range-price"
+              value="60"
+              min="0"
+              max="60"
+              step="5"
             />
             <label for="range-input"
-            >prix max :<span class="price"></span>
-          </label>
+              >prix max :<span class="price"></span>
+            </label>
+          </div>
         </div>
-      </div>
         <div class="form-opinion">
           <h3>Ajouter un avis</h3>
           <form class="formulaire-avis">
@@ -54,11 +54,23 @@
             </div>
             <div>
               <label for="eval">Note : <span class="evalPiece"></span></label>
-              <input class="evalInput" id="eval" type="range" name="nbStar" min="1" max="5" value="2.5" step="0.5"/>
+              <input
+                class="evalInput"
+                id="eval"
+                type="range"
+                name="nbStar"
+                min="1"
+                max="5"
+                value="2.5"
+                step="0.5"
+              />
             </div>
             <button>Envoyer</button>
-          </div>
-        </form>
+          </form>
+        </div>
+        <div class="maj">
+          <button class="btn-maj">Mettre à jour</button>
+        </div>
       </section>
 
       <!-- Fiches produits -->
