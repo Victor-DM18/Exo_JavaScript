@@ -13,6 +13,7 @@ const rangeBtn = document.querySelector(".range-price");
 const maxPrice = document.querySelector(".price");
 const evalInput = document.querySelector(".evalInput");
 const pieceValue = document.querySelector(".evalPiece");
+const majBtn = document.querySelector(".btn-maj");
 
 // Récupération des pièces éventuellement stockées dans le localStorage
 
@@ -156,4 +157,8 @@ rangeBtn.addEventListener("input", (e) => {
 
 evalInput.addEventListener("input", (e) => {
   pieceValue.innerHTML = `${e.target.value} sur 5`;
+});
+
+majBtn.addEventListener("input", () => {
+  window.localStorage.removeItem("pieces");
 });
