@@ -57,6 +57,14 @@ main {
 .filtres h3 {
 	text-align: center;
 }
+.filtres .maj {
+	display: flex;
+	justify-content: center;
+}
+
+.btn-maj {
+	margin: 50px;
+}
 
 .filtres .range {
 	display: flex;
