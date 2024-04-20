@@ -159,6 +159,6 @@ evalInput.addEventListener("input", (e) => {
   pieceValue.innerHTML = `${e.target.value} sur 5`;
 });
 
-majBtn.addEventListener("input", () => {
+majBtn.addEventListener("click", () => {
   window.localStorage.removeItem("pieces");
 });
