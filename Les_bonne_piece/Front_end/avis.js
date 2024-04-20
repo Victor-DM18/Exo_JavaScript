@@ -5,7 +5,7 @@ export const displayOpinionList = () => {
       const id = e.target.dataset.id;
       const res = await fetch(`http://localhost:8081/pieces/${id}/avis`);
       const opinion = await res.json();
-      console.log(opinion);
+      window.localStorage.setItem(`avis-piece ${id}`, JSON.stringify(opinion));
 
       const opinionElement = e.target.parentElement;
 
