@@ -120,7 +120,7 @@ for (let i = 0; i < pieces.length; i++) {
 
   if (opinion !== null) {
     const piexeElement = document.querySelector(`artcile[data-id="${id}"]`);
-    displayOpinion(piexeElement);
+    displayOpinion(piexeElement, opinion);
   }
 }
 
