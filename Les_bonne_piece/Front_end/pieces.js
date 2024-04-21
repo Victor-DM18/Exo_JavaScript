@@ -1,4 +1,4 @@
-import { displayOpinionList, addOpinion } from "./avis.js";
+import { displayOpinionList, addOpinion, displayOpinion } from "./avis.js";
 
 // All general variables declarated
 const ficheSection = document.querySelector(".fiches");
@@ -112,6 +112,17 @@ const displayArtcilesList = (pieces) => {
 };
 
 displayArtcilesList(pieces);
+
+for (let i = 0; i < pieces.length; i++) {
+  const id = pieces[i].id;
+  const opinionJSON = window.localStorage.getItem(`avis-piece ${id}`);
+  const opinion = JSON.parse(opinionJSON);
+
+  if (opinion !== null) {
+    const piexeElement = document.querySelector(`artcile[data-id="${id}"]`);
+    displayOpinion(piexeElement);
+  }
+}
 
 //eventListener for all filter buttons
 priceOrder.addEventListener("click", () => {
