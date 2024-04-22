@@ -82,6 +82,8 @@ const displayArtcilesList = (pieces) => {
     const stockElement = document.createElement("p");
     const opinionBtn = document.createElement("button");
 
+    piexeElement.dataset.id = pieces[i].id;
+
     imgElement.src = pieces[i].image;
     nameElement.innerText = pieces[i].nom;
     priceElement.innerText = `Prix : ${pieces[i].prix} € (${
@@ -119,7 +121,7 @@ for (let i = 0; i < pieces.length; i++) {
   const opinion = JSON.parse(opinionJSON);
 
   if (opinion !== null) {
-    const piexeElement = document.querySelector(`artcile[data-id="${id}"]`);
+    const piexeElement = document.querySelector(`article[data-id="${id}"]`);
     displayOpinion(piexeElement, opinion);
   }
 }
