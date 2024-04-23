@@ -23,7 +23,6 @@ export const displayOpinion = (opinionElement, opinion) => {
     for (let i = 0; i < opinion.length; i++) {
       newOpinion.innerHTML += `<p>Nom : ${opinion[i].utilisateur} <br> Commentaire : ${opinion[i].commentaire}</p> `;
     }
-    console.log(newOpinion);
     opinionElement.appendChild(newOpinion);
   }
 };
