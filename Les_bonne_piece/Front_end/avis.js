@@ -3,18 +3,25 @@ export const displayOpinionList = () => {
   for (let i = 0; i < pieceElement.length; i++) {
     pieceElement[i].addEventListener("click", async (e) => {
       const id = e.target.dataset.id;
-      const res = await fetch(`http://localhost:8081/pieces/${id}/avis`);
-      const opinion = await res.json();
-      window.localStorage.setItem(`avis-piece ${id}`, JSON.stringify(opinion));
-
-      const opinionElement = e.target.parentElement;
-
-      const newOpinion = document.createElement("p");
-      newOpinion.classList.add(`opinion-list-${id}`);
-      if (document.querySelector(`.opinion-list-${id}`)) {
-        document.querySelector(`.opinion-list-${id}`).remove();
+      let opinion = window.localStorage.getItem(`avis-piece ${id}`);
+      if (opinion == null) {
+        const res = await fetch(`http://localhost:8081/pieces/${id}/avis`);
+        opinion = await res.json();
+        window.localStorage.setItem(
+          `avis-piece ${id}`,
+          JSON.stringify(opinion)
+        );
       } else {
-        displayOpinion(newOpinion, opinionElement, opinion);
+        opinion = JSON.parse(opinion);
+        const opinionElement = e.target.parentElement;
+
+        if (document.querySelector(`.opinion-list-${id}`)) {
+          document.querySelector(`.opinion-list-${id}`).remove();
+        } else {
+          const newOpinion = document.createElement("p");
+          newOpinion.classList.add(`opinion-list-${id}`);
+          displayOpinion(newOpinion, opinionElement, opinion);
+        }
       }
     });
   }
@@ -23,7 +30,6 @@ export const displayOpinionList = () => {
 export const displayOpinion = (newOpinion, opinionElement, opinion) => {
   for (let i = 0; i < opinion.length; i++) {
     newOpinion.innerHTML += `<p>Nom : ${opinion[i].utilisateur} <br> Commentaire : ${opinion[i].commentaire}</p> `;
-
     opinionElement.appendChild(newOpinion);
   }
 };
