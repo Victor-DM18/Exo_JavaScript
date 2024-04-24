@@ -8,21 +8,22 @@ export const displayOpinionList = () => {
       window.localStorage.setItem(`avis-piece ${id}`, JSON.stringify(opinion));
 
       const opinionElement = e.target.parentElement;
-      displayOpinion(opinionElement, opinion);
+
+      const newOpinion = document.createElement("p");
+      newOpinion.classList.add(`opinion-list-${id}`);
+      if (document.querySelector(`.opinion-list-${id}`)) {
+        document.querySelector(`.opinion-list-${id}`).remove();
+      } else {
+        displayOpinion(newOpinion, opinionElement, opinion);
+      }
     });
   }
 };
 
-export const displayOpinion = (opinionElement, opinion) => {
-  const newOpinion = document.createElement("p");
-  newOpinion.classList.add("opinion-list");
+export const displayOpinion = (newOpinion, opinionElement, opinion) => {
+  for (let i = 0; i < opinion.length; i++) {
+    newOpinion.innerHTML += `<p>Nom : ${opinion[i].utilisateur} <br> Commentaire : ${opinion[i].commentaire}</p> `;
 
-  if (document.querySelector(".opinion-list")) {
-    document.querySelector(".opinion-list").remove();
-  } else {
-    for (let i = 0; i < opinion.length; i++) {
-      newOpinion.innerHTML += `<p>Nom : ${opinion[i].utilisateur} <br> Commentaire : ${opinion[i].commentaire}</p> `;
-    }
     opinionElement.appendChild(newOpinion);
   }
 };
