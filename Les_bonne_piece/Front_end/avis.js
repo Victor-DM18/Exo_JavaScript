@@ -56,6 +56,15 @@ export const addOpinion = () => {
 };
 
 export async function displayGraphOpinion() {
+  // Calcul du nombre total de commentaires par quantité d'étoiles attribuées
+  const avis = await fetch("http://localhost:8081/avis").then((avis) =>
+    avis.json()
+  );
+  const nb_commentaires = [0, 0, 0, 0, 0];
+  for (let commentaire of avis) {
+    nb_commentaires[commentaire.nbEtoiles - 1]++;
+  }
+
   const labels = ["5", "4", "3", "2", "1"];
 
   const data = {
@@ -81,13 +90,4 @@ export async function displayGraphOpinion() {
     document.querySelector("#graphique-avis"),
     config
   );
-
-  // Calcul du nombre total de commentaires par quantité d'étoiles attribuées
-  const avis = await fetch("http://localhost:8081/avis").then((avis) =>
-    avis.json()
-  );
-  const nb_commentaires = [0, 0, 0, 0, 0];
-  for (let commentaire of avis) {
-    nb_commentaires[commentaire.nbEtoiles - 1]++;
-  }
 }
