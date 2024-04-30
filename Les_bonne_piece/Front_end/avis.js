@@ -4,7 +4,7 @@ export const displayOpinionList = () => {
     pieceElement[i].addEventListener("click", async (e) => {
       const id = e.target.dataset.id;
       let opinion = window.localStorage.getItem(`avis-piece ${id}`);
-      if (opinion == null) {
+      if (opinion === null) {
         const res = await fetch(`http://localhost:8081/pieces/${id}/avis`);
         opinion = await res.json();
         window.localStorage.setItem(

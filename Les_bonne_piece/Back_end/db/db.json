@@ -197,6 +197,20 @@
       "commentaire": "not bad",
       "nbEtoiles": "8",
       "id": 22
+    },
+    {
+      "pieceId": 4,
+      "utilisateur": "vviki",
+      "commentaire": "not bad",
+      "nbEtoiles": "4",
+      "id": 23
+    },
+    {
+      "pieceId": 4,
+      "utilisateur": "yoyo",
+      "commentaire": "not bad",
+      "nbEtoiles": "4",
+      "id": 24
     }
   ]
 }

@@ -126,10 +126,11 @@ for (let i = 0; i < pieces.length; i++) {
   const opinionJSON = window.localStorage.getItem(`avis-piece ${id}`);
   const opinion = JSON.parse(opinionJSON);
 
-  if (opinion !== null) {
-    const piexeElement = document.querySelector(`article[data-id="${id}"]`);
-    displayOpinion(piexeElement, opinion);
-  }
+  // if (opinion !== null) {
+  //   const newOpinion = document.createElement(`opinion-list-${id}`);
+  //   const piexeElement = document.querySelector(`article[data-id="${id}"]`);
+  //   displayOpinion(newOpinion, piexeElement, opinion);
+  // }
 }
 
 //eventListener for all filter buttons
