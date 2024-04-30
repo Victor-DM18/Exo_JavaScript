@@ -1,4 +1,9 @@
-import { displayOpinionList, addOpinion, displayOpinion } from "./avis.js";
+import {
+  displayOpinionList,
+  addOpinion,
+  displayOpinion,
+  displayGraphOpinion,
+} from "./avis.js";
 
 // All general variables declarated
 const ficheSection = document.querySelector(".fiches");
@@ -39,6 +44,7 @@ maxPrice.innerText = rangeBtn.value + " €";
 pieceValue.innerHTML = evalInput.value + " sur5";
 
 addOpinion();
+displayGraphOpinion();
 
 //list of affordable articles
 const affordableElement = document.createElement("ul");
