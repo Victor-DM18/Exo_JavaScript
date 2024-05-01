@@ -65,6 +65,8 @@ export async function displayGraphOpinion() {
     nb_commentaires[commentaire.nbEtoiles - 1]++;
   }
 
+  console.log(nb_commentaires);
+
   const labels = ["5", "4", "3", "2", "1"];
 
   const data = {

@@ -44,7 +44,6 @@ maxPrice.innerText = rangeBtn.value + " €";
 pieceValue.innerHTML = evalInput.value + " sur5";
 
 addOpinion();
-displayGraphOpinion();
 
 //list of affordable articles
 const affordableElement = document.createElement("ul");
@@ -132,6 +131,8 @@ for (let i = 0; i < pieces.length; i++) {
   //   displayOpinion(newOpinion, piexeElement, opinion);
   // }
 }
+
+await displayGraphOpinion();
 
 //eventListener for all filter buttons
 priceOrder.addEventListener("click", () => {
