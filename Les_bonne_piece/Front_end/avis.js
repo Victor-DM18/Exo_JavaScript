@@ -98,4 +98,14 @@ export const displayGraphOpinion = async () => {
 
   let countDispo = 0;
   let countNotDispo = 0;
+
+  for (let i = 0; i < avis.length; i++) {
+    const piece = pieces.find((p) => p.id === avis[i].pieceId);
+  }
+
+  if (piece.disponibilite) {
+    countDispo++;
+  } else {
+    countNotDispo;
+  }
 };
