@@ -1,9 +1,4 @@
-import {
-  displayOpinionList,
-  addOpinion,
-  displayGraphOpinion,
-  displayGraphNbOpinion,
-} from "./avis.js";
+import { displayOpinionList, addOpinion, displayGraphOpinion } from "./avis.js";
 
 // All general variables declarated
 const ficheSection = document.querySelector(".fiches");
@@ -170,4 +165,3 @@ majBtn.addEventListener("click", () => {
 });
 
 await displayGraphOpinion();
-await displayGraphNbOpinion();

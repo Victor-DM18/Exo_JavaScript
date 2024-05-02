@@ -3,6 +3,7 @@ export const displayOpinionList = () => {
   for (let i = 0; i < pieceElement.length; i++) {
     pieceElement[i].addEventListener("click", async (e) => {
       const id = e.target.dataset.id;
+
       let opinion = window.localStorage.getItem(`avis-piece ${id}`);
       if (opinion === null) {
         const res = await fetch(`http://localhost:8081/pieces/${id}/avis`);
@@ -91,22 +92,10 @@ export const displayGraphOpinion = async () => {
     document.querySelector("#graphique-avis"),
     config
   );
-};
 
-export const displayGraphNbOpinion = async () => {
-  const opinion = await fetch("http://localhost:8081/avis").then((op) =>
-    op.json()
-  );
+  const piecesJSON = window.localStorage.getItem("pieces");
+  const pieces = JSON.parse(piecesJSON);
 
-  console.log(opinion);
-
-  const nbOpinion = [0, 0];
-
-  const dispoOpinion = opinion.filter((op) => op.disponibilite);
-
-  for (let commenetary of opinion) {
-    dispoOpinion[commenetary - 1]++;
-  }
-
-  const label = ["dispo", "non dispo"];
+  let countDispo = 0;
+  let countNotDispo = 0;
 };
