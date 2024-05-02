@@ -55,7 +55,7 @@ export const addOpinion = () => {
   });
 };
 
-export async function displayGraphOpinion() {
+export const displayGraphOpinion = async () => {
   // Calcul du nombre total de commentaires par quantité d'étoiles attribuées
   const avis = await fetch("http://localhost:8081/avis").then((avis) =>
     avis.json()
@@ -65,16 +65,14 @@ export async function displayGraphOpinion() {
     nb_commentaires[commentaire.nbEtoiles - 1]++;
   }
 
-  console.log(nb_commentaires);
-
-  const labels = ["5", "4", "3", "2", "1"];
+  const labels = ["1", "2", "3", "4", "5"];
 
   const data = {
     labels: labels,
     datasets: [
       {
         label: "Étoiles attribuées",
-        data: nb_commentaires.reverse(),
+        data: nb_commentaires,
         backgroundColor: "rgba(255, 230, 0, 1)", // couleur jaune
       },
     ],
@@ -92,4 +90,4 @@ export async function displayGraphOpinion() {
     document.querySelector("#graphique-avis"),
     config
   );
-}
+};
