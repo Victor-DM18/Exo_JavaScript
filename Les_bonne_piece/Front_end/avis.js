@@ -110,7 +110,7 @@ export const displayGraphOpinion = async () => {
   }
 
   console.log(countDispo);
-  const labelNbOpinion = ["dispo", "non dispo"];
+  const labelNbOpinion = ["pieces dispo", "pieces non dispo"];
 
   const dataNbOpinion = {
     labels: labelNbOpinion,
