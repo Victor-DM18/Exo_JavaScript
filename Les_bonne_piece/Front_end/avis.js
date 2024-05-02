@@ -13,15 +13,15 @@ export const displayOpinionList = () => {
         );
       } else {
         opinion = JSON.parse(opinion);
-        const opinionElement = e.target.parentElement;
+      }
+      const opinionElement = e.target.parentElement;
 
-        if (document.querySelector(`.opinion-list-${id}`)) {
-          document.querySelector(`.opinion-list-${id}`).remove();
-        } else {
-          const newOpinion = document.createElement("p");
-          newOpinion.classList.add(`opinion-list-${id}`);
-          displayOpinion(newOpinion, opinionElement, opinion);
-        }
+      if (document.querySelector(`.opinion-list-${id}`)) {
+        document.querySelector(`.opinion-list-${id}`).remove();
+      } else {
+        const newOpinion = document.createElement("p");
+        newOpinion.classList.add(`opinion-list-${id}`);
+        displayOpinion(newOpinion, opinionElement, opinion);
       }
     });
   }

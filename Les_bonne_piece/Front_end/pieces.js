@@ -41,7 +41,7 @@ if (pieces === null) {
 }
 
 maxPrice.innerText = rangeBtn.value + " €";
-pieceValue.innerHTML = evalInput.value + " sur5";
+pieceValue.innerHTML = evalInput.value + " sur 5";
 
 addOpinion();
 
@@ -118,18 +118,6 @@ const displayArtcilesList = (pieces) => {
 };
 
 displayArtcilesList(pieces);
-
-for (let i = 0; i < pieces.length; i++) {
-  const id = pieces[i].id;
-  const opinionJSON = window.localStorage.getItem(`avis-piece ${id}`);
-  const opinion = JSON.parse(opinionJSON);
-
-  // if (opinion !== null) {
-  //   const newOpinion = document.createElement(`opinion-list-${id}`);
-  //   const piexeElement = document.querySelector(`article[data-id="${id}"]`);
-  //   displayOpinion(newOpinion, piexeElement, opinion);
-  // }
-}
 
 //eventListener for all filter buttons
 priceOrder.addEventListener("click", () => {
