@@ -60,20 +60,19 @@ for (let i = 0; i < elementName.length; i++) {
 affordablePrice.appendChild(affordableElement);
 
 // list of disponibilited artciles
-// const dispoElement = document.createElement("ul");
-// const disponibilitedElement = pieces
-//   .filter((piece) => piece.disponibilité === true)
-//   .map((dispo) => {
-//     return `${dispo.nom}  -  ${dispo.prix} €`;
-//   });
+const dispoElement = document.createElement("ul");
 
-// for (let i = 0; i < disponibilitedElement.length; i++) {
-//   const dispoList = document.createElement("li");
-//   dispoList.innerText = disponibilitedElement[i];
-//   dispoElement.appendChild(dispoList);
-// }
+const disponibilitedElement = pieces
+  .filter((dispo) => dispo.disponibilite)
+  .map((dispo) => `${dispo.nom}  -  ${dispo.prix} €`);
 
-// dispoPieces.appendChild(dispoElement);
+for (let i = 0; i < disponibilitedElement.length; i++) {
+  const dispoList = document.createElement("li");
+  dispoList.innerText = disponibilitedElement[i];
+  dispoElement.appendChild(dispoList);
+}
+
+dispoPieces.appendChild(dispoElement);
 
 //list of all articles
 const displayArtcilesList = (pieces) => {
@@ -132,8 +131,6 @@ for (let i = 0; i < pieces.length; i++) {
   // }
 }
 
-await displayGraphOpinion();
-
 //eventListener for all filter buttons
 priceOrder.addEventListener("click", () => {
   const piecesSort = pieces.sort((a, b) => {
@@ -183,3 +180,5 @@ evalInput.addEventListener("input", (e) => {
 majBtn.addEventListener("click", () => {
   window.localStorage.removeItem("pieces");
 });
+
+await displayGraphOpinion();
