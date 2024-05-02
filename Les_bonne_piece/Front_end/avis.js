@@ -101,11 +101,32 @@ export const displayGraphOpinion = async () => {
 
   for (let i = 0; i < avis.length; i++) {
     const piece = pieces.find((p) => p.id === avis[i].pieceId);
+
+    if (piece.disponibilite) {
+      countDispo++;
+    } else {
+      countNotDispo++;
+    }
   }
 
-  if (piece.disponibilite) {
-    countDispo++;
-  } else {
-    countNotDispo;
-  }
+  console.log(countDispo);
+  const labelNbOpinion = ["dispo", "non dispo"];
+
+  const dataNbOpinion = {
+    labels: labelNbOpinion,
+    datasets: [
+      {
+        label: "Nombre de commentaires",
+        data: [countDispo, countNotDispo],
+        backgroundColor: "rgb(255, 160, 122)",
+      },
+    ],
+  };
+
+  const configNbOpinion = {
+    type: "bar",
+    data: dataNbOpinion,
+  };
+
+  new Chart(document.querySelector("#nb-avis"), configNbOpinion);
 };
