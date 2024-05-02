@@ -60,6 +60,7 @@ export const displayGraphOpinion = async () => {
   const avis = await fetch("http://localhost:8081/avis").then((avis) =>
     avis.json()
   );
+
   const nb_commentaires = [0, 0, 0, 0, 0];
   for (let commentaire of avis) {
     nb_commentaires[commentaire.nbEtoiles - 1]++;
@@ -90,4 +91,22 @@ export const displayGraphOpinion = async () => {
     document.querySelector("#graphique-avis"),
     config
   );
+};
+
+export const displayGraphNbOpinion = async () => {
+  const opinion = await fetch("http://localhost:8081/avis").then((op) =>
+    op.json()
+  );
+
+  console.log(opinion);
+
+  const nbOpinion = [0, 0];
+
+  const dispoOpinion = opinion.filter((op) => op.disponibilite);
+
+  for (let commenetary of opinion) {
+    dispoOpinion[commenetary - 1]++;
+  }
+
+  const label = ["dispo", "non dispo"];
 };

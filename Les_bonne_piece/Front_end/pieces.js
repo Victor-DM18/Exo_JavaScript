@@ -1,8 +1,8 @@
 import {
   displayOpinionList,
   addOpinion,
-  displayOpinion,
   displayGraphOpinion,
+  displayGraphNbOpinion,
 } from "./avis.js";
 
 // All general variables declarated
@@ -170,3 +170,4 @@ majBtn.addEventListener("click", () => {
 });
 
 await displayGraphOpinion();
+await displayGraphNbOpinion();
