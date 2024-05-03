@@ -67,7 +67,13 @@ export const displayGraphOpinion = async () => {
     nb_commentaires[commentaire.nbEtoiles - 1]++;
   }
 
-  const labels = ["1", "2", "3", "4", "5"];
+  const labels = [
+    "1 étoile",
+    "2 étoiles",
+    "3 étoiles",
+    "4 étoiles",
+    "5 étoiles",
+  ];
 
   const data = {
     labels: labels,
