@@ -7,7 +7,6 @@
     "start": "json-server --port 8081 --no-cors Back_end/db/db.json",
     "dev": "http-server",
     "lint": "eslint /**/*.js --ignore-pattern node_modules/"
-
   },
   "repository": {
     "type": "git",

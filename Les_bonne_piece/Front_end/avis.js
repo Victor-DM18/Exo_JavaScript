@@ -94,10 +94,8 @@ export const displayGraphOpinion = async () => {
     },
   };
 
-  const graphiqueAvis = new Chart(
-    document.querySelector("#graphique-avis"),
-    config
-  );
+  // eslint-disable-next-line no-undef
+  new Chart(document.querySelector("#graphique-avis"), config);
 
   const piecesJSON = window.localStorage.getItem("pieces");
   const pieces = JSON.parse(piecesJSON);
@@ -134,5 +132,6 @@ export const displayGraphOpinion = async () => {
     data: dataNbOpinion,
   };
 
+  // eslint-disable-next-line no-undef
   new Chart(document.querySelector("#nb-avis"), configNbOpinion);
 };

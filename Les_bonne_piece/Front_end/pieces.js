@@ -1,7 +1,6 @@
 import { displayOpinionList, addOpinion, displayGraphOpinion } from "./avis.js";
 
 // All general variables declarated
-const ficheSection = document.querySelector(".fiches");
 const listArticles = document.querySelector(".listArticles");
 const priceOrder = document.querySelector(".btn-trier");
 const priceFilter = document.querySelector(".btn-filtrer");
