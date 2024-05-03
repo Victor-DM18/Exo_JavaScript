@@ -113,7 +113,6 @@ export const displayGraphOpinion = async () => {
     }
   }
 
-  console.log(countDispo);
   const labelNbOpinion = ["pieces dispo", "pieces non dispo"];
 
   const dataNbOpinion = {
